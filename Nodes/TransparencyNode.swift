@@ -1,15 +1,15 @@
 //
-//  ColorNode.swift
-//  test_gragndrop
+//  TransparencyNode.swift
+//  SwiftUINodeEditor
 //
-//  Created by Matt Novoselov on 18/03/24.
+//  Created by Matt Novoselov on 19/03/24.
 //
 
 import SwiftUI
 
-struct ColorNode: View {
+struct TransparencyNode: View {
     @Binding var circlePosition: CGPoint
-    @Binding var diplayedColor: Color
+    @Binding var diplayedTransparency: Double
     var action: (() -> Void)?
     
     var body: some View {
@@ -23,13 +23,18 @@ struct ColorNode: View {
                     .stroke(Color.white, lineWidth: 5)
                 
                 VStack{
-                    Text("Color Node")
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white)
+                    HStack{
+                        Text("Transpareny Node \(diplayedTransparency.description)")
+                            .fontWeight(.bold)
+                            .foregroundStyle(.white)
 
-                    ColorPicker("Pick", selection: $diplayedColor)
-                        .foregroundStyle(.white)
+                        Image(systemName: "rectangle.checkered")
+                    }
+                    
+                    
+                    Slider(value: $diplayedTransparency)
                 }
+
 
             }
             .contextMenu(ContextMenu(menuItems: {

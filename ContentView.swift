@@ -17,6 +17,9 @@ struct ContentView: View {
     @State var colorStates: [Color] = []
     @State var colorNodePositions: [CGPoint] = []
     
+    @State var transparencyStates: [Double] = []
+    @State var transparencyNodePositions: [CGPoint] = []
+    
     @State private var currentZoom = 0.0
     @State private var currentPos: CGPoint = .zero
     @State private var totalZoom = 1.0
@@ -31,6 +34,7 @@ struct ContentView: View {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundStyle(colorStates.indices.contains(index) ? colorStates[index] : .white)
+                            .opacity(transparencyStates.indices.contains(index) ? transparencyStates[index] : 1.0)
                         
                     }
                     
@@ -62,11 +66,15 @@ struct ContentView: View {
                     Button("Add Toggle") {
                         addToggle()
                     }
+                    
+                    Button("Add Transparency") {
+                        addTransparency()
+                    }
                 }
                 
                 ZStack{
-                    ForEach(0..<colorStates.count, id: \.self) { index in
-                        ColorNode(circlePosition: $colorNodePositions[index], diplayedColor: $colorStates[index])
+                    ForEach(0..<colorNodePositions.count, id: \.self) { index in
+                        ColorNode(circlePosition: $colorNodePositions[index], diplayedColor: $colorStates[index], action: {removeColor(at: index)})
                             .background {
                                 if textNodePositions.indices.contains(index) && colorNodePositions.indices.contains(index) {
                                     BezierPath(startPoint: $colorNodePositions[index], endPoint: $textNodePositions[index])
@@ -74,12 +82,21 @@ struct ContentView: View {
                             }
                     }
                     
-                    ForEach(0..<textStates.count, id: \.self) { index in
+                    ForEach(0..<textNodePositions.count, id: \.self) { index in
                         TextNode(circlePosition: $textNodePositions[index], diplayedText: $textStates[index], action: {removeText(at: index)})
                     }
                     
-                    ForEach(0..<toggleStates.count, id: \.self) { index in
+                    ForEach(0..<toggleNodePosition.count, id: \.self) { index in
                         ToggleNode(circlePosition: $toggleNodePosition[index], isOn: $toggleStates[index], action: {removeToggle(at: index)})
+                    }
+                    
+                    ForEach(0..<transparencyNodePositions.count, id: \.self) { index in
+                        TransparencyNode(circlePosition: $transparencyNodePositions[index], diplayedTransparency: $transparencyStates[index], action: {removeTransparency(at: index)})
+                            .background {
+                                if textNodePositions.indices.contains(index) && transparencyNodePositions.indices.contains(index) {
+                                    BezierPath(startPoint: $transparencyNodePositions[index], endPoint: $textNodePositions[index])
+                                }
+                            }
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -149,6 +166,20 @@ struct ContentView: View {
         withAnimation(.easeInOut){
             colorStates.remove(at: index)
             colorNodePositions.remove(at: index)
+        }
+    }
+    
+    func addTransparency() {
+        withAnimation(.easeInOut){
+            transparencyStates.append(1.0)
+            transparencyNodePositions.append(.zero)
+        }
+    }
+    
+    func removeTransparency(at index: Int) {
+        withAnimation(.easeInOut){
+            transparencyStates.remove(at: index)
+            transparencyNodePositions.remove(at: index)
         }
     }
 }

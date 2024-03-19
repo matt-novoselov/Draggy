@@ -12,6 +12,7 @@
 		1A111A1A2BA884CF00A6B850 /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A192BA884CF00A6B850 /* TextNode.swift */; };
 		1A111A1C2BA884DD00A6B850 /* ColorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A1B2BA884DD00A6B850 /* ColorNode.swift */; };
 		1A111A1E2BA888AF00A6B850 /* ToggleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A1D2BA888AF00A6B850 /* ToggleNode.swift */; };
+		1ACFB9842BA9915E00223133 /* TransparencyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9832BA9915E00223133 /* TransparencyNode.swift */; };
 		1AEB6C5D2BA89AB100F52C55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB6C5C2BA89AB100F52C55 /* ContentView.swift */; };
 		1AEB6C5F2BA8A31B00F52C55 /* BezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB6C5E2BA8A31B00F52C55 /* BezierPath.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +24,7 @@
 		1A111A192BA884CF00A6B850 /* TextNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextNode.swift; sourceTree = "<group>"; };
 		1A111A1B2BA884DD00A6B850 /* ColorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNode.swift; sourceTree = "<group>"; };
 		1A111A1D2BA888AF00A6B850 /* ToggleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleNode.swift; sourceTree = "<group>"; };
+		1ACFB9832BA9915E00223133 /* TransparencyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparencyNode.swift; sourceTree = "<group>"; };
 		1AEB6C5C2BA89AB100F52C55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1AEB6C5E2BA8A31B00F52C55 /* BezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 				1A111A192BA884CF00A6B850 /* TextNode.swift */,
 				1A111A1B2BA884DD00A6B850 /* ColorNode.swift */,
 				1A111A1D2BA888AF00A6B850 /* ToggleNode.swift */,
+				1ACFB9832BA9915E00223133 /* TransparencyNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				1A111A1C2BA884DD00A6B850 /* ColorNode.swift in Sources */,
 				1A111A1E2BA888AF00A6B850 /* ToggleNode.swift in Sources */,
 				1A111A1A2BA884CF00A6B850 /* TextNode.swift in Sources */,
+				1ACFB9842BA9915E00223133 /* TransparencyNode.swift in Sources */,
 				1AEB6C5F2BA8A31B00F52C55 /* BezierPath.swift in Sources */,
 				1A111A082BA866D300A6B850 /* SwiftUINodeEditor.swift in Sources */,
 				1AEB6C5D2BA89AB100F52C55 /* ContentView.swift in Sources */,
