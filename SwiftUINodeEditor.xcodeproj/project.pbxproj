@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A111A082BA866D300A6B850 /* test_gragndropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A072BA866D300A6B850 /* test_gragndropApp.swift */; };
+		1A111A082BA866D300A6B850 /* SwiftUINodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A072BA866D300A6B850 /* SwiftUINodeEditor.swift */; };
 		1A111A0C2BA866D500A6B850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A111A0B2BA866D500A6B850 /* Assets.xcassets */; };
 		1A111A1A2BA884CF00A6B850 /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A192BA884CF00A6B850 /* TextNode.swift */; };
 		1A111A1C2BA884DD00A6B850 /* ColorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A111A1B2BA884DD00A6B850 /* ColorNode.swift */; };
@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A111A042BA866D300A6B850 /* test_gragndrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test_gragndrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A111A072BA866D300A6B850 /* test_gragndropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_gragndropApp.swift; sourceTree = "<group>"; };
+		1A111A042BA866D300A6B850 /* SwiftUINodeEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUINodeEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A111A072BA866D300A6B850 /* SwiftUINodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINodeEditor.swift; sourceTree = "<group>"; };
 		1A111A0B2BA866D500A6B850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A111A192BA884CF00A6B850 /* TextNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextNode.swift; sourceTree = "<group>"; };
 		1A111A1B2BA884DD00A6B850 /* ColorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNode.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				1A111A0B2BA866D500A6B850 /* Assets.xcassets */,
-				1A111A072BA866D300A6B850 /* test_gragndropApp.swift */,
+				1A111A072BA866D300A6B850 /* SwiftUINodeEditor.swift */,
 				1AEB6C5C2BA89AB100F52C55 /* ContentView.swift */,
 				1AEB6C5E2BA8A31B00F52C55 /* BezierPath.swift */,
 				1A111A212BA8997900A6B850 /* Nodes */,
@@ -53,7 +53,7 @@
 		1A111A052BA866D300A6B850 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A111A042BA866D300A6B850 /* test_gragndrop.app */,
+				1A111A042BA866D300A6B850 /* SwiftUINodeEditor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,9 +71,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A111A032BA866D300A6B850 /* test_gragndrop */ = {
+		1A111A032BA866D300A6B850 /* SwiftUINodeEditor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A111A122BA866D500A6B850 /* Build configuration list for PBXNativeTarget "test_gragndrop" */;
+			buildConfigurationList = 1A111A122BA866D500A6B850 /* Build configuration list for PBXNativeTarget "SwiftUINodeEditor" */;
 			buildPhases = (
 				1A111A002BA866D300A6B850 /* Sources */,
 				1A111A012BA866D300A6B850 /* Frameworks */,
@@ -83,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = test_gragndrop;
+			name = SwiftUINodeEditor;
 			productName = test_gragndrop;
-			productReference = 1A111A042BA866D300A6B850 /* test_gragndrop.app */;
+			productReference = 1A111A042BA866D300A6B850 /* SwiftUINodeEditor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1A1119FF2BA866D300A6B850 /* Build configuration list for PBXProject "test_gragndrop" */;
+			buildConfigurationList = 1A1119FF2BA866D300A6B850 /* Build configuration list for PBXProject "SwiftUINodeEditor" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A111A032BA866D300A6B850 /* test_gragndrop */,
+				1A111A032BA866D300A6B850 /* SwiftUINodeEditor */,
 			);
 		};
 /* End PBXProject section */
@@ -141,7 +141,7 @@
 				1A111A1E2BA888AF00A6B850 /* ToggleNode.swift in Sources */,
 				1A111A1A2BA884CF00A6B850 /* TextNode.swift in Sources */,
 				1AEB6C5F2BA8A31B00F52C55 /* BezierPath.swift in Sources */,
-				1A111A082BA866D300A6B850 /* test_gragndropApp.swift in Sources */,
+				1A111A082BA866D300A6B850 /* SwiftUINodeEditor.swift in Sources */,
 				1AEB6C5D2BA89AB100F52C55 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +201,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -258,7 +258,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -290,6 +290,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattnovoselov.test-gragndrop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +322,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mattnovoselov.test-gragndrop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A1119FF2BA866D300A6B850 /* Build configuration list for PBXProject "test_gragndrop" */ = {
+		1A1119FF2BA866D300A6B850 /* Build configuration list for PBXProject "SwiftUINodeEditor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A111A102BA866D500A6B850 /* Debug */,
@@ -336,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A111A122BA866D500A6B850 /* Build configuration list for PBXNativeTarget "test_gragndrop" */ = {
+		1A111A122BA866D500A6B850 /* Build configuration list for PBXNativeTarget "SwiftUINodeEditor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A111A132BA866D500A6B850 /* Debug */,
