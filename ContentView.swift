@@ -20,6 +20,9 @@ struct ContentView: View {
     @State var transparencyStates: [Double] = []
     @State var transparencyNodePositions: [CGPoint] = []
     
+    @State var imageStates: [String] = []
+    @State var imageNodePositions: [CGPoint] = []
+    
     @State private var currentZoom = 0.0
     @State private var currentPos: CGPoint = .zero
     @State private var totalZoom = 1.0
@@ -41,6 +44,13 @@ struct ContentView: View {
                     ForEach(0..<toggleStates.count, id: \.self) { index in
                         Toggle("Toggle \(index + 1)", isOn: self.$toggleStates[index])
                             .foregroundColor(.white)
+                    }
+                    
+                    ForEach(0..<imageStates.count, id: \.self) { index in
+                        Image(imageStates[index])
+                            .resizable()
+                            .scaledToFit()
+                        
                     }
                     
                 }
@@ -70,6 +80,10 @@ struct ContentView: View {
                     Button("Add Transparency") {
                         addTransparency()
                     }
+                    
+                    Button("Add Image") {
+                        addImage()
+                    }
                 }
                 
                 ZStack{
@@ -97,6 +111,10 @@ struct ContentView: View {
                                     BezierPath(startPoint: $transparencyNodePositions[index], endPoint: $textNodePositions[index])
                                 }
                             }
+                    }
+                    
+                    ForEach(0..<imageNodePositions.count, id: \.self) { index in
+                        ImageNode(circlePosition: $imageNodePositions[index], action: {removeImage(at: index)})
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -180,6 +198,20 @@ struct ContentView: View {
         withAnimation(.easeInOut){
             transparencyStates.remove(at: index)
             transparencyNodePositions.remove(at: index)
+        }
+    }
+    
+    func addImage() {
+        withAnimation(.easeInOut){
+            imageStates.append("placeholder")
+            imageNodePositions.append(.zero)
+        }
+    }
+    
+    func removeImage(at index: Int) {
+        withAnimation(.easeInOut){
+            imageStates.remove(at: index)
+            imageNodePositions.remove(at: index)
         }
     }
 }
