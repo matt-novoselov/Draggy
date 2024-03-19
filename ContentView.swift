@@ -36,14 +36,14 @@ struct ContentView: View {
                         Text(textStates[index])
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundStyle(colorStates.indices.contains(index) ? colorStates[index] : .white)
+                            .foregroundStyle(colorStates.indices.contains(index) ? colorStates[index] : .black)
                             .opacity(transparencyStates.indices.contains(index) ? transparencyStates[index] : 1.0)
                         
                     }
                     
                     ForEach(0..<toggleStates.count, id: \.self) { index in
                         Toggle("Toggle \(index + 1)", isOn: self.$toggleStates[index])
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     }
                     
                     ForEach(0..<imageStates.count, id: \.self) { index in
@@ -58,7 +58,6 @@ struct ContentView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.black)
 
             
         }
@@ -175,7 +174,7 @@ struct ContentView: View {
     
     func addColor() {
         withAnimation(.easeInOut){
-            colorStates.append(.white)
+            colorStates.append(.black)
             colorNodePositions.append(.zero)
         }
     }
