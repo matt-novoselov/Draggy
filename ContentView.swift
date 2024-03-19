@@ -20,7 +20,7 @@ struct ContentView: View {
     @State var transparencyStates: [Double] = []
     @State var transparencyNodePositions: [CGPoint] = []
     
-    @State var imageStates: [String] = []
+    @State var imageStates: [Image?] = []
     @State var imageNodePositions: [CGPoint] = []
     
     @State private var currentZoom = 0.0
@@ -47,10 +47,11 @@ struct ContentView: View {
                     }
                     
                     ForEach(0..<imageStates.count, id: \.self) { index in
-                        Image(imageStates[index])
-                            .resizable()
-                            .scaledToFit()
-                        
+                        if let image = imageStates[index] {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        }
                     }
                     
                 }
@@ -113,7 +114,7 @@ struct ContentView: View {
                     }
                     
                     ForEach(0..<imageNodePositions.count, id: \.self) { index in
-                        ImageNode(circlePosition: $imageNodePositions[index], action: {removeImage(at: index)})
+                        ImageNode(circlePosition: $imageNodePositions[index], action: {removeImage(at: index)}, diplayedImage: $imageStates[index])
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -202,7 +203,7 @@ struct ContentView: View {
     
     func addImage() {
         withAnimation(.easeInOut){
-            imageStates.append("placeholder")
+            imageStates.append(Image("placeholder"))
             imageNodePositions.append(.zero)
         }
     }

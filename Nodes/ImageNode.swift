@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ImageNode: View {
     @Binding var circlePosition: CGPoint
     var action: (() -> Void)?
+    
+    @State private var pickerItem: PhotosPickerItem?
+    @Binding var diplayedImage: Image?
     
     var body: some View {
         let circleSize: CGFloat = 200
@@ -26,7 +30,17 @@ struct ImageNode: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                     
-
+                    diplayedImage?
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                    
+                    PhotosPicker("Select a picture", selection: $pickerItem, matching: .images)
+                }
+                .onChange(of: pickerItem) {
+                    Task {
+                        diplayedImage = try await pickerItem?.loadTransferable(type: Image.self)
+                    }
                 }
 
 

@@ -24,13 +24,16 @@ struct TransparencyNode: View {
                 
                 VStack{
                     HStack{
-                        Text("Transpareny Node \(diplayedTransparency.description)")
+                        Image(systemName: "rectangle.checkered")
+                            .foregroundStyle(.white)
+                        
+                        Text("Transpareny Node")
                             .fontWeight(.bold)
                             .foregroundStyle(.white)
-
-                        Image(systemName: "rectangle.checkered")
                     }
                     
+                    Text(String(format: "%.1f", diplayedTransparency))
+                        .foregroundStyle(.white)
                     
                     Slider(value: $diplayedTransparency)
                 }
