@@ -36,21 +36,9 @@ struct CanvasView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
-            ForEach(nodeData.textNodes.indices, id: \.self) { index in
-                ForEach(nodeData.textNodes[index].linkedNodes.indices, id: \.self){ index2 in
-                    BezierPath(startPoint: $nodeData.textNodes[index].position, endPoint: $nodeData.textNodes[index].linkedNodes[index2].position)
-                }
-            }
-        }
-        .background {
-            ForEach(nodeData.imageNodes.indices, id: \.self) { index in
-                ForEach(nodeData.imageNodes[index].linkedNodes.indices, id: \.self){ index2 in
-                    BezierPath(startPoint: $nodeData.imageNodes[index].position, endPoint: $nodeData.imageNodes[index].linkedNodes[index2].position)
-                }
-            }
+            LinkingView()
         }
         .background(.gray)
-        
         
     }
 }

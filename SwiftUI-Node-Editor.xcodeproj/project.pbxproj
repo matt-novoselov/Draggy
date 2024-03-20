@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7ACF12BAB474B00E09324 /* LinkingView.swift */; };
 		1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */; };
 		1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9972BA9AFB200223133 /* ContentView.swift */; };
 		1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9A32BA9B07D00223133 /* NodeData.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AB7ACF12BAB474B00E09324 /* LinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkingView.swift; sourceTree = "<group>"; };
 		1ACFB9922BA9AFB200223133 /* SwiftUI-Node-Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Node-Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNodeEditorApp.swift; sourceTree = "<group>"; };
 		1ACFB9972BA9AFB200223133 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				1ACFB9B32BAA1A1400223133 /* CanvasView.swift */,
+				1AB7ACF12BAB474B00E09324 /* LinkingView.swift */,
 				1ACFB9C12BAA1E0B00223133 /* Components */,
 			);
 			path = Canvas;
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */,
 				1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */,
 				1ACFB9AA2BA9BC2400223133 /* TextUIElement.swift in Sources */,
 				1ACFB9C02BAA1C8F00223133 /* ImageUIElement.swift in Sources */,
