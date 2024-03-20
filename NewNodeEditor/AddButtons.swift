@@ -49,8 +49,3 @@ struct AddButtons: View {
         }
     }
 }
-
-#Preview {
-    AddButtons()
-        .environmentObject(NodeData())
-}

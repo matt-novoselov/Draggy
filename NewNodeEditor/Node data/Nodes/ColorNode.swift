@@ -10,10 +10,10 @@ import SwiftUI
 class ColorNode: Node {
     var id: UUID = UUID()
     var position: CGPoint = .zero
-    @Published var linkedNodes: [any Node] = []
+    var linkedNodes: [any Node] = []
     
     // Property of the Node
-    @Published var color: Color = .red
+    var color: Color = .red
 }
 
 func getColorFromLinkedNodes(_ node: any Node) -> Color? {

@@ -14,13 +14,13 @@ struct PreviewView: View {
         
         VStack{
             // Text Nodes
-            ForEach(nodeData.textNodes) { textNode in
-                TextUIElement(textNode: textNode)
+            ForEach(nodeData.textNodes.indices, id: \.self) { index in
+                TextUIElement(textIndex: index)
             }
             
             // Text Nodes
-            ForEach(nodeData.imageNodes) { imageNode in
-                ImageUIElement(imageNode: imageNode)
+            ForEach(nodeData.imageNodes.indices, id: \.self) { index in
+                ImageUIElement(imageIndex: index)
             }
         }
         .frame(width: 300)

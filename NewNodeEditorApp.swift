@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct NewNodeEditorApp: App {
-    let nodeData = NodeData()
+    @StateObject var nodeData: NodeData = NodeData()
     
     var body: some Scene {
         WindowGroup {

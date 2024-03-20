@@ -10,10 +10,10 @@ import SwiftUI
 class OpacityNode: Node {
     var id: UUID = UUID()
     var position: CGPoint = .zero
-    @Published var linkedNodes: [any Node] = []
+    var linkedNodes: [any Node] = []
     
     // Property of the Node
-    @Published var opacity: Double = 0.5
+    var opacity: Double = 0.5
 }
 
 func getOpacityFromLinkedNodes(_ node: any Node) -> Double {
