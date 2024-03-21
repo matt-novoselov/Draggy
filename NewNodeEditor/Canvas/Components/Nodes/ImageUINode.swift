@@ -17,12 +17,17 @@ struct ImageUINode: View {
         VStack{
             Text("Image")
                 .fontWeight(.bold)
-            
-            selectedNode.image?
-                .resizable()
-                .scaledToFit()
+
+            Rectangle()
+                .fill(.clear)
+                .aspectRatio(contentMode: .fit)
+                .background(
+                    selectedNode.image?
+                        .resizable()
+                        .scaledToFill()
+                )
+                .clipShape(Rectangle())
                 .cornerRadius(10)
-                .padding()
             
             PhotosPicker("Select a picture", selection: $pickerItem, matching: .images)
                 .onChange(of: pickerItem) {
