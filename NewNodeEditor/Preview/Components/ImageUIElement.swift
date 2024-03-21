@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ImageUIElement: View {
+    
     var selectedNode: ImageNode
     
     var opacity: Double {

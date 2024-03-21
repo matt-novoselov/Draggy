@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct BezierPath2: View {
+struct BezierPathInteractable: View {
     
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
-    var selfNode: any Node
+    var selfNode: Node
     
     @State private var startPoint: CGPoint = CGPoint(x: 100, y: 100)
     @State private var endPoint: CGPoint = CGPoint(x: 100, y: 100)
@@ -61,13 +61,13 @@ struct BezierPath2: View {
     }
     
     func detectOverlappingCircle(value: DragGesture.Value) {
-        
-        for index in nodeData.nodes.indices {
-            let circlePosition = nodeData.nodes[index].position
+
+        for node in nodeData.nodes {
+            let circlePosition = node.position
             
             let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
             if distance <= 20 {
-                nodeData.nodes[index].addLinkedNode(selfNode)
+                node.addLinkedNode(selfNode)
                 endPoint = startPoint
                 return
             }

@@ -12,24 +12,24 @@ struct BaseUINode: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
 
-    var customOverlay: AnyView?
-    
     @State private var scale: CGFloat = 1.0
     @State private var shadowOpacity: CGFloat = 0.0
-
-    @State var selectedNode: any Node
+    let cornerRadius: CGFloat = 25
+    
+    @State var selectedNode: Node
+    var customOverlay: AnyView?
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 25.0)
-                .stroke(Color.black, lineWidth: 5) // Adjust the color and line width as needed
-                .background(RoundedRectangle(cornerRadius: 25.0).foregroundColor(.white))
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(.black, lineWidth: 5)
+                .background(Color.white.cornerRadius(cornerRadius))
                 .shadow(color: .black.opacity(shadowOpacity), radius: 15)
             
             customOverlay
                 .padding()
             
-            BezierPath2(selfNode: selectedNode)
+            BezierPathInteractable(selfNode: selectedNode)
         }
         .frame(width: 200, height: 200)
         .contextMenu{

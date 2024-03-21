@@ -9,24 +9,33 @@ import SwiftUI
 
 @Observable
 class NodeData {
-    var nodes: [any Node] = []
+    var nodes: [Node] = []
     
-    func deleteNode(_ node: any Node) {
+    func deleteNode(_ node: Node) {
         withAnimation {
             nodes.removeAll { $0.id == node.id }
         }
     }
 }
 
-protocol Node: Identifiable {
+protocol NodeProtocol: Identifiable, AnyObject {
     var id: UUID { get }
     var position: CGPoint { get set }
-    var linkedNodes: [any Node] { get set }
-    var availableForLinkingNodes: [any Node.Type] { get }
+    var linkedNodes: [Node] { get set }
+    var availableForLinkingNodes: [Node.Type] { get }
 }
 
+@Observable
+class Node: NodeProtocol {
+    var id: UUID = .init()
+    var position: CGPoint = .zero
+    var linkedNodes: [Node] = []
+    var availableForLinkingNodes: [Node.Type] = []
+}
+
+// MARK: 
 extension Node {
-    mutating func addLinkedNode(_ node: any Node) {
+    func addLinkedNode(_ node: Node) {
         guard availableForLinkingNodes.contains(where: { $0 == type(of: node) }) else {
             print("Node of type \(type(of: node)) is not allowed for linking")
             return

@@ -15,21 +15,20 @@ struct CanvasView: View {
     var body: some View {
         
         ZStack{
-            
-            ForEach(nodeData.nodes.indices, id: \.self){ index in
-                BaseUINode(customOverlay: AnyView(createUINode(node: nodeData.nodes[index])), selectedNode: nodeData.nodes[index])
+            ForEach(nodeData.nodes){ node in
+                BaseUINode(selectedNode: node, customOverlay: AnyView(createUINode(node: node)))
             }
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.gray)
         .overlay {
             LinkingView()
         }
-        .background(.gray)
         
     }
     
-    func createUINode(node: any Node) -> some View {
+    // MARK: - Create UI Node
+    func createUINode(node: Node) -> some View {
         switch node {
         case let textNode as TextNode:
             return AnyView(TextUINode(selectedNode: textNode))

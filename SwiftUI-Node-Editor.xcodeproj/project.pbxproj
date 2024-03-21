@@ -27,8 +27,8 @@
 		1ACFB9C72BAA328000223133 /* ImageUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9C62BAA328000223133 /* ImageUINode.swift */; };
 		1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */; };
 		1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */; };
-		1ACFB9CD2BAA3B3A00223133 /* BezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CC2BAA3B3A00223133 /* BezierPath.swift */; };
-		1AE242362BAC27B6009F4104 /* BezierPath2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPath2.swift */; };
+		1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */; };
+		1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +53,8 @@
 		1ACFB9C62BAA328000223133 /* ImageUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUINode.swift; sourceTree = "<group>"; };
 		1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUINode.swift; sourceTree = "<group>"; };
 		1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityUINode.swift; sourceTree = "<group>"; };
-		1ACFB9CC2BAA3B3A00223133 /* BezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPath.swift; sourceTree = "<group>"; };
-		1AE242352BAC27B6009F4104 /* BezierPath2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPath2.swift; sourceTree = "<group>"; };
+		1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathStatic.swift; sourceTree = "<group>"; };
+		1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathInteractable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				1ACFB9C22BAA1E3100223133 /* BaseUINode.swift */,
-				1ACFB9CC2BAA3B3A00223133 /* BezierPath.swift */,
-				1AE242352BAC27B6009F4104 /* BezierPath2.swift */,
+				1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */,
+				1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */,
 				1ACFB9CE2BAA456300223133 /* Nodes */,
 			);
 			path = Components;
@@ -246,7 +246,7 @@
 				1ACFB9B42BAA1A1400223133 /* CanvasView.swift in Sources */,
 				1ACFB9C72BAA328000223133 /* ImageUINode.swift in Sources */,
 				1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */,
-				1ACFB9CD2BAA3B3A00223133 /* BezierPath.swift in Sources */,
+				1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */,
 				1ACFB9AD2BAA191200223133 /* TextNode.swift in Sources */,
 				1ACFB9C32BAA1E3100223133 /* BaseUINode.swift in Sources */,
 				1ACFB9C52BAA259700223133 /* TextUINode.swift in Sources */,
@@ -257,7 +257,7 @@
 				1ACFB9BE2BAA1BF700223133 /* ImageNode.swift in Sources */,
 				1ACFB9AF2BAA191B00223133 /* OpacityNode.swift in Sources */,
 				1ACFB9BA2BAA1B5F00223133 /* AddButtons.swift in Sources */,
-				1AE242362BAC27B6009F4104 /* BezierPath2.swift in Sources */,
+				1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */,
 				1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
