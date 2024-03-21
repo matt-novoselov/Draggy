@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct BaseUINode: View {
+    
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
 
     var customOverlay: AnyView?
     
     @State private var scale: CGFloat = 1.0
     @State private var shadowOpacity: CGFloat = 0.0
-    
+
     @State var selectedNode: any Node
     
     var body: some View {
@@ -29,6 +32,11 @@ struct BaseUINode: View {
             BezierPath2(selfNode: selectedNode)
         }
         .frame(width: 200, height: 200)
+        .contextMenu{
+            Button("Delete") {
+                nodeData.deleteNode(selectedNode)
+            }
+        }
         .position(selectedNode.position)
         .scaleEffect(scale)
         .gesture(

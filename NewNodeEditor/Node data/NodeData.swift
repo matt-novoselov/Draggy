@@ -10,6 +10,12 @@ import SwiftUI
 @Observable
 class NodeData {
     var nodes: [any Node] = []
+    
+    func deleteNode(_ node: any Node) {
+        withAnimation {
+            nodes.removeAll { $0.id == node.id }
+        }
+    }
 }
 
 protocol Node: Identifiable {
@@ -41,4 +47,3 @@ extension Node {
         linkedNodes[existingIndex] = node
     }
 }
-

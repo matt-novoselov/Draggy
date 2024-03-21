@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct BezierPath: View {
-//    @State private var startPoint: CGPoint = .zero
-//    @State private var endPoint: CGPoint = .zero
-    
     var selectedNode1: any Node
     var selectedNode2: any Node
     
@@ -29,10 +26,6 @@ struct BezierPath: View {
     private var endPoint: CGPoint {
         return selectedNode2.position
     }
-    
-//    @State private var endPoint: CGPoint {
-//        return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: endPoint.y)
-//    }
     
     var body: some View {
         ZStack {
