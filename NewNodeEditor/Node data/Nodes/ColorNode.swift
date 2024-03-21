@@ -11,6 +11,7 @@ class ColorNode: Node {
     var id: UUID = UUID()
     var position: CGPoint = .zero
     var linkedNodes: [any Node] = []
+    var availableForLinkingNodes: [any Node.Type] = []
     
     // Property of the Node
     var color: Color = .red

@@ -11,6 +11,7 @@ class TextNode: Node, ObservableObject {
     var id: UUID = UUID()
     var position: CGPoint = .zero
     var linkedNodes: [any Node] = []
+    var availableForLinkingNodes: [any Node.Type] = [ColorNode.self, OpacityNode.self]
     
     // Property of the Node
     var text: String = "Hello World!"

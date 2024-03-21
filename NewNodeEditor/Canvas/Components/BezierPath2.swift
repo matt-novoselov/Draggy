@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct BezierPath2: View {
-    @Binding var startPoint: CGPoint
-    @Binding var endPoint: CGPoint
-    @Binding var selfNodePosition: CGPoint
-    
     @EnvironmentObject var nodeData: NodeData
+    var selfNode: any Node
     
-//    @Binding var selfNodePosition: CGPoint
-//    @Binding var selfNodePosition: CGPoint
+    @State private var startPoint: CGPoint = .zero
+    @State private var endPoint: CGPoint = .zero
     
     private var controlPoint1: CGPoint {
         return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: startPoint.y)
@@ -39,11 +36,6 @@ struct BezierPath2: View {
                 .frame(width: 32, height: 32)
                 .position(startPoint)
                 .foregroundColor(.blue)
-                .gesture(DragGesture()
-                    .onChanged { (value) in
-//                        print(value)
-                        self.startPoint = CGPoint(x: value.location.x, y: value.location.y)
-                    })
             
             // Circle 2
             Circle()
@@ -52,14 +44,13 @@ struct BezierPath2: View {
                 .foregroundColor(.green)
                 .gesture(DragGesture()
                     .onChanged { (value) in
-//                        print(value)
                         self.endPoint = CGPoint(x: value.location.x, y: value.location.y)
                         
                         detectOverlappingCircle(value: value)
                     }
                     .onEnded(){ _ in
                         withAnimation{
-                            self.endPoint = startPoint
+                            self.endPoint = self.startPoint
                         }
                     }
                 )
@@ -67,19 +58,29 @@ struct BezierPath2: View {
     }
     
     func detectOverlappingCircle(value: DragGesture.Value) {
+        
         for index in 0..<nodeData.textNodes.count {
             let circlePosition = nodeData.textNodes[index].position
             
             
-            let distance = sqrt(pow(circlePosition.x - selfNodePosition.x - value.location.x, 2) + pow(circlePosition.y - selfNodePosition.y - value.location.y, 2))
+            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y, 2))
             if distance <= 100 {
-                print("detected")
-                nodeData.textNodes[index].addLinkedNode(nodeData.colorNodes[0])
+                nodeData.textNodes[index].addLinkedNode(selfNode)
                 return
             }
-            else{
-                print(distance)
+        }
+        
+        for index in 0..<nodeData.imageNodes.count {
+            let circlePosition = nodeData.imageNodes[index].position
+            
+            
+            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y, 2))
+            if distance <= 100 {
+                nodeData.imageNodes[index].addLinkedNode(selfNode)
+                return
             }
         }
+        
+        
     }
 }
