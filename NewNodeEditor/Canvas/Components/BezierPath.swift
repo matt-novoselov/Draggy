@@ -11,7 +11,8 @@ struct BezierPath: View {
     @Binding var startPoint: CGPoint
     @Binding var endPoint: CGPoint
     
-    @EnvironmentObject var nodeData: NodeData
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
     
     private var controlPoint1: CGPoint {
         return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: startPoint.y)

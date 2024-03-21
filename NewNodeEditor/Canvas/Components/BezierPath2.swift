@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct BezierPath2: View {
-    @EnvironmentObject var nodeData: NodeData
+    
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
+    
     var selfNode: any Node
     
     @State private var startPoint: CGPoint = CGPoint(x: 100, y: 100)

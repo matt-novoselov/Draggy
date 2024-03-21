@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct CanvasView: View {
-    @EnvironmentObject var nodeData: NodeData
+    
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
     
     var body: some View {
+        
+        @Bindable var nodeData = nodeData
         
         ZStack{
             // Text Nodes
@@ -45,5 +49,5 @@ struct CanvasView: View {
 
 #Preview {
     CanvasView()
-        .environmentObject(NodeData())
+        .environment(NodeData())
 }

@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-class NodeData: ObservableObject {
-    @Published var colorNodes: [ColorNode] = []
-    @Published var textNodes: [TextNode] = []
-    @Published var opacityNodes: [OpacityNode] = []
-    @Published var imageNodes: [ImageNode] = []
+@Observable
+class NodeData {
+    var colorNodes: [ColorNode] = []
+    var textNodes: [TextNode] = []
+    var opacityNodes: [OpacityNode] = []
+    var imageNodes: [ImageNode] = []
 }
 
 protocol Node: Identifiable {

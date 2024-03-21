@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AddButtons: View {
-    @EnvironmentObject var nodeData: NodeData
+    
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
     
     var body: some View {
         HStack {

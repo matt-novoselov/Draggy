@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct LinkingView: View {
-    @EnvironmentObject var nodeData: NodeData
+    
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
     
     var body: some View {
+        
+        @Bindable var nodeData = nodeData
+        
         ZStack{
             ForEach(nodeData.textNodes.indices, id: \.self) { index in
                 ForEach(nodeData.textNodes[index].linkedNodes.indices, id: \.self){ index2 in

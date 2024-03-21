@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct NewNodeEditorApp: App {
-    @StateObject var nodeData: NodeData = NodeData()
+    @State var nodeData: NodeData = NodeData()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(nodeData)
+                .environment(nodeData)
                 .preferredColorScheme(.light)
         }
     }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@Observable
 class ColorNode: Node {
     var id: UUID = UUID()
     var position: CGPoint = .zero

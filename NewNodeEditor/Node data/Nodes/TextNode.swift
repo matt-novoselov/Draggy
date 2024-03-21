@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-class TextNode: Node, ObservableObject {
+@Observable
+class TextNode: Node {
+    
     var id: UUID = UUID()
     var position: CGPoint = .zero
     var linkedNodes: [any Node] = []

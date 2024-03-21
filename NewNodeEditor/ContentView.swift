@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var nodeData: NodeData
+    @Environment(NodeData.self)
+    private var nodeData: NodeData
     
     var body: some View {
         
@@ -27,5 +28,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(NodeData())
+        .environment(NodeData())
 }
