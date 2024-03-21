@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7ACF12BAB474B00E09324 /* LinkingView.swift */; };
+		1AB7ACF42BAB4FB300E09324 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7ACF32BAB4FB300E09324 /* SwiftUIView.swift */; };
 		1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */; };
 		1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9972BA9AFB200223133 /* ContentView.swift */; };
 		1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9A32BA9B07D00223133 /* NodeData.swift */; };
@@ -27,10 +28,12 @@
 		1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */; };
 		1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */; };
 		1ACFB9CD2BAA3B3A00223133 /* BezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CC2BAA3B3A00223133 /* BezierPath.swift */; };
+		1AE242362BAC27B6009F4104 /* BezierPath2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPath2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1AB7ACF12BAB474B00E09324 /* LinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkingView.swift; sourceTree = "<group>"; };
+		1AB7ACF32BAB4FB300E09324 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		1ACFB9922BA9AFB200223133 /* SwiftUI-Node-Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Node-Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNodeEditorApp.swift; sourceTree = "<group>"; };
 		1ACFB9972BA9AFB200223133 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUINode.swift; sourceTree = "<group>"; };
 		1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityUINode.swift; sourceTree = "<group>"; };
 		1ACFB9CC2BAA3B3A00223133 /* BezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPath.swift; sourceTree = "<group>"; };
+		1AE242352BAC27B6009F4104 /* BezierPath2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPath2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				1ACFB9B72BAA1A2800223133 /* Canvas */,
 				1ACFB9AB2BAA190000223133 /* Node data */,
 				1ACFB9B92BAA1B5F00223133 /* AddButtons.swift */,
+				1AB7ACF32BAB4FB300E09324 /* SwiftUIView.swift */,
 			);
 			path = NewNodeEditor;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			children = (
 				1ACFB9C22BAA1E3100223133 /* BaseUINode.swift */,
 				1ACFB9CC2BAA3B3A00223133 /* BezierPath.swift */,
+				1AE242352BAC27B6009F4104 /* BezierPath2.swift */,
 				1ACFB9CE2BAA456300223133 /* Nodes */,
 			);
 			path = Components;
@@ -246,10 +252,12 @@
 				1ACFB9C52BAA259700223133 /* TextUINode.swift in Sources */,
 				1ACFB9B12BAA192400223133 /* ColorNode.swift in Sources */,
 				1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */,
+				1AB7ACF42BAB4FB300E09324 /* SwiftUIView.swift in Sources */,
 				1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */,
 				1ACFB9BE2BAA1BF700223133 /* ImageNode.swift in Sources */,
 				1ACFB9AF2BAA191B00223133 /* OpacityNode.swift in Sources */,
 				1ACFB9BA2BAA1B5F00223133 /* AddButtons.swift in Sources */,
+				1AE242362BAC27B6009F4104 /* BezierPath2.swift in Sources */,
 				1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

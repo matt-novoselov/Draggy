@@ -35,7 +35,7 @@ struct CanvasView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background {
+        .overlay {
             LinkingView()
         }
         .background(.gray)

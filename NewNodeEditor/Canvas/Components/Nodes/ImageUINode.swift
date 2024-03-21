@@ -21,6 +21,7 @@ struct ImageUINode: View {
             selectedNode.image?
                 .resizable()
                 .scaledToFit()
+                .cornerRadius(10)
                 .padding()
             
             PhotosPicker("Select a picture", selection: $pickerItem, matching: .images)

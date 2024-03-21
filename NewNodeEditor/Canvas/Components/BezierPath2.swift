@@ -1,0 +1,85 @@
+//
+//  SwiftUIView.swift
+//  test_gragndrop
+//
+//  Created by Matt Novoselov on 18/03/24.
+//
+
+import SwiftUI
+
+struct BezierPath2: View {
+    @Binding var startPoint: CGPoint
+    @Binding var endPoint: CGPoint
+    @Binding var selfNodePosition: CGPoint
+    
+    @EnvironmentObject var nodeData: NodeData
+    
+//    @Binding var selfNodePosition: CGPoint
+//    @Binding var selfNodePosition: CGPoint
+    
+    private var controlPoint1: CGPoint {
+        return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: startPoint.y)
+    }
+    
+    private var controlPoint2: CGPoint {
+        return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: endPoint.y)
+    }
+    
+    var body: some View {
+        ZStack {
+            Path { (path) in
+                path.move(to: startPoint)
+                path.addCurve(to: endPoint, control1: controlPoint1, control2: controlPoint2)
+            }
+            .strokedPath(StrokeStyle(lineWidth: 9, lineCap: .round, lineJoin: .round))
+            .foregroundColor(.green)
+            
+            // Circle 1
+            Circle()
+                .frame(width: 32, height: 32)
+                .position(startPoint)
+                .foregroundColor(.blue)
+                .gesture(DragGesture()
+                    .onChanged { (value) in
+//                        print(value)
+                        self.startPoint = CGPoint(x: value.location.x, y: value.location.y)
+                    })
+            
+            // Circle 2
+            Circle()
+                .frame(width: 32, height: 32)
+                .position(endPoint)
+                .foregroundColor(.green)
+                .gesture(DragGesture()
+                    .onChanged { (value) in
+//                        print(value)
+                        self.endPoint = CGPoint(x: value.location.x, y: value.location.y)
+                        
+                        detectOverlappingCircle(value: value)
+                    }
+                    .onEnded(){ _ in
+                        withAnimation{
+                            self.endPoint = startPoint
+                        }
+                    }
+                )
+        }
+    }
+    
+    func detectOverlappingCircle(value: DragGesture.Value) {
+        for index in 0..<nodeData.textNodes.count {
+            let circlePosition = nodeData.textNodes[index].position
+            
+            
+            let distance = sqrt(pow(circlePosition.x - selfNodePosition.x - value.location.x, 2) + pow(circlePosition.y - selfNodePosition.y - value.location.y, 2))
+            if distance <= 100 {
+                print("detected")
+                nodeData.textNodes[index].addLinkedNode(nodeData.colorNodes[0])
+                return
+            }
+            else{
+                print(distance)
+            }
+        }
+    }
+}
