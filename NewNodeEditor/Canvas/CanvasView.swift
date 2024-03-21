@@ -15,22 +15,22 @@ struct CanvasView: View {
         ZStack{
             // Text Nodes
             ForEach(nodeData.textNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.textNodes[index].position, customOverlay: AnyView(TextUINode(selectedNode: $nodeData.textNodes[index])))
+                BaseUINode(nodePosition: $nodeData.textNodes[index].position, customOverlay: AnyView(TextUINode(selectedNode: $nodeData.textNodes[index])), selectedNode: nodeData.textNodes[index])
             }
             
             // Image Nodes
             ForEach(nodeData.imageNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.imageNodes[index].position, customOverlay: AnyView(ImageUINode(selectedNode: $nodeData.imageNodes[index])))
+                BaseUINode(nodePosition: $nodeData.imageNodes[index].position, customOverlay: AnyView(ImageUINode(selectedNode: $nodeData.imageNodes[index])), selectedNode: nodeData.imageNodes[index])
             }
             
             // Color Nodes
             ForEach(nodeData.colorNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.colorNodes[index].position, customOverlay: AnyView(ColorUINode(selectedNode: $nodeData.colorNodes[index])))
+                BaseUINode(nodePosition: $nodeData.colorNodes[index].position, customOverlay: AnyView(ColorUINode(selectedNode: $nodeData.colorNodes[index])), selectedNode: nodeData.colorNodes[index])
             }
             
             // Opacity Nodes
             ForEach(nodeData.opacityNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.opacityNodes[index].position, customOverlay: AnyView(OpacityUINode(selectedNode: $nodeData.opacityNodes[index])))
+                BaseUINode(nodePosition: $nodeData.opacityNodes[index].position, customOverlay: AnyView(OpacityUINode(selectedNode: $nodeData.opacityNodes[index])), selectedNode: nodeData.opacityNodes[index])
             }
             
         }

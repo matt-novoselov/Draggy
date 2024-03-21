@@ -14,19 +14,27 @@ struct AddButtons: View {
         HStack {
             Group{
                 Button("Add text node") {
-                    nodeData.textNodes.append(TextNode())
+                    withAnimation{
+                        nodeData.textNodes.append(TextNode())
+                    }
                 }
                 
                 Button("Add image node") {
-                    nodeData.imageNodes.append(ImageNode())
+                    withAnimation{
+                        nodeData.imageNodes.append(ImageNode())
+                    }
                 }
                 
                 Button("Add color node") {
-                    nodeData.colorNodes.append(ColorNode())
+                    withAnimation{
+                        nodeData.colorNodes.append(ColorNode())
+                    }
                 }
                 
                 Button("Add opacity node") {
-                    nodeData.opacityNodes.append(OpacityNode())
+                    withAnimation{
+                        nodeData.opacityNodes.append(OpacityNode())
+                    }
                 }
             }
             .buttonStyle(BorderedProminentButtonStyle())

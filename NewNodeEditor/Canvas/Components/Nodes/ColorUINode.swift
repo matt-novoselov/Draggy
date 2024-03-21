@@ -12,8 +12,6 @@ struct ColorUINode: View {
     
     var body: some View {
         VStack{
-            BezierPath2(selfNode: selectedNode)
-            
             Text("Color")
                 .fontWeight(.bold)
             

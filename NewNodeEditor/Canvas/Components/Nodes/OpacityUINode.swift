@@ -12,8 +12,6 @@ struct OpacityUINode: View {
     
     var body: some View {
         VStack{
-            BezierPath2(selfNode: selectedNode)
-            
             Text("Opacity")
                 .fontWeight(.bold)
             

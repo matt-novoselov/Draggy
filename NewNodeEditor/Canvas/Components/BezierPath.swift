@@ -35,20 +35,14 @@ struct BezierPath: View {
                 .frame(width: 32, height: 32)
                 .position(startPoint)
                 .foregroundColor(.blue)
-//                .gesture(DragGesture()
-//                    .onChanged { (value) in
-//                        self.startPoint = CGPoint(x: value.location.x, y: value.location.y)
-//                    })
+                .allowsHitTesting(false)
             
             // Circle 2
             Circle()
                 .frame(width: 32, height: 32)
                 .position(endPoint)
                 .foregroundColor(.green)
-//                .gesture(DragGesture()
-//                    .onChanged { (value) in
-//                        self.endPoint = CGPoint(x: value.location.x, y: value.location.y)
-//                    })
+                .allowsHitTesting(false)
         }
     }
 }

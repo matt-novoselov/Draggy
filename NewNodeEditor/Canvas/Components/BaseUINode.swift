@@ -14,6 +14,8 @@ struct BaseUINode: View {
     @State private var scale: CGFloat = 1.0
     @State private var shadowOpacity: CGFloat = 0.0
     
+    var selectedNode: any Node
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 25.0)
@@ -23,6 +25,8 @@ struct BaseUINode: View {
             
             customOverlay
                 .padding()
+            
+            BezierPath2(selfNode: selectedNode)
         }
         .frame(width: 200, height: 200)
         .position(nodePosition)

@@ -11,8 +11,8 @@ struct BezierPath2: View {
     @EnvironmentObject var nodeData: NodeData
     var selfNode: any Node
     
-    @State private var startPoint: CGPoint = .zero
-    @State private var endPoint: CGPoint = .zero
+    @State private var startPoint: CGPoint = CGPoint(x: 100, y: 100)
+    @State private var endPoint: CGPoint = CGPoint(x: 100, y: 100)
     
     private var controlPoint1: CGPoint {
         return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: startPoint.y)
@@ -35,13 +35,13 @@ struct BezierPath2: View {
             Circle()
                 .frame(width: 32, height: 32)
                 .position(startPoint)
-                .foregroundColor(.blue)
+                .foregroundColor(.green)
             
             // Circle 2
             Circle()
                 .frame(width: 32, height: 32)
                 .position(endPoint)
-                .foregroundColor(.green)
+                .foregroundColor(.blue)
                 .gesture(DragGesture()
                     .onChanged { (value) in
                         self.endPoint = CGPoint(x: value.location.x, y: value.location.y)
@@ -63,9 +63,10 @@ struct BezierPath2: View {
             let circlePosition = nodeData.textNodes[index].position
             
             
-            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y, 2))
-            if distance <= 100 {
+            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
+            if distance <= 10 {
                 nodeData.textNodes[index].addLinkedNode(selfNode)
+                endPoint = startPoint
                 return
             }
         }
@@ -74,10 +75,14 @@ struct BezierPath2: View {
             let circlePosition = nodeData.imageNodes[index].position
             
             
-            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y, 2))
-            if distance <= 100 {
+            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
+            if distance <= 10 {
                 nodeData.imageNodes[index].addLinkedNode(selfNode)
+                endPoint = startPoint
                 return
+            }
+            else{
+                print(distance)
             }
         }
         
