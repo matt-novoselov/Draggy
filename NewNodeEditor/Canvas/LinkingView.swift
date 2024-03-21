@@ -15,31 +15,15 @@ struct LinkingView: View {
     var body: some View {
         
         ZStack{
-            ForEach(nodeData.textNodes) { selectedNode in
-                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
-                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
+            
+            ForEach(nodeData.nodes.indices, id: \.self){ index in
+                ForEach(nodeData.nodes[index].linkedNodes.indices, id: \.self){ index2 in
+                    BezierPath(selectedNode1: nodeData.nodes[index], selectedNode2: nodeData.nodes[index].linkedNodes[index2])
                 }
             }
             
-            ForEach(nodeData.imageNodes) { selectedNode in
-                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
-                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
-                }
-            }
-            
-            ForEach(nodeData.colorNodes) { selectedNode in
-                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
-                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
-                }
-            }
-            
-            ForEach(nodeData.opacityNodes) { selectedNode in
-                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
-                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
-                }
-            }
-
         }
+        
     }
 }
 

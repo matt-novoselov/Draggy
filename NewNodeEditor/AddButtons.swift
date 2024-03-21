@@ -17,25 +17,25 @@ struct AddButtons: View {
             Group{
                 Button("Add text node") {
                     withAnimation{
-                        nodeData.textNodes.append(TextNode())
+                        nodeData.nodes.append(TextNode())
                     }
                 }
                 
                 Button("Add image node") {
                     withAnimation{
-                        nodeData.imageNodes.append(ImageNode())
+                        nodeData.nodes.append(ImageNode())
                     }
                 }
                 
                 Button("Add color node") {
                     withAnimation{
-                        nodeData.colorNodes.append(ColorNode())
+                        nodeData.nodes.append(ColorNode())
                     }
                 }
                 
                 Button("Add opacity node") {
                     withAnimation{
-                        nodeData.opacityNodes.append(OpacityNode())
+                        nodeData.nodes.append(OpacityNode())
                     }
                 }
             }

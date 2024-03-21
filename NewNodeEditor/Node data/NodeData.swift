@@ -9,10 +9,7 @@ import SwiftUI
 
 @Observable
 class NodeData {
-    var colorNodes: [ColorNode] = []
-    var textNodes: [TextNode] = []
-    var opacityNodes: [OpacityNode] = []
-    var imageNodes: [ImageNode] = []
+    var nodes: [any Node] = []
 }
 
 protocol Node: Identifiable {

@@ -15,18 +15,23 @@ struct PreviewView: View {
     var body: some View {
 
         VStack{
-            // Text Nodes
-            ForEach(nodeData.textNodes) { selectedNode in
-                TextUIElement(selectedNode: selectedNode)
-            }
-            
-            // Text Nodes
-            ForEach(nodeData.imageNodes) { selectedNode in
-                ImageUIElement(selectedNode: selectedNode)
+            ForEach(nodeData.nodes.indices, id: \.self){ index in
+                createUIElement(node: nodeData.nodes[index])
             }
         }
         .frame(width: 300)
         
+    }
+    
+    func createUIElement(node: any Node) -> some View {
+        switch node {
+        case let textNode as TextNode:
+            return AnyView(TextUIElement(selectedNode: textNode))
+        case let imageNode as ImageNode:
+            return AnyView(ImageUIElement(selectedNode: imageNode))
+        default:
+            return AnyView(EmptyView())
+        }
     }
 }
 

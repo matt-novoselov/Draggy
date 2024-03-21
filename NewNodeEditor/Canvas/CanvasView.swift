@@ -15,28 +15,9 @@ struct CanvasView: View {
     var body: some View {
         
         ZStack{
-            // Text Nodes
-            ForEach(nodeData.textNodes) { selectedNode in
-                BaseUINode(customOverlay: AnyView(TextUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
-            }
             
-            // Image Nodes
-            ForEach(nodeData.imageNodes) { selectedNode in
-                BaseUINode(customOverlay: AnyView(ImageUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
-            }
-            
-            // Color Nodes
-            ForEach(nodeData.colorNodes) { selectedNode in
-                BaseUINode(customOverlay: AnyView(ColorUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
-            }
-            
-            // Opacity Nodes
-            ForEach(nodeData.opacityNodes) { selectedNode in
-                BaseUINode(customOverlay: AnyView(OpacityUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
-            }
-            
-            ForEach(nodeData.opacityNodes) { selectedNode in
-                BaseUINode(customOverlay: AnyView(OpacityUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
+            ForEach(nodeData.nodes.indices, id: \.self){ index in
+                BaseUINode(customOverlay: AnyView(createUINode(node: nodeData.nodes[index])), selectedNode: nodeData.nodes[index])
             }
             
         }
@@ -47,6 +28,22 @@ struct CanvasView: View {
         .background(.gray)
         
     }
+    
+    func createUINode(node: any Node) -> some View {
+        switch node {
+        case let textNode as TextNode:
+            return AnyView(TextUINode(selectedNode: textNode))
+        case let imageNode as ImageNode:
+            return AnyView(ImageUINode(selectedNode: imageNode))
+        case let colorNode as ColorNode:
+            return AnyView(ColorUINode(selectedNode: colorNode))
+        case let opacityNode as OpacityNode:
+            return AnyView(OpacityUINode(selectedNode: opacityNode))
+        default:
+            return AnyView(EmptyView())
+        }
+    }
+    
 }
 
 #Preview {

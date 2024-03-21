@@ -62,33 +62,16 @@ struct BezierPath2: View {
     
     func detectOverlappingCircle(value: DragGesture.Value) {
         
-        for index in 0..<nodeData.textNodes.count {
-            let circlePosition = nodeData.textNodes[index].position
-            
+        for index in nodeData.nodes.indices {
+            let circlePosition = nodeData.nodes[index].position
             
             let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
-            if distance <= 10 {
-                nodeData.textNodes[index].addLinkedNode(selfNode)
+            if distance <= 20 {
+                nodeData.nodes[index].addLinkedNode(selfNode)
                 endPoint = startPoint
                 return
             }
         }
-        
-        for index in 0..<nodeData.imageNodes.count {
-            let circlePosition = nodeData.imageNodes[index].position
-            
-            
-            let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
-            if distance <= 50 {
-                nodeData.imageNodes[index].addLinkedNode(selfNode)
-                endPoint = startPoint
-                return
-            }
-            else{
-                print(distance)
-            }
-        }
-        
-        
     }
+    
 }
