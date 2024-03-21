@@ -79,7 +79,7 @@ struct BezierPath2: View {
             
             
             let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
-            if distance <= 10 {
+            if distance <= 50 {
                 nodeData.imageNodes[index].addLinkedNode(selfNode)
                 endPoint = startPoint
                 return

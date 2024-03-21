@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ColorUINode: View {
-    @Binding var selectedNode: ColorNode
+    var selectedNode: ColorNode
     
     var body: some View {
+        @Bindable var selectedNode = selectedNode
+        
         VStack{
             Text("Color")
                 .fontWeight(.bold)

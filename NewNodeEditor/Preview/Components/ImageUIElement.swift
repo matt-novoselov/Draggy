@@ -8,19 +8,14 @@
 import SwiftUI
 
 struct ImageUIElement: View {
-    
-    @Environment(NodeData.self)
-    private var nodeData: NodeData
-    
-    var imageIndex: Int
+    var selectedNode: ImageNode
     
     var opacity: Double {
-        getOpacityFromLinkedNodes(nodeData.imageNodes[imageIndex])
+        getOpacityFromLinkedNodes(selectedNode)
     }
 
     var body: some View {
-
-        nodeData.imageNodes[imageIndex].image?
+        selectedNode.image?
             .resizable()
             .scaledToFit()
             .padding()

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(NodeData.self)
-    private var nodeData: NodeData
     
     var body: some View {
         

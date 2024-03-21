@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct OpacityUINode: View {
-    @Binding var selectedNode: OpacityNode
+    var selectedNode: OpacityNode
     
     var body: some View {
+        @Bindable var selectedNode = selectedNode
+        
         VStack{
             Text("Opacity")
                 .fontWeight(.bold)

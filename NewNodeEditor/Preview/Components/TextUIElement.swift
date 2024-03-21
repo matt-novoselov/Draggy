@@ -9,18 +9,16 @@ import SwiftUI
 
 struct TextUIElement: View {
     
-    @Environment(NodeData.self) private var nodeData: NodeData
-    
-    var textIndex: Int
+    var selectedNode: TextNode
     
     var color: Color {
-        getColorFromLinkedNodes(nodeData.textNodes[textIndex]) ?? .black
+        getColorFromLinkedNodes(selectedNode) ?? .black
     }
     var opacity: Double {
-        getOpacityFromLinkedNodes(nodeData.textNodes[textIndex])
+        getOpacityFromLinkedNodes(selectedNode)
     }
     var text: String {
-        nodeData.textNodes[textIndex].text
+        selectedNode.text
     }
 
     var body: some View {

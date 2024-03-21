@@ -14,27 +14,29 @@ struct CanvasView: View {
     
     var body: some View {
         
-        @Bindable var nodeData = nodeData
-        
         ZStack{
             // Text Nodes
-            ForEach(nodeData.textNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.textNodes[index].position, customOverlay: AnyView(TextUINode(selectedNode: $nodeData.textNodes[index])), selectedNode: nodeData.textNodes[index])
+            ForEach(nodeData.textNodes) { selectedNode in
+                BaseUINode(customOverlay: AnyView(TextUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
             }
             
             // Image Nodes
-            ForEach(nodeData.imageNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.imageNodes[index].position, customOverlay: AnyView(ImageUINode(selectedNode: $nodeData.imageNodes[index])), selectedNode: nodeData.imageNodes[index])
+            ForEach(nodeData.imageNodes) { selectedNode in
+                BaseUINode(customOverlay: AnyView(ImageUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
             }
             
             // Color Nodes
-            ForEach(nodeData.colorNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.colorNodes[index].position, customOverlay: AnyView(ColorUINode(selectedNode: $nodeData.colorNodes[index])), selectedNode: nodeData.colorNodes[index])
+            ForEach(nodeData.colorNodes) { selectedNode in
+                BaseUINode(customOverlay: AnyView(ColorUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
             }
             
             // Opacity Nodes
-            ForEach(nodeData.opacityNodes.indices, id: \.self) { index in
-                BaseUINode(nodePosition: $nodeData.opacityNodes[index].position, customOverlay: AnyView(OpacityUINode(selectedNode: $nodeData.opacityNodes[index])), selectedNode: nodeData.opacityNodes[index])
+            ForEach(nodeData.opacityNodes) { selectedNode in
+                BaseUINode(customOverlay: AnyView(OpacityUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
+            }
+            
+            ForEach(nodeData.opacityNodes) { selectedNode in
+                BaseUINode(customOverlay: AnyView(OpacityUINode(selectedNode: selectedNode)), selectedNode: selectedNode)
             }
             
         }

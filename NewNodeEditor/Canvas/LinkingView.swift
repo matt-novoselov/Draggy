@@ -14,32 +14,31 @@ struct LinkingView: View {
     
     var body: some View {
         
-        @Bindable var nodeData = nodeData
-        
         ZStack{
-            ForEach(nodeData.textNodes.indices, id: \.self) { index in
-                ForEach(nodeData.textNodes[index].linkedNodes.indices, id: \.self){ index2 in
-                    BezierPath(startPoint: $nodeData.textNodes[index].position, endPoint: $nodeData.textNodes[index].linkedNodes[index2].position)
+            ForEach(nodeData.textNodes) { selectedNode in
+                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
+                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
                 }
             }
             
-            ForEach(nodeData.imageNodes.indices, id: \.self) { index in
-                ForEach(nodeData.imageNodes[index].linkedNodes.indices, id: \.self){ index2 in
-                    BezierPath(startPoint: $nodeData.imageNodes[index].position, endPoint: $nodeData.imageNodes[index].linkedNodes[index2].position)
+            ForEach(nodeData.imageNodes) { selectedNode in
+                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
+                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
                 }
             }
             
-            ForEach(nodeData.opacityNodes.indices, id: \.self) { index in
-                ForEach(nodeData.opacityNodes[index].linkedNodes.indices, id: \.self){ index2 in
-                    BezierPath(startPoint: $nodeData.opacityNodes[index].position, endPoint: $nodeData.opacityNodes[index].linkedNodes[index2].position)
+            ForEach(nodeData.colorNodes) { selectedNode in
+                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
+                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
                 }
             }
             
-            ForEach(nodeData.colorNodes.indices, id: \.self) { index in
-                ForEach(nodeData.colorNodes[index].linkedNodes.indices, id: \.self){ index2 in
-                    BezierPath(startPoint: $nodeData.colorNodes[index].position, endPoint: $nodeData.colorNodes[index].linkedNodes[index2].position)
+            ForEach(nodeData.opacityNodes) { selectedNode in
+                ForEach(selectedNode.linkedNodes.indices, id: \.self){ index in
+                    BezierPath(selectedNode1: selectedNode, selectedNode2: selectedNode.linkedNodes[index])
                 }
             }
+
         }
     }
 }

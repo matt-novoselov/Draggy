@@ -13,18 +13,16 @@ struct PreviewView: View {
     private var nodeData: NodeData
     
     var body: some View {
-        
-        @Bindable var nodeData = nodeData
-        
+
         VStack{
             // Text Nodes
-            ForEach($nodeData.wrappedValue.textNodes.indices, id: \.self) { index in
-                TextUIElement(textIndex: index)
+            ForEach(nodeData.textNodes) { selectedNode in
+                TextUIElement(selectedNode: selectedNode)
             }
             
             // Text Nodes
-            ForEach($nodeData.wrappedValue.imageNodes.indices, id: \.self) { index in
-                ImageUIElement(imageIndex: index)
+            ForEach(nodeData.imageNodes) { selectedNode in
+                ImageUIElement(selectedNode: selectedNode)
             }
         }
         .frame(width: 300)

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct BaseUINode: View {
-    @Binding var nodePosition: CGPoint
+
     var customOverlay: AnyView?
     
     @State private var scale: CGFloat = 1.0
     @State private var shadowOpacity: CGFloat = 0.0
     
-    var selectedNode: any Node
+    @State var selectedNode: any Node
     
     var body: some View {
         ZStack{
@@ -29,12 +29,12 @@ struct BaseUINode: View {
             BezierPath2(selfNode: selectedNode)
         }
         .frame(width: 200, height: 200)
-        .position(nodePosition)
+        .position(selectedNode.position)
         .scaleEffect(scale)
         .gesture(
             DragGesture()
                 .onChanged { value in
-                    nodePosition = value.location
+                    selectedNode.position = value.location
                     
                     withAnimation{
                         scale = 1.1
