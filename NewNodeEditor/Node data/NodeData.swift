@@ -21,21 +21,24 @@ protocol Node: Identifiable {
 
 extension Node {
     mutating func addLinkedNode(_ node: any Node) {
-        if !availableForLinkingNodes.contains(where: { $0 == type(of: node) }) {
+        guard availableForLinkingNodes.contains(where: { $0 == type(of: node) }) else {
             print("Node of type \(type(of: node)) is not allowed for linking")
             return
         }
-
-        if let existingIndex = linkedNodes.firstIndex(where: { type(of: $0) == type(of: node) }) {
-            if type(of: node) == type(of: linkedNodes[existingIndex]) {
-                print("Replaced node of type \(type(of: node))")
-                linkedNodes[existingIndex] = node
-            } else {
-                print("Cannot replace node: Types mismatch")
-            }
-        } else {
+        
+        guard let existingIndex = linkedNodes.firstIndex(where: { type(of: $0) == type(of: node) }) else {
             print("Added node of type \(type(of: node))")
             linkedNodes.append(node)
+            return
         }
+
+        guard type(of: node) == type(of: linkedNodes[existingIndex]) else {
+            print("Cannot replace node: Types mismatch")
+            return
+        }
+
+        print("Replaced node of type \(type(of: node))")
+        linkedNodes[existingIndex] = node
     }
 }
+
