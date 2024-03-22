@@ -7,52 +7,7 @@
 
 import SwiftUI
 
-// Define a class to hold your shared data
-class DataModel: ObservableObject {
-    @Published var value: Int = 0
+@Observable
+class CanvasData {
+    var canvasGeometry: GeometryProxy?
 }
-
-//import SwiftUI
-//
-//// Define a class to hold your shared data
-//class DataModel: ObservableObject {
-//    @Published var value: Int = 0
-//}
-//
-//// Define your views
-//struct ContentView: View {
-//    var body: some View {
-//        // Provide the DataModel as an environment object
-//        View3().environmentObject(DataModel())
-//    }
-//}
-//
-//struct View3: View {
-//    @EnvironmentObject var dataModel: DataModel
-//
-//    var body: some View {
-//        VStack {
-//            View1()
-//            View2()
-//        }
-//    }
-//}
-//
-//struct View1: View {
-//    @EnvironmentObject var dataModel: DataModel
-//
-//    var body: some View {
-//        // Access and modify dataModel.value as needed
-//        Text("Value in View1: \(dataModel.value)")
-//    }
-//}
-//
-//struct View2: View {
-//    @EnvironmentObject var dataModel: DataModel
-//
-//    var body: some View {
-//        // Access and modify dataModel.value as needed
-//        Text("Value in View2: \(dataModel.value)")
-//    }
-//}
-//

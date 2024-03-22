@@ -27,4 +27,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environment(NodeData())
+        .environment(CanvasData())
 }

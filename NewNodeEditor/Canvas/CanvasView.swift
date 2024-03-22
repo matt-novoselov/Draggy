@@ -12,7 +12,8 @@ struct CanvasView: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
-    @State private var geometryProxy: GeometryProxy?
+    @Environment(CanvasData.self)
+    private var canvasData: CanvasData
     
     var body: some View {
         
@@ -30,7 +31,7 @@ struct CanvasView: View {
             GeometryReader{ proxy in
                 Color.clear
                     .onAppear(){
-                        geometryProxy = proxy
+                        canvasData.canvasGeometry = proxy
                     }
             }
         }
@@ -58,4 +59,5 @@ struct CanvasView: View {
 #Preview {
     CanvasView()
         .environment(NodeData())
+        .environment(CanvasData())
 }

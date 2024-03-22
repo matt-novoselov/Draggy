@@ -32,17 +32,15 @@ class Node: NodeObject {
     var linkedNodes: [Node] = []
     var availableForLinkingNodes: [Node.Type] = []
     
-    func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
-        for linkedNode in self.linkedNodes {
-            if type(of: linkedNode) == linkedNodeType {
-                return linkedNode
-            }
-        }
-        return nil
+    // MARK:
+    required init(
+        position: CGPoint = .zero
+    ) {
+        self.position = position
     }
 }
 
-// MARK: 
+// MARK:
 extension Node {
     func addLinkedNode(_ node: Node) {
         guard availableForLinkingNodes.contains(where: { $0 == type(of: node) }) else {
@@ -55,13 +53,25 @@ extension Node {
             linkedNodes.append(node)
             return
         }
-
+        
         guard type(of: node) == type(of: linkedNodes[existingIndex]) else {
             print("Cannot replace node: Types mismatch")
             return
         }
-
+        
         print("Replaced node of type \(type(of: node))")
         linkedNodes[existingIndex] = node
+    }
+}
+
+// MARK:
+extension Node {
+    func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
+        for linkedNode in self.linkedNodes {
+            if type(of: linkedNode) == linkedNodeType {
+                return linkedNode
+            }
+        }
+        return nil
     }
 }

@@ -11,5 +11,13 @@ import SwiftUI
 class ColorNode: Node {
     
     // Property of the Node
-    var value: Color = .red
+    var value: Color
+    
+    required init(
+        position: CGPoint = .zero
+    ) {
+        self.value = .red
+        super.init(position: position)
+    }
+    
 }

@@ -10,14 +10,13 @@ import SwiftUI
 @Observable
 class TextNode: Node {
     
-    override init() {
-        super.init()
-        self.availableForLinkingNodes = [
-            ColorNode.self,
-            OpacityNode.self
-        ]
-    }
-    
     // Property of the Node
-    var value = "Hello World!"
+    var value: String
+
+    required init(
+        position: CGPoint = .zero
+    ) {
+        self.value = "Hello World!"
+        super.init(position: position)
+    }
 }
