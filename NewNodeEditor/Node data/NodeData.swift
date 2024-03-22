@@ -18,7 +18,7 @@ class NodeData {
     }
 }
 
-protocol NodeProtocol: Identifiable, AnyObject {
+protocol NodeObject: Identifiable, AnyObject {
     var id: UUID { get }
     var position: CGPoint { get set }
     var linkedNodes: [Node] { get set }
@@ -26,11 +26,20 @@ protocol NodeProtocol: Identifiable, AnyObject {
 }
 
 @Observable
-class Node: NodeProtocol {
+class Node: NodeObject {
     var id: UUID = .init()
     var position: CGPoint = .zero
     var linkedNodes: [Node] = []
     var availableForLinkingNodes: [Node.Type] = []
+    
+    func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
+        for linkedNode in self.linkedNodes {
+            if type(of: linkedNode) == linkedNodeType {
+                return linkedNode
+            }
+        }
+        return nil
+    }
 }
 
 // MARK: 

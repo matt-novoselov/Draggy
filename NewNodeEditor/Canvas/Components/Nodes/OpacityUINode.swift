@@ -14,12 +14,9 @@ struct OpacityUINode: View {
         @Bindable var selectedNode = selectedNode
         
         VStack{
-            Text("Opacity")
-                .fontWeight(.bold)
+            Text("\(Int(selectedNode.value * 100))%")
             
-            Text("\(Int(selectedNode.opacity * 100))%")
-            
-            Slider(value: $selectedNode.opacity)
+            Slider(value: $selectedNode.value)
         }
         
     }

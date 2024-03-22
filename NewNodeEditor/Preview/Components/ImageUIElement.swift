@@ -12,11 +12,15 @@ struct ImageUIElement: View {
     var selectedNode: ImageNode
     
     var opacity: Double {
-        getOpacityFromLinkedNodes(selectedNode)
+        if let test = selectedNode.parseLinkedNodes(linkedNodeType: OpacityNode.self) as? OpacityNode{
+            return test.value
+        }
+        
+        return 1.0
     }
 
     var body: some View {
-        selectedNode.image?
+        selectedNode.value?
             .resizable()
             .scaledToFit()
             .padding()

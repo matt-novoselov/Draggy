@@ -12,30 +12,28 @@ struct ImageUINode: View {
     var selectedNode: ImageNode
     
     @State private var pickerItem: PhotosPickerItem?
+    @State private var showingPhotoPicker: Bool = false
     
     var body: some View {
-        VStack{
-            Text("Image")
-                .fontWeight(.bold)
-
+        Button(action: {showingPhotoPicker = true}){
+            
             Rectangle()
                 .fill(.clear)
                 .aspectRatio(contentMode: .fit)
                 .background(
-                    selectedNode.image?
+                    selectedNode.value?
                         .resizable()
                         .scaledToFill()
                 )
                 .clipShape(Rectangle())
                 .cornerRadius(10)
             
-            PhotosPicker("Select a picture", selection: $pickerItem, matching: .images)
-                .onChange(of: pickerItem) {
-                    Task {
-                        selectedNode.image = try await pickerItem?.loadTransferable(type: Image.self)
-                    }
-                }
-
+        }
+        .photosPicker(isPresented: $showingPhotoPicker, selection: $pickerItem, matching: .images)
+        .onChange(of: pickerItem) {
+            Task {
+                selectedNode.value = try await pickerItem?.loadTransferable(type: Image.self)
+            }
         }
     }
 }

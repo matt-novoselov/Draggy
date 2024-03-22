@@ -7,13 +7,17 @@
 
 import SwiftUI
 
+@Observable
 class TextNode: Node {
     
-//    override var availableForLinkingNodes: [Node.Type] = [
-//        ColorNode.self,
-//        OpacityNode.self
-//    ]
+    override init() {
+        super.init()
+        self.availableForLinkingNodes = [
+            ColorNode.self,
+            OpacityNode.self
+        ]
+    }
     
     // Property of the Node
-    var text: String = "Hello World!"
+    var value = "Hello World!"
 }

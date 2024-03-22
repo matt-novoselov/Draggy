@@ -17,7 +17,9 @@ struct AddButtons: View {
             Group{
                 Button("Add text node") {
                     withAnimation{
-                        nodeData.nodes.append(TextNode())
+                        nodeData.nodes.append(
+                            TextNode()
+                        )
                     }
                 }
                 

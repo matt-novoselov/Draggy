@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+@Observable
 class ImageNode: Node {
     
-//    override var availableForLinkingNodes: [Node.Type] = [
-//        OpacityNode.self
-//    ]
+    override init() {
+        super.init()
+        self.availableForLinkingNodes = [
+            OpacityNode.self
+        ]
+    }
     
     // Property of the Node
-    var image: Image? = Image("placeholder")
+    var value: Image? = Image("placeholder")
 }

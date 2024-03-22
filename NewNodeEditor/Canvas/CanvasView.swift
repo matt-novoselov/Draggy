@@ -12,6 +12,8 @@ struct CanvasView: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
+    @State private var geometryProxy: GeometryProxy?
+    
     var body: some View {
         
         ZStack{
@@ -24,7 +26,15 @@ struct CanvasView: View {
         .overlay {
             LinkingView()
         }
-        
+        .overlay{
+            GeometryReader{ proxy in
+                Color.clear
+                    .onAppear(){
+                        geometryProxy = proxy
+                    }
+            }
+        }
+
     }
     
     // MARK: - Create UI Node

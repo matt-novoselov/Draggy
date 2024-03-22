@@ -7,17 +7,9 @@
 
 import SwiftUI
 
+@Observable
 class ColorNode: Node {
     
     // Property of the Node
-    var color: Color = .red
-}
-
-func getColorFromLinkedNodes(_ node: Node) -> Color? {
-    for linkedNode in node.linkedNodes {
-        if let colorNode = linkedNode as? ColorNode {
-            return colorNode.color
-        }
-    }
-    return nil
+    var value: Color = .red
 }
