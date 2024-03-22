@@ -28,15 +28,17 @@ protocol NodeObject: Identifiable, AnyObject {
 @Observable
 class Node: NodeObject {
     var id: UUID = .init()
-    var position: CGPoint = .zero
+    var position: CGPoint
     var linkedNodes: [Node] = []
-    var availableForLinkingNodes: [Node.Type] = []
+    var availableForLinkingNodes: [Node.Type]
     
     // MARK:
     required init(
-        position: CGPoint = .zero
+        position: CGPoint = .zero,
+        availableForLinkingNodes: [Node.Type] = []
     ) {
         self.position = position
+        self.availableForLinkingNodes = availableForLinkingNodes
     }
 }
 

@@ -11,13 +11,13 @@ import SwiftUI
 class ColorNode: Node {
     
     // Property of the Node
-    var value: Color
+    var value: Color = .red
     
     required init(
-        position: CGPoint = .zero
+        position: CGPoint = .zero,
+        availableForLinkingNodes: [Node.Type] = []
     ) {
-        self.value = .red
-        super.init(position: position)
+        super.init(position: position, availableForLinkingNodes: [])
     }
     
 }

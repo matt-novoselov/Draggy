@@ -11,12 +11,12 @@ import SwiftUI
 class TextNode: Node {
     
     // Property of the Node
-    var value: String
+    var value: String = "Hello World!"
 
     required init(
-        position: CGPoint = .zero
+        position: CGPoint = .zero,
+        availableForLinkingNodes: [Node.Type] = []
     ) {
-        self.value = "Hello World!"
-        super.init(position: position)
+        super.init(position: position, availableForLinkingNodes: [ColorNode.self, OpacityNode.self])
     }
 }

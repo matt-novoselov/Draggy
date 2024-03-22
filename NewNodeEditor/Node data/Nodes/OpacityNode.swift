@@ -11,13 +11,13 @@ import SwiftUI
 class OpacityNode: Node {
     
     // Property of the Node
-    var value: Double
+    var value: Double = 0.5
     
     required init(
-        position: CGPoint = .zero
+        position: CGPoint = .zero,
+        availableForLinkingNodes: [Node.Type] = []
     ) {
-        self.value = 0.5
-        super.init(position: position)
+        super.init(position: position, availableForLinkingNodes: [])
     }
     
 }

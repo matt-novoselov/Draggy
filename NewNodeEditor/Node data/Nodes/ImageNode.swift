@@ -11,13 +11,13 @@ import SwiftUI
 class ImageNode: Node {
     
     // Property of the Node
-    var value: Image?
+    var value: Image? = Image("placeholder")
     
     required init(
-        position: CGPoint = .zero
+        position: CGPoint = .zero,
+        availableForLinkingNodes: [Node.Type] = []
     ) {
-        self.value = Image("placeholder")
-        super.init(position: position)
+        super.init(position: position, availableForLinkingNodes: [OpacityNode.self])
     }
     
 }
