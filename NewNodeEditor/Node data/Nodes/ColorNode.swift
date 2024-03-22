@@ -8,16 +8,10 @@
 import SwiftUI
 
 @Observable
-class ColorNode: Node {
+class ColorNode: Node<Color> {
     
-    // Property of the Node
-    var value: Color = .red
-    
-    required init(
-        position: CGPoint = .zero,
-        availableForLinkingNodes: [Node.Type] = []
-    ) {
-        super.init(position: position, availableForLinkingNodes: [])
+    func getOpacity(from nodes: any NodeObject) -> Double? {
+        Node<Any>.getValue(as: Double.self, from: nodes)
     }
     
 }

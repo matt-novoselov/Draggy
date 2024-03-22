@@ -13,6 +13,11 @@ struct TextUINode: View {
     var body: some View {
         @Bindable var selectedNode = selectedNode
         
-        TextField("Input Text", text: $selectedNode.value)
+        VStack{
+            Text("Text")
+                .fontWeight(.bold)
+            
+            TextField("Input Text", text: $selectedNode.text)
+        }
     }
 }

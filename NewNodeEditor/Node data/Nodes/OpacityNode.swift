@@ -8,16 +8,17 @@
 import SwiftUI
 
 @Observable
-class OpacityNode: Node {
+class OpacityNode: Node<Any> {
     
     // Property of the Node
-    var value: Double = 0.5
-    
-    required init(
-        position: CGPoint = .zero,
-        availableForLinkingNodes: [Node.Type] = []
-    ) {
-        super.init(position: position, availableForLinkingNodes: [])
+    var opacity: Double = 0.5
+}
+
+func getOpacityFromLinkedNodes(_ node: Node<Any>) -> Double {
+    for linkedNode in node.linkedNodes {
+        if let opacityNode = linkedNode as? OpacityNode {
+            return opacityNode.opacity
+        }
     }
-    
+    return 1.0
 }

@@ -10,13 +10,11 @@ import SwiftUI
 @main
 struct NewNodeEditorApp: App {
     @State var nodeData: NodeData = NodeData()
-    @State var canvasData: CanvasData = CanvasData()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(nodeData)
-                .environment(canvasData)
                 .preferredColorScheme(.light)
         }
     }

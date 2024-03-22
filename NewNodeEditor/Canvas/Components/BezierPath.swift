@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct BezierPathStatic: View {
-    var selectedNode1: Node
-    var selectedNode2: Node
+struct BezierPath: View {
+    var selectedNode1: any NodeObject
+    var selectedNode2: any NodeObject
     
     private var controlPoint1: CGPoint {
         return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: startPoint.y)

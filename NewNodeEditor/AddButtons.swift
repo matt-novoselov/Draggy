@@ -12,40 +12,34 @@ struct AddButtons: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
-    @Environment(CanvasData.self)
-    private var canvasData: CanvasData
-    
     var body: some View {
         HStack {
             Group{
                 Button("Add text node") {
-                    addNode(nodeType: TextNode.self)
+                    withAnimation{
+                        nodeData.nodes.append(TextNode())
+                    }
                 }
                 
                 Button("Add image node") {
-                    addNode(nodeType: ImageNode.self)
+                    withAnimation{
+                        nodeData.nodes.append(ImageNode())
+                    }
                 }
                 
                 Button("Add color node") {
-                    addNode(nodeType: ColorNode.self)
+                    withAnimation{
+                        nodeData.nodes.append(ColorNode())
+                    }
                 }
                 
                 Button("Add opacity node") {
-                    addNode(nodeType: OpacityNode.self)
+                    withAnimation{
+                        nodeData.nodes.append(OpacityNode())
+                    }
                 }
             }
             .buttonStyle(BorderedProminentButtonStyle())
-        }
-    }
-    
-    func addNode(nodeType: Node.Type){
-        withAnimation{
-            let centerX = (canvasData.canvasGeometry?.size.width ?? 0) / 2
-            let centerY = (canvasData.canvasGeometry?.size.height ?? 0) / 2
-            
-            nodeData.nodes.append(
-                nodeType.init(position: CGPoint(x: centerX, y: centerY))
-            )
         }
     }
 }

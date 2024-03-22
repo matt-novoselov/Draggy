@@ -12,34 +12,28 @@ struct CanvasView: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
-    @Environment(CanvasData.self)
-    private var canvasData: CanvasData
-    
     var body: some View {
         
         ZStack{
-            ForEach(nodeData.nodes){ node in
-                BaseUINode(selectedNode: node, customOverlay: AnyView(createUINode(node: node)))
+            
+            ForEach(nodeData.nodes.indices, id: \.self){ index in
+                BaseUINode(
+                    selectedNode: nodeData.nodes[index],
+                    customOverlay: AnyView(createUINode(node: nodeData.nodes[index]))
+                )
             }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.gray)
         .overlay {
             LinkingView()
         }
-        .overlay{
-            GeometryReader{ proxy in
-                Color.clear
-                    .onAppear(){
-                        canvasData.canvasGeometry = proxy
-                    }
-            }
-        }
-
+        
     }
     
     // MARK: - Create UI Node
-    func createUINode(node: Node) -> some View {
+    func createUINode(node: any NodeObject) -> some View {
         switch node {
         case let textNode as TextNode:
             return AnyView(TextUINode(selectedNode: textNode))
@@ -59,5 +53,4 @@ struct CanvasView: View {
 #Preview {
     CanvasView()
         .environment(NodeData())
-        .environment(CanvasData())
 }

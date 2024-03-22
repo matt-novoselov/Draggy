@@ -12,23 +12,23 @@ struct BaseUINode: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
 
-    @State private var isBeingDragged: Bool = false
-    let cornerRadius: CGFloat = 25
+    @State private var scale: CGFloat = 1.0
+    @State private var shadowOpacity: CGFloat = 0.0
     
-    @State var selectedNode: Node
+    @State var selectedNode: any NodeObject
     var customOverlay: AnyView?
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(.black, lineWidth: 5)
-                .background(Color.white.cornerRadius(cornerRadius))
-                .shadow(color: .black.opacity(isBeingDragged ? 0.2 : 0), radius: 15)
+            RoundedRectangle(cornerRadius: 25.0)
+                .stroke(Color.black, lineWidth: 5)
+                .background(.white)
+                .shadow(color: .black.opacity(shadowOpacity), radius: 15)
             
             customOverlay
-                .padding(.all, 30)
+                .padding()
             
-            BezierPathInteractable(selfNode: selectedNode)
+            BezierPath2(selfNode: selectedNode)
         }
         .frame(width: 200, height: 200)
         .contextMenu{
@@ -36,22 +36,22 @@ struct BaseUINode: View {
                 nodeData.deleteNode(selectedNode)
             }
         }
-        .zIndex(isBeingDragged ? 1 : 0)
-        .scaleEffect(isBeingDragged ? 1.1 : 1.0)
         .position(selectedNode.position)
-        .transition(.scale)
+        .scaleEffect(scale)
         .gesture(
             DragGesture()
                 .onChanged { value in
                     selectedNode.position = value.location
                     
                     withAnimation{
-                        isBeingDragged = true
+                        scale = 1.1
+                        shadowOpacity = 0.2
                     }
                 }
                 .onEnded{ _ in 
                     withAnimation{
-                        isBeingDragged = false
+                        scale = 1.0
+                        shadowOpacity = 0.0
                     }
                 }
         )

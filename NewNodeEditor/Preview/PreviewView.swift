@@ -15,7 +15,12 @@ struct PreviewView: View {
     var body: some View {
 
         VStack{
-            ForEach(nodeData.nodes) { node in
+            
+//            ForEach(nodeData.nodes.indices, id: \.self){ index in
+//                createUIElement(node: nodeData.nodes[index])
+//            }
+            
+            ForEach(nodeData.nodes, id: \.id) { node in
                 createUIElement(node: node)
             }
         }
@@ -23,8 +28,8 @@ struct PreviewView: View {
         
     }
     
-    // MARK: 
-    func createUIElement(node: Node) -> some View {
+    /// MARK
+    func createUIElement(node: any NodeObject) -> some View {
         switch node {
         case let textNode as TextNode:
             return AnyView(TextUIElement(selectedNode: textNode))

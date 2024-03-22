@@ -8,16 +8,15 @@
 import SwiftUI
 
 @Observable
-class ImageNode: Node {
+class ImageNode: Node<Any> {
     
-    // Property of the Node
-    var value: Image? = Image("placeholder")
-    
-    required init(
-        position: CGPoint = .zero,
-        availableForLinkingNodes: [Node.Type] = []
-    ) {
-        super.init(position: position, availableForLinkingNodes: [OpacityNode.self])
+    override init() {
+        super.init()
+        self.availableForLinkingNodes = [
+            OpacityNode.self
+        ] as! NodeTypeList
     }
     
+    // Property of the Node
+    var image: Image? = Image("placeholder")
 }

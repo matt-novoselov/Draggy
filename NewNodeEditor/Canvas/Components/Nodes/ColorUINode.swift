@@ -1,5 +1,5 @@
 //
-//  OpacityUINode.swift
+//  ColorUINode.swift
 //  NewNodeEditor
 //
 //  Created by Matt Novoselov on 19/03/24.
@@ -7,20 +7,18 @@
 
 import SwiftUI
 
-struct OpacityUINode: View {
-    var selectedNode: OpacityNode
+struct ColorUINode: View {
+    var selectedNode: ColorNode
     
     var body: some View {
         @Bindable var selectedNode = selectedNode
         
         VStack{
-            Text("Opacity")
+            Text("Color")
                 .fontWeight(.bold)
             
-            Text("\(Int(selectedNode.opacity * 100))%")
-            
-            Slider(value: $selectedNode.opacity)
+//            ColorPicker("Select", selection: $selectedNode.value)
         }
-        
+
     }
 }

@@ -16,11 +16,11 @@ struct LinkingView: View {
         
         ZStack{
             
-            ForEach(nodeData.nodes){ node in
-                ForEach(node.linkedNodes){ linkedNode in
-                    BezierPathStatic(
-                        selectedNode1: node,
-                        selectedNode2: linkedNode
+            ForEach(nodeData.nodes.indices, id: \.self){ index in
+                ForEach(nodeData.nodes[index].linkedNodes.indices, id: \.self){ index2 in
+                    BezierPath(
+                        selectedNode1: nodeData.nodes[index],
+                        selectedNode2: nodeData.nodes[index].linkedNodes[index2]
                     )
                 }
             }

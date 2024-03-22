@@ -12,21 +12,14 @@ struct TextUIElement: View {
     var selectedNode: TextNode
     
     var color: Color {
-        if let test = selectedNode.parseLinkedNodes(linkedNodeType: ColorNode.self) as? ColorNode{
-            return test.value
-        }
-     
-        return .black
+//        getColorFromLinkedNodes(selectedNode) ??,
+            .black
     }
     var opacity: Double {
-        if let test = selectedNode.parseLinkedNodes(linkedNodeType: OpacityNode.self) as? OpacityNode{
-            return test.value
-        }
-        
-        return 1.0
+        getOpacityFromLinkedNodes(selectedNode)
     }
     var text: String {
-        selectedNode.value
+        selectedNode.text
     }
 
     var body: some View {
