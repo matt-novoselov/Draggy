@@ -12,6 +12,9 @@ struct BezierPathInteractable: View {
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
+    @Environment(NotificationsData.self)
+    private var notificationsData: NotificationsData
+    
     var selfNode: Node
     
     @State private var startPoint: CGPoint = CGPoint(x: 100, y: 100)
@@ -68,7 +71,7 @@ struct BezierPathInteractable: View {
             
             let distance = sqrt(pow(circlePosition.x - selfNode.position.x - value.location.x + 100, 2) + pow(circlePosition.y - selfNode.position.y - value.location.y + 100, 2))
             if distance <= 20 {
-                node.addLinkedNode(selfNode)
+                node.addLinkedNode(selfNode, notificationsData: notificationsData)
                 endPoint = startPoint
                 return
             }

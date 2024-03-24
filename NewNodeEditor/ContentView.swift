@@ -16,6 +16,9 @@ struct ContentView: View {
             
             ZStack(alignment: .top){
                 CanvasView()
+                    .overlay{
+                        NotificationsView()
+                    }
                 
                 AddButtons()
             }
@@ -28,4 +31,5 @@ struct ContentView: View {
     ContentView()
         .environment(NodeData())
         .environment(CanvasData())
+        .environment(NotificationsData())
 }

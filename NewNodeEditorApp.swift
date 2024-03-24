@@ -11,6 +11,7 @@ import SwiftUI
 struct NewNodeEditorApp: App {
     @State var nodeData: NodeData = NodeData()
     @State var canvasData: CanvasData = CanvasData()
+    @State var notificationsData: NotificationsData = NotificationsData()
     
     var body: some Scene {
         WindowGroup {
