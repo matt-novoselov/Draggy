@@ -56,22 +56,22 @@ extension Node {
         }
         
         guard availableForLinkingNodes.contains(where: { $0 == type(of: node) }) else {
-            notificationsData.displayedNotifications.append("Node of type \(type(of: node)) is not allowed for linking")
+            notificationsData.add("Node of type \(type(of: node)) is not allowed for linking")
             return
         }
         
         guard let existingIndex = linkedNodes.firstIndex(where: { type(of: $0) == type(of: node) }) else {
-            notificationsData.displayedNotifications.append("Added node of type \(type(of: node))")
+            notificationsData.add("Added node of type \(type(of: node))")
             linkedNodes.append(node)
             return
         }
         
         guard type(of: node) == type(of: linkedNodes[existingIndex]) else {
-            notificationsData.displayedNotifications.append("Cannot replace node: Types mismatch")
+            notificationsData.add("Cannot replace node: Types mismatch")
             return
         }
         
-        notificationsData.displayedNotifications.append("Replaced node of type \(type(of: node))")
+        notificationsData.add("Replaced node of type \(type(of: node))")
         linkedNodes[existingIndex] = node
     }
 }

@@ -9,5 +9,11 @@ import SwiftUI
 
 @Observable
 class NotificationsData {
-    var displayedNotifications: [String] = []
+    var displayed: [String] = []
+    
+    func add(_ text: String){
+        withAnimation{
+            displayed.append(text)
+        }
+    }
 }

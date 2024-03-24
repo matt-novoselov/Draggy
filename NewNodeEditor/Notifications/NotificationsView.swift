@@ -19,10 +19,18 @@ struct NotificationsView: View {
             Spacer()
             
             ZStack{
-                ForEach(notificationsData.displayedNotifications, id: \.self) { selectedNotification in
+                ForEach(notificationsData.displayed.indices, id: \.self) { index in
 
-                    NotificationsBlob(text: selectedNotification)
+                    NotificationsBlob(text: notificationsData.displayed[index])
                         .transition(.move(edge: .bottom).combined(with: .blurReplace))
+                        .onAppear(){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                withAnimation{
+                                    notificationsData.displayed.removeAll()
+                                }
+                            }
+                        }
+                    
                 }
             }
         }
@@ -41,6 +49,7 @@ struct NotificationsBlob: View {
             .padding()
             .background(.black.opacity(0.75))
             .cornerRadius(50)
+            .shadow(color: .white, radius: 10)
         
     }
 }
