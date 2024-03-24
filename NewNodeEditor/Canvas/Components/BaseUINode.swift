@@ -18,6 +18,9 @@ struct BaseUINode: View {
     @State var selectedNode: Node
     var customOverlay: AnyView?
     
+    @Binding var maxZIndex: Double
+    @State var selfZIndex: Double = 0
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: cornerRadius)
@@ -36,7 +39,7 @@ struct BaseUINode: View {
                 nodeData.deleteNode(selectedNode)
             }
         }
-        .zIndex(isBeingDragged ? 1 : 0)
+        .zIndex(isBeingDragged ? 10000.0 : selfZIndex)
         .scaleEffect(isBeingDragged ? 1.1 : 1.0)
         .position(selectedNode.position)
         .transition(.scale)
@@ -50,10 +53,19 @@ struct BaseUINode: View {
                     }
                 }
                 .onEnded{ _ in 
+                    updateZIndex()
+                    
                     withAnimation{
                         isBeingDragged = false
                     }
                 }
         )
+    }
+    
+    func updateZIndex(){
+        if selfZIndex<maxZIndex{
+            selfZIndex = maxZIndex+1
+            maxZIndex = selfZIndex
+        }
     }
 }

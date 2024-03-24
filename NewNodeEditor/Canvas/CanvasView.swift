@@ -15,11 +15,13 @@ struct CanvasView: View {
     @Environment(CanvasData.self)
     private var canvasData: CanvasData
     
+    @State var maxZIndex: Double = 1
+    
     var body: some View {
         
         ZStack{
             ForEach(nodeData.nodes){ node in
-                BaseUINode(selectedNode: node, customOverlay: AnyView(createUINode(node: node)))
+                BaseUINode(selectedNode: node, customOverlay: AnyView(createUINode(node: node)), maxZIndex: $maxZIndex)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
