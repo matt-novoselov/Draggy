@@ -40,7 +40,7 @@ struct CanvasView: View {
 
     }
     
-    // MARK: - Create UI Node
+    // MARK:
     func createUINode(node: Node) -> some View {
         switch node {
         case let textNode as TextNode:

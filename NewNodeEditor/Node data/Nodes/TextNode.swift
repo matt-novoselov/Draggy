@@ -13,6 +13,7 @@ class TextNode: Node {
     // Property of the Node
     var value: String = "Hello World!"
 
+    // MARK: 
     required init(
         position: CGPoint = .zero,
         availableForLinkingNodes: [Node.Type] = []

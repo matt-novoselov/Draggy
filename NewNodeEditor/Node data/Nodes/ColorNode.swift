@@ -13,6 +13,7 @@ class ColorNode: Node {
     // Property of the Node
     var value: Color = .red
     
+    // MARK: 
     required init(
         position: CGPoint = .zero,
         availableForLinkingNodes: [Node.Type] = []

@@ -19,9 +19,9 @@ struct NotificationsView: View {
             Spacer()
             
             ZStack{
-                ForEach(notificationsData.displayedNotifications.indices, id: \.self) { index in
+                ForEach(notificationsData.displayedNotifications, id: \.self) { selectedNotification in
 
-                    NotificationsBlob(text: notificationsData.displayedNotifications[index])
+                    NotificationsBlob(text: selectedNotification)
                         .transition(.move(edge: .bottom).combined(with: .blurReplace))
                 }
             }
