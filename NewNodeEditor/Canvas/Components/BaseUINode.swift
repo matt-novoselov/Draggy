@@ -11,6 +11,9 @@ struct BaseUINode: View {
     
     @Environment(NodeData.self)
     private var nodeData: NodeData
+    
+    @Environment(CanvasData.self)
+    private var canvasData: CanvasData
 
     @State private var isBeingDragged: Bool = false
     let cornerRadius: CGFloat = 25
@@ -42,7 +45,7 @@ struct BaseUINode: View {
         }
         .zIndex(isBeingDragged ? 10000.0 : selfZIndex)
         .position(selectedNode.position)
-        .transition(.scale)
+        .transition(.scale(0.0, anchor: selectedNodeAnchor()))
         .gesture(
             DragGesture()
                 .onChanged { value in
@@ -72,6 +75,17 @@ struct BaseUINode: View {
             )
         }
     }
+    
+    func selectedNodeAnchor() -> UnitPoint {
+        guard let canvasGeometry = canvasData.canvasGeometry else {
+            return UnitPoint(x: 0.5, y: 0.5)
+        }
+
+        let x = selectedNode.position.x / canvasGeometry.size.width
+        let y = selectedNode.position.y / canvasGeometry.size.height
+        return UnitPoint(x: x, y: y)
+    }
+
     
     private func updateZIndex(){
         if selfZIndex<maxZIndex{
