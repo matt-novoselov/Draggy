@@ -51,6 +51,10 @@ class Node: NodeObject {
 extension Node {
 
     func addLinkedNode(_ node: Node, notificationsData: NotificationsData) {
+        guard node.id != self.id else {
+            return
+        }
+        
         guard availableForLinkingNodes.contains(where: { $0 == type(of: node) }) else {
             notificationsData.displayedNotifications.append("Node of type \(type(of: node)) is not allowed for linking")
             return
