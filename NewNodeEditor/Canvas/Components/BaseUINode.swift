@@ -19,7 +19,8 @@ struct BaseUINode: View {
     var customOverlay: AnyView?
     
     @Binding var maxZIndex: Double
-    @State var selfZIndex: Double = 0
+    @State private var selfZIndex: Double = 0
+    @State private var showingAlert = false
     
     var body: some View {
         ZStack{
@@ -36,11 +37,10 @@ struct BaseUINode: View {
         .frame(width: 200, height: 200)
         .contextMenu{
             Button("Delete") {
-                nodeData.deleteNode(selectedNode)
+                showingAlert=true
             }
         }
         .zIndex(isBeingDragged ? 10000.0 : selfZIndex)
-        .scaleEffect(isBeingDragged ? 1.1 : 1.0)
         .position(selectedNode.position)
         .transition(.scale)
         .gesture(
@@ -60,9 +60,20 @@ struct BaseUINode: View {
                     }
                 }
         )
+        .alert(isPresented: $showingAlert) {
+            Alert(
+                title: Text("Do you want to delete this node?"),
+                message: Text("You can't undo this action."),
+                primaryButton: .cancel(),
+                secondaryButton: .destructive(
+                    Text("Delete"),
+                    action: { nodeData.deleteNode(selectedNode) }
+                )
+            )
+        }
     }
     
-    func updateZIndex(){
+    private func updateZIndex(){
         if selfZIndex<maxZIndex{
             selfZIndex = maxZIndex+1
             maxZIndex = selfZIndex
