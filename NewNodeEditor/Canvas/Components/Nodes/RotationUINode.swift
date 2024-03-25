@@ -10,13 +10,19 @@ import SwiftUI
 struct RotationUINode: View {
     var selectedNode: RotationNode
     
+    @State var degreesProxy: Double = 0
+    
     var body: some View {
-        @Bindable var selectedNode = selectedNode
         
         VStack{
-            Text("\(Int(selectedNode.value.degrees))°")
+            Text("\(Int(degreesProxy))°")
             
-            Slider(value: $selectedNode.value.degrees, in: 0...360)
+            Slider(value: $degreesProxy, in: 0...270, step: 90)
+        }
+        .onChange(of: degreesProxy){
+            withAnimation{
+                selectedNode.value.degrees = degreesProxy
+            }
         }
         
     }
