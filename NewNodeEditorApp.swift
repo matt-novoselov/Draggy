@@ -18,6 +18,7 @@ struct NewNodeEditorApp: App {
             ContentView()
                 .environment(nodeData)
                 .environment(canvasData)
+                .environment(notificationsData)
                 .preferredColorScheme(.light)
         }
     }

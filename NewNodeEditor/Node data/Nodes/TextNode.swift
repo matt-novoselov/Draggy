@@ -15,20 +15,21 @@ class TextNode: Node {
 
     // MARK: 
     required init(
-        position: CGPoint = .zero,
-        availableForLinkingNodes: [Node.Type] = [],
-        uiNodeElement: any View = AnyView(EmptyView()),
-        uiPreviewElement: any View = AnyView(EmptyView())
+        position: CGPoint,
+        availableForLinkingNodes: [Node.Type],
+        uiNodeElement: any View,
+        uiPreviewElement: any View
     ) {
         super.init(
             position: position,
-            availableForLinkingNodes: [ColorNode.self, OpacityNode.self],
+            availableForLinkingNodes: availableForLinkingNodes,
             uiNodeElement: uiNodeElement,
             uiPreviewElement: uiPreviewElement
         )
         
         self.uiPreviewElement = AnyView(TextUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(TextUINode(selectedNode: self))
+        self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self]
     }
     
 }

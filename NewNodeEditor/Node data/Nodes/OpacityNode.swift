@@ -15,19 +15,21 @@ class OpacityNode: Node {
     
     // MARK:
     required init(
-        position: CGPoint = .zero,
-        availableForLinkingNodes: [Node.Type] = [],
-        uiNodeElement: any View = AnyView(EmptyView()),
-        uiPreviewElement: any View = AnyView(EmptyView())
+        position: CGPoint,
+        availableForLinkingNodes: [Node.Type],
+        uiNodeElement: any View,
+        uiPreviewElement: any View
     ) {
         super.init(
             position: position,
-            availableForLinkingNodes: [],
+            availableForLinkingNodes: availableForLinkingNodes,
             uiNodeElement: uiNodeElement,
             uiPreviewElement: uiPreviewElement
         )
         
+        self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(OpacityUINode(selectedNode: self))
+        self.availableForLinkingNodes = []
     }
     
 }
