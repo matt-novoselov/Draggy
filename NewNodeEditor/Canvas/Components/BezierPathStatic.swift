@@ -20,11 +20,11 @@ struct BezierPathStatic: View {
     }
     
     private var startPoint: CGPoint {
-        return selectedNode1.position
+        return CGPoint(x: selectedNode1.position.x + 100, y: selectedNode1.position.y)
     }
     
     private var endPoint: CGPoint {
-        return selectedNode2.position
+        return CGPoint(x: selectedNode2.position.x + 100, y: selectedNode2.position.y)
     }
     
     var body: some View {

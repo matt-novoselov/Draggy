@@ -37,8 +37,10 @@ struct BaseUINode: View {
             
             customOverlay
                 .padding(.all, 35)
-            
+        }
+        .overlay{
             BezierPathInteractable(selfNode: selectedNode)
+                .offset(x: 100)
         }
         .frame(width: 200, height: 200)
         .contextMenu{
