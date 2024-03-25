@@ -28,6 +28,8 @@ struct BezierPathInteractable: View {
         return CGPoint(x: (startPoint.x + endPoint.x) / 2, y: endPoint.y)
     }
     
+    @State var lastCheckedNodeID: UUID = .init()
+    
     var body: some View {
         ZStack {
             Path { (path) in
@@ -75,7 +77,12 @@ struct BezierPathInteractable: View {
             )
             
             if distance <= colliderSize {
-                node.addLinkedNode(selfNode, notificationsData: notificationsData)
+                guard node.id != lastCheckedNodeID else{
+                    return
+                }
+                
+                node.tryToLinkNode(selfNode, notificationsData: notificationsData)
+                lastCheckedNodeID = node.id
                 endPoint = startPoint
                 return
             }

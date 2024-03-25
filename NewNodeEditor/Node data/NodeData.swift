@@ -68,7 +68,7 @@ class Node: NodeObject {
 
 extension Node {
 
-    func addLinkedNode(_ node: Node, notificationsData: NotificationsData) {
+    func tryToLinkNode(_ node: Node, notificationsData: NotificationsData) {
         // Chek Node is not itself
         guard node.id != self.id else {
             return
