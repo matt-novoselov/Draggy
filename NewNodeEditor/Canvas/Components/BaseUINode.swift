@@ -14,7 +14,7 @@ struct BaseUINode: View {
     
     @Environment(CanvasData.self)
     private var canvasData: CanvasData
-
+    
     @State private var isBeingDragged: Bool = false
     let cornerRadius: CGFloat = 25
     
@@ -25,6 +25,9 @@ struct BaseUINode: View {
     @State private var selfZIndex: Double = 0
     @State private var showingAlert = false
     
+    @GestureState private var dragOffset = CGSize.zero
+    @State private var position: CGPoint = .zero
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: cornerRadius)
@@ -33,7 +36,7 @@ struct BaseUINode: View {
                 .shadow(color: .black.opacity(isBeingDragged ? 0.2 : 0), radius: 15)
             
             customOverlay
-                .padding(.all, 30)
+                .padding(.all, 35)
             
             BezierPathInteractable(selfNode: selectedNode)
         }
@@ -44,25 +47,39 @@ struct BaseUINode: View {
             }
         }
         .zIndex(isBeingDragged ? 10000.0 : selfZIndex)
-        .position(selectedNode.position)
+        .scaleEffect(isBeingDragged ? 1.1 : 1.0)
         .transition(.scale(0.0, anchor: selectedNodeAnchor()))
+        .position(position)
+        .offset(x: dragOffset.width, y: dragOffset.height)
         .gesture(
             DragGesture()
-                .onChanged { value in
-                    selectedNode.position = value.location
+                .updating($dragOffset, body: { (value, state, transaction) in
+                    state = value.translation
+                    position = value.location
                     
-                    withAnimation{
+                    selectedNode.position = CGPoint(x: position.x + dragOffset.width, y: position.y + dragOffset.height)
+                })
+                .onChanged{ value in
+                    withAnimation {
                         isBeingDragged = true
                     }
                 }
-                .onEnded{ _ in 
+                .onEnded { value in
+                    self.position.x += value.translation.width
+                    self.position.y += value.translation.height
+                    
+                    selectedNode.position = position
+
                     updateZIndex()
                     
-                    withAnimation{
+                    withAnimation {
                         isBeingDragged = false
                     }
                 }
         )
+        .onAppear(){
+            self.position = selectedNode.position
+        }
         .alert(isPresented: $showingAlert) {
             Alert(
                 title: Text("Do you want to delete this node?"),
@@ -80,12 +97,12 @@ struct BaseUINode: View {
         guard let canvasGeometry = canvasData.canvasGeometry else {
             return UnitPoint(x: 0.5, y: 0.5)
         }
-
+        
         let x = selectedNode.position.x / canvasGeometry.size.width
         let y = selectedNode.position.y / canvasGeometry.size.height
         return UnitPoint(x: x, y: y)
     }
-
+    
     
     private func updateZIndex(){
         if selfZIndex<maxZIndex{
