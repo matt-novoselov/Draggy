@@ -19,7 +19,6 @@ struct PreviewView: View {
                 AnyView(node.uiPreviewElement)
             }
         }
-        .frame(width: 300)
         
     }
 

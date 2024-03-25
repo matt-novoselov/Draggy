@@ -11,9 +11,10 @@ struct ContentView: View {
     
     var body: some View {
         
-        HStack{
+        NavigationSplitView {
             PreviewView()
-            
+        } 
+        detail: {
             ZStack(alignment: .top){
                 CanvasView()
                     .overlay{
