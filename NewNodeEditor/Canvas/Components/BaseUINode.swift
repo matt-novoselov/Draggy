@@ -79,6 +79,7 @@ struct BaseUINode: View {
         )
         .onAppear(){
             self.position = selectedNode.position
+            self.selfZIndex = maxZIndex + 1
         }
         .alert(isPresented: $showingAlert) {
             Alert(
