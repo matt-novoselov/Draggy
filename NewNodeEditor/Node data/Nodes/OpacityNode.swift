@@ -13,7 +13,6 @@ class OpacityNode: Node {
     // Property of the Node
     var value: Double = 0.5
     
-    // MARK:
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],

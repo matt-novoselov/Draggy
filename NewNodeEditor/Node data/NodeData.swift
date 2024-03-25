@@ -41,7 +41,6 @@ class Node: NodeObject {
     var uiNodeElement: any View = AnyView(EmptyView())
     var uiPreviewElement: any View = AnyView(EmptyView())
     
-    // MARK:
     required init(
         position: CGPoint = .zero,
         availableForLinkingNodes: [Node.Type] = [],
@@ -55,7 +54,6 @@ class Node: NodeObject {
     }
 }
 
-// MARK:
 extension Node {
 
     func addLinkedNode(_ node: Node, notificationsData: NotificationsData) {
@@ -82,7 +80,6 @@ extension Node {
     }
 }
 
-// MARK:
 extension Node {
     func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
         for linkedNode in self.linkedNodes {

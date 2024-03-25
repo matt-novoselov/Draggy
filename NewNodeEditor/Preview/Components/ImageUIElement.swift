@@ -12,7 +12,6 @@ struct ImageUIElement: View {
     var selectedNode: ImageNode
     
     var opacity: Double {
-        // MARK: 
         if let test = selectedNode.parseLinkedNodes(linkedNodeType: OpacityNode.self) as? OpacityNode{
             return test.value
         }

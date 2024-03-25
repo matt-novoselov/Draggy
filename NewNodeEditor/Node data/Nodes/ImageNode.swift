@@ -13,7 +13,6 @@ class ImageNode: Node {
     // Property of the Node
     var value: Image? = Image("placeholder")
     
-    // MARK:
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],

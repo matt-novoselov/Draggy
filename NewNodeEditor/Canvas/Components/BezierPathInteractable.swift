@@ -63,7 +63,6 @@ struct BezierPathInteractable: View {
         }
     }
     
-    // MARK: 
     func detectOverlappingCircle(value: DragGesture.Value) {
         let colliderSize: Double = 20
 

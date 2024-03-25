@@ -12,7 +12,6 @@ struct TextUIElement: View {
     var selectedNode: TextNode
     
     var color: Color {
-        // MARK:
         if let test = selectedNode.parseLinkedNodes(linkedNodeType: ColorNode.self) as? ColorNode{
             return test.value
         }
@@ -21,7 +20,6 @@ struct TextUIElement: View {
     }
     
     var opacity: Double {
-        // MARK:
         if let test = selectedNode.parseLinkedNodes(linkedNodeType: OpacityNode.self) as? OpacityNode{
             return test.value
         }
