@@ -41,6 +41,7 @@ struct TextUIElement: View {
 
     var body: some View {
         Text(text)
+            .font(.title2)
             .rotationEffect(Angle(degrees: rotation))
             .foregroundColor(color)
             .opacity(opacity)
