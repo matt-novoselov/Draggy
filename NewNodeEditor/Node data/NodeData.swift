@@ -69,7 +69,6 @@ extension Node {
         }
         
         guard let existingIndex = linkedNodes.firstIndex(where: { type(of: $0) == type(of: node) }) else {
-            notificationsData.add("Added node of type \(type(of: node))")
             linkedNodes.append(node)
             return
         }
@@ -79,7 +78,6 @@ extension Node {
             return
         }
         
-        notificationsData.add("Replaced node of type \(type(of: node))")
         linkedNodes[existingIndex] = node
     }
 }

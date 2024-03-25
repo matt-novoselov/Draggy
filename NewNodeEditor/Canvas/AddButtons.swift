@@ -19,26 +19,26 @@ struct AddButtons: View {
         HStack {
             Group{
                 Button("Add text node") {
-                    addNode(nodeType: TextNode.self)
+                    addNode(TextNode.self)
                 }
                 
                 Button("Add image node") {
-                    addNode(nodeType: ImageNode.self)
+                    addNode(ImageNode.self)
                 }
                 
                 Button("Add color node") {
-                    addNode(nodeType: ColorNode.self)
+                    addNode(ColorNode.self)
                 }
                 
                 Button("Add opacity node") {
-                    addNode(nodeType: OpacityNode.self)
+                    addNode(OpacityNode.self)
                 }
             }
             .buttonStyle(BorderedProminentButtonStyle())
         }
     }
     
-    func addNode(nodeType: Node.Type){
+    func addNode(_ nodeType: Node.Type){
         withAnimation{
             let centerX = (canvasData.canvasGeometry?.size.width ?? 0) / 2
             let centerY = (canvasData.canvasGeometry?.size.height ?? 0) / 2
