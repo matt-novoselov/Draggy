@@ -30,9 +30,18 @@ struct TextUIElement: View {
     var text: String {
         selectedNode.value
     }
+    
+    var rotation: Double {
+        if let test = selectedNode.parseLinkedNodes(linkedNodeType: RotationNode.self) as? RotationNode{
+            return test.value.degrees
+        }
+        
+        return .zero
+    }
 
     var body: some View {
         Text(text)
+            .rotationEffect(Angle(degrees: rotation))
             .foregroundColor(color)
             .opacity(opacity)
     }

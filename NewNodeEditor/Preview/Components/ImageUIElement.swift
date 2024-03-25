@@ -18,11 +18,20 @@ struct ImageUIElement: View {
         
         return 1.0
     }
+    
+    var rotation: Double {
+        if let test = selectedNode.parseLinkedNodes(linkedNodeType: RotationNode.self) as? RotationNode{
+            return test.value.degrees
+        }
+        
+        return .zero
+    }
 
     var body: some View {
         selectedNode.value?
             .resizable()
             .scaledToFit()
+            .rotationEffect(Angle(degrees: rotation))
             .padding()
             .opacity(opacity)
     }

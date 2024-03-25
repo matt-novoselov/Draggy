@@ -28,7 +28,7 @@ class ImageNode: Node {
         
         self.uiPreviewElement = AnyView(ImageUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(ImageUINode(selectedNode: self))
-        self.availableForLinkingNodes = [OpacityNode.self]
+        self.availableForLinkingNodes = [OpacityNode.self, RotationNode.self]
     }
     
 }

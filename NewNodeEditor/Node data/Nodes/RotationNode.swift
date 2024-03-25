@@ -1,18 +1,18 @@
 //
-//  TextNode.swift
-//  NewNodeEditor
+//  RotationNode.swift
+//  SwiftUI-Node-Editor
 //
-//  Created by Matt Novoselov on 19/03/24.
+//  Created by Matt Novoselov on 25/03/24.
 //
 
 import SwiftUI
 
 @Observable
-class TextNode: Node {
+class RotationNode: Node {
     
     // Property of the Node
-    var value: String = "Hello World!"
-
+    var value: Angle = .zero
+    
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -26,9 +26,9 @@ class TextNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
-        self.uiPreviewElement = AnyView(TextUIElement(selectedNode: self))
-        self.uiNodeElement = AnyView(TextUINode(selectedNode: self))
-        self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self]
+        self.uiPreviewElement = AnyView(EmptyView())
+        self.uiNodeElement = AnyView(RotationUINode(selectedNode: self))
+        self.availableForLinkingNodes = []
     }
     
 }

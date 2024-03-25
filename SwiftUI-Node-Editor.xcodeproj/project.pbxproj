@@ -32,6 +32,8 @@
 		1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */; };
 		1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */; };
 		1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */; };
+		1AE52EF92BB1D3AC00EF64AC /* RotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */; };
+		1AE52EFB2BB1D41B00EF64AC /* RotationUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityUINode.swift; sourceTree = "<group>"; };
 		1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathStatic.swift; sourceTree = "<group>"; };
 		1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathInteractable.swift; sourceTree = "<group>"; };
+		1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationNode.swift; sourceTree = "<group>"; };
+		1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationUINode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				1ACFB9BD2BAA1BF700223133 /* ImageNode.swift */,
 				1ACFB9AE2BAA191B00223133 /* OpacityNode.swift */,
 				1ACFB9B02BAA192400223133 /* ColorNode.swift */,
+				1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				1ACFB9C62BAA328000223133 /* ImageUINode.swift */,
 				1A4E7D6E2BAD6CB30081EC12 /* ColorUINode */,
 				1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */,
+				1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				1ACFB9AD2BAA191200223133 /* TextNode.swift in Sources */,
 				1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */,
 				1ACFB9C32BAA1E3100223133 /* BaseUINode.swift in Sources */,
+				1AE52EF92BB1D3AC00EF64AC /* RotationNode.swift in Sources */,
 				1ACFB9C52BAA259700223133 /* TextUINode.swift in Sources */,
 				1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */,
 				1ACFB9B12BAA192400223133 /* ColorNode.swift in Sources */,
@@ -287,6 +294,7 @@
 				1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */,
 				1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */,
 				1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */,
+				1AE52EFB2BB1D41B00EF64AC /* RotationUINode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

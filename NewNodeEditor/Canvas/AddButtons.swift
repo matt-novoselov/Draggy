@@ -33,6 +33,10 @@ struct AddButtons: View {
                 Button("Add opacity node") {
                     addNode(OpacityNode.self)
                 }
+                
+                Button("Add rotation node") {
+                    addNode(RotationNode.self)
+                }
             }
             .buttonStyle(BorderedProminentButtonStyle())
         }
