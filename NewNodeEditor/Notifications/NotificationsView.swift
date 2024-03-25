@@ -20,21 +20,24 @@ struct NotificationsView: View {
             
             ZStack{
                 ForEach(notificationsData.displayed.indices, id: \.self) { index in
-
-                    NotificationsBlob(text: notificationsData.displayed[index])
-                        .transition(.move(edge: .bottom).combined(with: .blurReplace))
-                        .onAppear(){
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                                withAnimation{
-                                    notificationsData.displayed.removeAll()
+                    let notification = notificationsData.displayed[index]
+                    
+                    if notification.isShowing {
+                        NotificationsBlob(text: notification.text)
+                            .transition(.move(edge: .bottom).combined(with: .blurReplace))
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                    withAnimation {
+                                        notificationsData.displayed[index].isShowing = false
+                                    }
                                 }
                             }
-                        }
-                    
+                    }
                 }
             }
+            
         }
-
+        
     }
 }
 

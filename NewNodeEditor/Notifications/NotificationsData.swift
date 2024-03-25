@@ -9,11 +9,18 @@ import SwiftUI
 
 @Observable
 class NotificationsData {
-    var displayed: [String] = []
+    struct NotificationItem: Identifiable {
+        let id = UUID()
+        let text: String
+        var isShowing: Bool = true
+    }
     
-    func add(_ text: String){
-        withAnimation{
-            displayed.append(text)
+    var displayed: [NotificationItem] = []
+    
+    func add(_ text: String) {
+        withAnimation {
+            let newItem = NotificationItem(text: text)
+            displayed.append(newItem)
         }
     }
 }
