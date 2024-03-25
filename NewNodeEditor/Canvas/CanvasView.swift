@@ -21,7 +21,11 @@ struct CanvasView: View {
         
         ZStack{
             ForEach(nodeData.nodes){ node in
-                BaseUINode(selectedNode: node, customOverlay: AnyView(createUINode(node: node)), maxZIndex: $maxZIndex)
+                BaseUINode(
+                    selectedNode: node,
+                    customOverlay: AnyView(node.uiNodeElement),
+                    maxZIndex: $maxZIndex
+                )
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -38,22 +42,6 @@ struct CanvasView: View {
             }
         }
 
-    }
-    
-    // MARK:
-    func createUINode(node: Node) -> some View {
-        switch node {
-        case let textNode as TextNode:
-            return AnyView(TextUINode(selectedNode: textNode))
-        case let imageNode as ImageNode:
-            return AnyView(ImageUINode(selectedNode: imageNode))
-        case let colorNode as ColorNode:
-            return AnyView(ColorUINode(selectedNode: colorNode))
-        case let opacityNode as OpacityNode:
-            return AnyView(OpacityUINode(selectedNode: opacityNode))
-        default:
-            return AnyView(EmptyView())
-        }
     }
     
 }

@@ -28,6 +28,8 @@ protocol NodeObject: Identifiable, AnyObject {
     var position: CGPoint { get set }
     var linkedNodes: [Node] { get set }
     var availableForLinkingNodes: [Node.Type] { get }
+    var uiNodeElement: any View {get}
+    var uiPreviewElement: any View {get}
 }
 
 @Observable
@@ -36,14 +38,20 @@ class Node: NodeObject {
     var position: CGPoint
     var linkedNodes: [Node] = []
     var availableForLinkingNodes: [Node.Type]
+    var uiNodeElement: any View = AnyView(EmptyView())
+    var uiPreviewElement: any View = AnyView(EmptyView())
     
     // MARK:
     required init(
         position: CGPoint = .zero,
-        availableForLinkingNodes: [Node.Type] = []
+        availableForLinkingNodes: [Node.Type] = [],
+        uiNodeElement: any View = AnyView(EmptyView()),
+        uiPreviewElement: any View = AnyView(EmptyView())
     ) {
         self.position = position
         self.availableForLinkingNodes = availableForLinkingNodes
+        self.uiNodeElement = uiNodeElement
+        self.uiPreviewElement = uiPreviewElement
     }
 }
 
