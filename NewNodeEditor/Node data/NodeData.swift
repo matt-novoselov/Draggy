@@ -52,31 +52,48 @@ class Node: NodeObject {
         self.uiNodeElement = uiNodeElement
         self.uiPreviewElement = uiPreviewElement
     }
+    
+    func addLinkedNode(_ node: Node) {
+        withAnimation {
+            linkedNodes.append(node)
+        }
+    }
+    
+    func replaceLinkedNode(_ node: Node, existingIndex: Int) {
+        withAnimation {
+            linkedNodes[existingIndex] = node
+        }
+    }
 }
 
 extension Node {
 
     func addLinkedNode(_ node: Node, notificationsData: NotificationsData) {
+        // Chek Node is not itself
         guard node.id != self.id else {
             return
         }
         
+        // Check if Node of the type is not allowed for linking
         guard availableForLinkingNodes.contains(where: { $0 == type(of: node) }) else {
             notificationsData.add("Node of type \(type(of: node)) is not allowed for linking")
             return
         }
         
+        // Add new Node
         guard let existingIndex = linkedNodes.firstIndex(where: { type(of: $0) == type(of: node) }) else {
-            linkedNodes.append(node)
+            addLinkedNode(node)
             return
         }
         
+        // Error: Can't replace Node
         guard type(of: node) == type(of: linkedNodes[existingIndex]) else {
             notificationsData.add("Cannot replace node: Types mismatch")
             return
         }
         
-        linkedNodes[existingIndex] = node
+        // Replace node
+        replaceLinkedNode(node, existingIndex: existingIndex)
     }
 }
 
