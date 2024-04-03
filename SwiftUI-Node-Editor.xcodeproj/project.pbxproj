@@ -31,6 +31,8 @@
 		1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */; };
 		1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */; };
 		1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */; };
+		1AD88EC72BBD638B0028890E /* OpacitySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD88EC62BBD638B0028890E /* OpacitySlider.swift */; };
+		1AD88EC92BBD6D7F0028890E /* RotationDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD88EC82BBD6D7F0028890E /* RotationDial.swift */; };
 		1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */; };
 		1AE52EF92BB1D3AC00EF64AC /* RotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */; };
 		1AE52EFB2BB1D41B00EF64AC /* RotationUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */; };
@@ -62,6 +64,8 @@
 		1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUINode.swift; sourceTree = "<group>"; };
 		1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityUINode.swift; sourceTree = "<group>"; };
 		1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathStatic.swift; sourceTree = "<group>"; };
+		1AD88EC62BBD638B0028890E /* OpacitySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacitySlider.swift; sourceTree = "<group>"; };
+		1AD88EC82BBD6D7F0028890E /* RotationDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationDial.swift; sourceTree = "<group>"; };
 		1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathInteractable.swift; sourceTree = "<group>"; };
 		1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationNode.swift; sourceTree = "<group>"; };
 		1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationUINode.swift; sourceTree = "<group>"; };
@@ -87,13 +91,13 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		1A4E7D6E2BAD6CB30081EC12 /* ColorUINode */ = {
+		1A4E7D6E2BAD6CB30081EC12 /* ColorNode */ = {
 			isa = PBXGroup;
 			children = (
 				1ACFB9C82BAA34AF00223133 /* ColorUINode.swift */,
 				1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */,
 			);
-			path = ColorUINode;
+			path = ColorNode;
 			sourceTree = "<group>";
 		};
 		1ACFB9892BA9AFB200223133 = {
@@ -193,11 +197,29 @@
 			children = (
 				1ACFB9C42BAA259700223133 /* TextUINode.swift */,
 				1ACFB9C62BAA328000223133 /* ImageUINode.swift */,
-				1A4E7D6E2BAD6CB30081EC12 /* ColorUINode */,
-				1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */,
-				1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */,
+				1A4E7D6E2BAD6CB30081EC12 /* ColorNode */,
+				1AD88EC52BBD63700028890E /* OpacityNode */,
+				1AD88ECA2BBD6DB40028890E /* RotationNode */,
 			);
 			path = Nodes;
+			sourceTree = "<group>";
+		};
+		1AD88EC52BBD63700028890E /* OpacityNode */ = {
+			isa = PBXGroup;
+			children = (
+				1ACFB9CA2BAA34B800223133 /* OpacityUINode.swift */,
+				1AD88EC62BBD638B0028890E /* OpacitySlider.swift */,
+			);
+			path = OpacityNode;
+			sourceTree = "<group>";
+		};
+		1AD88ECA2BBD6DB40028890E /* RotationNode */ = {
+			isa = PBXGroup;
+			children = (
+				1AD88EC82BBD6D7F0028890E /* RotationDial.swift */,
+				1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */,
+			);
+			path = RotationNode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +293,7 @@
 			files = (
 				1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */,
 				1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */,
+				1AD88EC72BBD638B0028890E /* OpacitySlider.swift in Sources */,
 				1ACFB9AA2BA9BC2400223133 /* TextUIElement.swift in Sources */,
 				1ACFB9C02BAA1C8F00223133 /* ImageUIElement.swift in Sources */,
 				1ACFB9B62BAA1A2300223133 /* PreviewView.swift in Sources */,
@@ -279,6 +302,7 @@
 				1ACFB9C72BAA328000223133 /* ImageUINode.swift in Sources */,
 				1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */,
 				1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */,
+				1AD88EC92BBD6D7F0028890E /* RotationDial.swift in Sources */,
 				1ACFB9AD2BAA191200223133 /* TextNode.swift in Sources */,
 				1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */,
 				1ACFB9C32BAA1E3100223133 /* BaseUINode.swift in Sources */,

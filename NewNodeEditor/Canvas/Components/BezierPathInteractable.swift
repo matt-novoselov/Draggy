@@ -30,26 +30,27 @@ struct BezierPathInteractable: View {
     
     @State var lastCheckedNodeID: UUID = .init()
     
-    var body: some View {
+    var body: some View {        
         ZStack {
             Path { (path) in
                 path.move(to: startPoint)
                 path.addCurve(to: endPoint, control1: controlPoint1, control2: controlPoint2)
             }
             .strokedPath(StrokeStyle(lineWidth: 9, lineCap: .round, lineJoin: .round))
-            .foregroundColor(.green)
+            .foregroundStyle(Color.accentColor)
+
             
             // Circle 1
             Circle()
                 .frame(width: 32, height: 32)
                 .position(startPoint)
-                .foregroundColor(.green)
+                .foregroundColor(.accentColor)
             
             // Circle 2
             Circle()
                 .frame(width: 32, height: 32)
                 .position(endPoint)
-                .foregroundColor(.blue)
+                .foregroundColor(.nodeConnectionDark)
                 .gesture(DragGesture()
                     .onChanged { (value) in
                         self.endPoint = CGPoint(x: value.location.x, y: value.location.y)

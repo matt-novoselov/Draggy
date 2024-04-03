@@ -30,8 +30,13 @@ struct BaseUINode: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(.black, lineWidth: 5)
-                .background(Color.white.cornerRadius(cornerRadius))
+                .stroke(.nodeStroke, lineWidth: 8)
+                .background{
+                    Color.nodeBackground
+                        .blur(radius: 10)
+                        .opacity(0.85)
+                }
+                .cornerRadius(cornerRadius)
                 .shadow(color: .black.opacity(isBeingDragged ? 0.2 : 0), radius: 15)
             
             customOverlay

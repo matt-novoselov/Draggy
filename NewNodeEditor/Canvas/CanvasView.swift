@@ -29,9 +29,14 @@ struct CanvasView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.gray)
-        .overlay {
+        .background {
             LinkingView()
+        }
+        .background{
+            Image(.gridBackground)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
         }
         .overlay{
             GeometryReader{ proxy in

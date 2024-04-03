@@ -50,9 +50,21 @@ struct NotificationsBlob: View {
             .foregroundStyle(.white)
             .fontWeight(.medium)
             .padding()
-            .background(.black.opacity(0.75))
-            .cornerRadius(50)
-            .shadow(color: .white, radius: 10)
+            .background{
+//                Color.nodeBackground
+//                    .blur(radius: 10)
+//                    .opacity(0.85)
+                
+                RoundedRectangle(cornerRadius: 50)
+                    .stroke(.nodeStroke, lineWidth: 4)
+                    .background{
+                        Color.nodeBackground
+                            .blur(radius: 10)
+                            .opacity(0.85)
+                    }
+            }
+//            .stroke(.nodeStroke, lineWidth: 8)
+//            .cornerRadius(50)
         
     }
 }

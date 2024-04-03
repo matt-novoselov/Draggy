@@ -13,15 +13,42 @@ struct PreviewView: View {
     private var nodeData: NodeData
     
     var body: some View {
-
-        VStack{
-            ForEach(nodeData.nodes) { node in
-                AnyView(node.uiPreviewElement)
-            }
+        
+        ZStack{
+            
+            Image(.iphoneBezel)
+                .resizable()
+                .scaledToFit()
+                .overlay{
+                    Image(.iphoneIsland)
+                        .resizable()
+                        .scaledToFit()
+                }
+                .background{
+                    VStack{
+                        ForEach(nodeData.nodes) { node in
+                            AnyView(node.uiPreviewElement)
+                        }
+                    }
+                    .padding()
+                    .padding(.top)
+                }
+                .background{
+                    Color.white
+                        .mask{
+                            Image(.iphoneBackground)
+                                .resizable()
+                                .scaledToFit()
+                                .padding(.all, 1)
+                        }
+                }
+                .padding()
+            
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.nodeBackground)
         
     }
-
 }
 
 #Preview {

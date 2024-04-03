@@ -13,16 +13,15 @@ struct ContentView: View {
         
         NavigationSplitView {
             PreviewView()
-        } 
+        }
         detail: {
-            ZStack(alignment: .top){
-                CanvasView()
-                    .overlay{
-                        NotificationsView()
-                    }
-                
-                AddButtons()
-            }
+            CanvasView()
+                .overlay{
+                    NotificationsView()
+                }
+                .toolbar{
+                    AddButtons()
+                }
         }
 
     }

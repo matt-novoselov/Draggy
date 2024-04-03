@@ -14,10 +14,11 @@ struct RotationUINode: View {
     
     var body: some View {
         
-        VStack{
-            Text("\(Int(degreesProxy))°")
+        ZStack{
+            RotatingDial(indicatorDiameter: 25, angle: $degreesProxy)
             
-            Slider(value: $degreesProxy, in: 0...270, step: 90)
+            Text("\(Int(degreesProxy))°")
+                .fontWeight(.bold)
         }
         .onChange(of: degreesProxy){
             withAnimation{

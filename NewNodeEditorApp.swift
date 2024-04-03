@@ -16,10 +16,12 @@ struct NewNodeEditorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .statusBarHidden()
+                .preferredColorScheme(.dark)
+                .persistentSystemOverlays(.hidden)
                 .environment(nodeData)
                 .environment(canvasData)
                 .environment(notificationsData)
-                .preferredColorScheme(.light)
         }
     }
 }

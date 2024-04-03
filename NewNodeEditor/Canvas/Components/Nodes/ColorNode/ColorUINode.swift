@@ -22,7 +22,8 @@ struct ColorUINode: View {
         }
         .background(
             ColorPicker("", selection: $selectedNode.value, supportsOpacity: false)
-                .labelsHidden().opacity(0)
+                .labelsHidden()
+                .opacity(0)
         )
 
     }

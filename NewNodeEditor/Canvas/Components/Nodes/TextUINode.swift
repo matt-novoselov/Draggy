@@ -13,6 +13,8 @@ struct TextUINode: View {
     var body: some View {
         @Bindable var selectedNode = selectedNode
         
-        TextField("Input Text", text: $selectedNode.value)
+        TextField("Enter some text here", text: $selectedNode.value, axis: .vertical)
+            .fontWeight(.bold)
+            .multilineTextAlignment(.center)
     }
 }

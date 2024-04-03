@@ -16,29 +16,43 @@ struct AddButtons: View {
     private var canvasData: CanvasData
     
     var body: some View {
-        HStack {
+        
+        Menu {
             Group{
-                Button("Add text node") {
+                Button {
                     addNode(TextNode.self)
+                } label: {
+                    Label("Text", systemImage: "text.alignleft")
                 }
                 
-                Button("Add image node") {
+                Button {
                     addNode(ImageNode.self)
+                } label: {
+                    Label("Image", systemImage: "photo.fill")
                 }
                 
-                Button("Add color node") {
+                Button {
                     addNode(ColorNode.self)
+                } label: {
+                    Label("Color", systemImage: "circle.hexagongrid.fill")
                 }
                 
-                Button("Add opacity node") {
+                Button {
                     addNode(OpacityNode.self)
+                } label: {
+                    Label("Opacity", systemImage: "rectangle.checkered")
                 }
                 
-                Button("Add rotation node") {
+                Button {
                     addNode(RotationNode.self)
+                } label: {
+                    Label("Rotation", systemImage: "arrow.clockwise")
                 }
             }
             .buttonStyle(BorderedProminentButtonStyle())
+            
+        } label: {
+            Image(systemName: "plus.circle")
         }
     }
     
