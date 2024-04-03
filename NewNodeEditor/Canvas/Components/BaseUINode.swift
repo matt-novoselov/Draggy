@@ -23,8 +23,7 @@ struct BaseUINode: View {
     
     @Binding var maxZIndex: Double
     @State private var selfZIndex: Double = 0
-    @State private var showingAlert = false
-    
+
     @GestureState private var dragOffset = CGSize.zero
     @State private var position: CGPoint = .zero
     
@@ -45,7 +44,9 @@ struct BaseUINode: View {
         .frame(width: 200, height: 200)
         .contextMenu{
             Button("Delete") {
-                showingAlert=true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
+                    nodeData.deleteNode(selectedNode)
+                }
             }
         }
         .zIndex(isBeingDragged ? 10000.0 : selfZIndex)
@@ -82,17 +83,6 @@ struct BaseUINode: View {
         .onAppear(){
             self.position = selectedNode.position
             self.selfZIndex = maxZIndex + 1
-        }
-        .alert(isPresented: $showingAlert) {
-            Alert(
-                title: Text("Do you want to delete this node?"),
-                message: Text("You can't undo this action."),
-                primaryButton: .cancel(),
-                secondaryButton: .destructive(
-                    Text("Delete"),
-                    action: { nodeData.deleteNode(selectedNode) }
-                )
-            )
         }
     }
     
