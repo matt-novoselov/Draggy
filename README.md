@@ -2,6 +2,6 @@
 
 An app for visual scripting in SwiftUI using nodes
 
-![](https://github.com/matt-novoselov/SwiftNode/blob/9ec8e0e68a7f5383850438f6c4531ac0b39f74d9/poster.png)
+![](https://github.com/matt-novoselov/SwiftNode/blob/aa63f1831325d69ec2bd49442a82655f0993fc76/poster.png)
 
 Developed with ❤️ by Matt Novoselov
