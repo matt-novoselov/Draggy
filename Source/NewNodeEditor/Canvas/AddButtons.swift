@@ -48,6 +48,12 @@ struct AddButtons: View {
                 } label: {
                     Label("Rotation", systemImage: "arrow.clockwise")
                 }
+                
+//                Button {
+//                    addNode(CornerRadiusNode.self)
+//                } label: {
+//                    Label("Corner Radius", systemImage: "viewfinder")
+//                }
             }
             .buttonStyle(BorderedProminentButtonStyle())
             

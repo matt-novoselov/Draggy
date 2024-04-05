@@ -26,11 +26,20 @@ struct ImageUIElement: View {
         
         return .zero
     }
+    
+    var cornerRadius: CGFloat {
+        if let test = selectedNode.parseLinkedNodes(linkedNodeType: CornerRadiusNode.self) as? CornerRadiusNode{
+            return test.value
+        }
+        
+        return 0
+    }
 
     var body: some View {
         selectedNode.value?
             .resizable()
             .scaledToFit()
+            .clipShape(.rect(cornerRadius: cornerRadius))
             .rotationEffect(Angle(degrees: rotation))
             .padding()
             .opacity(opacity)

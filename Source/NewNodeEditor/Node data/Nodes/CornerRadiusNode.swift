@@ -1,18 +1,18 @@
 //
-//  ImageNode.swift
-//  NewNodeEditor
+//  CornerRadiusNode.swift
+//  SwiftUI-Node-Editor
 //
-//  Created by Matt Novoselov on 19/03/24.
+//  Created by Matt Novoselov on 05/04/24.
 //
 
 import SwiftUI
 
 @Observable
-class ImageNode: Node {
+class CornerRadiusNode: Node {
     
     // Property of the Node
-    var value: Image? = Image("placeholder")
-    
+    var value: CGFloat = 25
+
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -26,9 +26,9 @@ class ImageNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
-        self.uiPreviewElement = AnyView(ImageUIElement(selectedNode: self))
-        self.uiNodeElement = AnyView(ImageUINode(selectedNode: self))
-        self.availableForLinkingNodes = [OpacityNode.self, RotationNode.self, CornerRadiusNode.self]
+        self.uiPreviewElement = AnyView(EmptyView())
+        self.uiNodeElement = AnyView(CornerRadiusUINode(selectedNode: self))
+        self.availableForLinkingNodes = []
     }
     
 }
