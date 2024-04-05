@@ -1,5 +1,5 @@
 //
-//  CornerRadiusUINode.swift
+//  ShadowUINode.swift
 //  SwiftUI-Node-Editor
 //
 //  Created by Matt Novoselov on 05/04/24.
@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-
-struct CornerRadiusUINode: View {
-    var selectedNode: CornerRadiusNode
+struct ShadowUINode: View {
+    var selectedNode: ShadowNode
     
     var body: some View {
         @Bindable var selectedNode = selectedNode
@@ -17,7 +16,7 @@ struct CornerRadiusUINode: View {
         VStack{
             Text("\(selectedNode.value.description)")
             
-            Slider(value: $selectedNode.value, in: 1...100, step: 1)
+            Slider(value: $selectedNode.value, in: 0...50)
         }
         
     }

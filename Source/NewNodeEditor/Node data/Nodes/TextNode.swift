@@ -28,7 +28,7 @@ class TextNode: Node {
         
         self.uiPreviewElement = AnyView(TextUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(TextUINode(selectedNode: self))
-        self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self]
+        self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self, ShadowNode.self]
     }
     
 }

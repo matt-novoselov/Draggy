@@ -21,7 +21,8 @@ struct AddButtons: View {
         (ColorNode.self, "Color", "circle.hexagongrid.fill"),
         (OpacityNode.self, "Opacity", "rectangle.checkered"),
         (RotationNode.self, "Rotation", "arrow.clockwise"),
-//        (CornerRadiusNode.self, "Corner Radius", "viewfinder")
+//        (CornerRadiusNode.self, "Corner Radius", "viewfinder"),
+//        (ShadowNode.self, "Shadow", "shadow"),
     ]
     
     var body: some View {

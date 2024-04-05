@@ -34,12 +34,21 @@ struct ImageUIElement: View {
         
         return 0
     }
+    
+    var shadowRadius: Double {
+        if let test = selectedNode.parseLinkedNodes(linkedNodeType: ShadowNode.self) as? ShadowNode{
+            return test.value
+        }
+        
+        return 0
+    }
 
     var body: some View {
         selectedNode.value?
             .resizable()
             .scaledToFit()
             .cornerRadius(cornerRadius)
+            .shadow(color: .black, radius: shadowRadius)
             .rotationEffect(Angle(degrees: rotation))
             .padding()
             .opacity(opacity)

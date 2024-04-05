@@ -14,6 +14,8 @@
 		1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8B6C2BADE3B20069A63B /* NotificationsData.swift */; };
 		1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */; };
 		1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */; };
+		1AADE2E42BC050AD0060F755 /* ShadowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE2E32BC050AD0060F755 /* ShadowNode.swift */; };
+		1AADE2E62BC050DA0060F755 /* ShadowUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */; };
 		1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7ACF12BAB474B00E09324 /* LinkingView.swift */; };
 		1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */; };
 		1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9972BA9AFB200223133 /* ContentView.swift */; };
@@ -49,6 +51,8 @@
 		1A1F8B6C2BADE3B20069A63B /* NotificationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsData.swift; sourceTree = "<group>"; };
 		1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorWellExtension.swift; sourceTree = "<group>"; };
 		1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasData.swift; sourceTree = "<group>"; };
+		1AADE2E32BC050AD0060F755 /* ShadowNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowNode.swift; sourceTree = "<group>"; };
+		1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowUINode.swift; sourceTree = "<group>"; };
 		1AB7ACF12BAB474B00E09324 /* LinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkingView.swift; sourceTree = "<group>"; };
 		1ACFB9922BA9AFB200223133 /* SwiftUI-Node-Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Node-Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNodeEditorApp.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				1ACFB9B02BAA192400223133 /* ColorNode.swift */,
 				1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */,
 				1A133EA02BC024FC00ACFBE9 /* CornerRadiusNode.swift */,
+				1AADE2E32BC050AD0060F755 /* ShadowNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				1AD88EC52BBD63700028890E /* OpacityNode */,
 				1AD88ECA2BBD6DB40028890E /* RotationNode */,
 				1A133EA22BC0257F00ACFBE9 /* CornerRadiusUINode.swift */,
+				1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */,
 				1ACFB9B12BAA192400223133 /* ColorNode.swift in Sources */,
 				1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */,
+				1AADE2E42BC050AD0060F755 /* ShadowNode.swift in Sources */,
 				1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */,
 				1ACFB9BE2BAA1BF700223133 /* ImageNode.swift in Sources */,
 				1ACFB9AF2BAA191B00223133 /* OpacityNode.swift in Sources */,
@@ -331,6 +338,7 @@
 				1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */,
 				1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */,
 				1AE52EFB2BB1D41B00EF64AC /* RotationUINode.swift in Sources */,
+				1AADE2E62BC050DA0060F755 /* ShadowUINode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

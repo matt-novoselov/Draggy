@@ -29,6 +29,9 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .statusBarHidden()
+        .preferredColorScheme(.dark)
+        .persistentSystemOverlays(.hidden)
         .environment(NodeData())
         .environment(CanvasData())
         .environment(NotificationsData())

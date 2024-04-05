@@ -38,11 +38,31 @@ struct TextUIElement: View {
         
         return .zero
     }
+    
+    var shadowRadius: Double {
+        if let test = selectedNode.parseLinkedNodes(linkedNodeType: ShadowNode.self) as? ShadowNode{
+            return test.value
+        }
+        
+        return 0
+    }
+    
+    var shadowColor: Color {
+        if let shadowNode = selectedNode.parseLinkedNodes(linkedNodeType: ShadowNode.self) as? ShadowNode{
+
+            if let test = shadowNode.parseLinkedNodes(linkedNodeType: ColorNode.self) as? ColorNode{
+                return test.value
+            }
+        }
+        
+        return .black
+    }
 
     var body: some View {
         Text(text)
             .font(.title2)
             .fontWeight(.bold)
+            .shadow(color: shadowColor, radius: shadowRadius)
             .multilineTextAlignment(.center)
             .rotationEffect(Angle(degrees: rotation))
             .foregroundColor(color)
