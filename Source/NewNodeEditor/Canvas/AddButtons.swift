@@ -15,61 +15,38 @@ struct AddButtons: View {
     @Environment(CanvasData.self)
     private var canvasData: CanvasData
     
+    private let buttons: [(Node.Type, String, String)] = [
+        (TextNode.self, "Text", "text.alignleft"),
+        (ImageNode.self, "Image", "photo.fill"),
+        (ColorNode.self, "Color", "circle.hexagongrid.fill"),
+        (OpacityNode.self, "Opacity", "rectangle.checkered"),
+        (RotationNode.self, "Rotation", "arrow.clockwise"),
+//        (CornerRadiusNode.self, "Corner Radius", "viewfinder")
+    ]
+    
     var body: some View {
-        
         Menu {
-            Group{
+            ForEach(buttons, id: \.1) { button in
                 Button {
-                    addNode(TextNode.self)
+                    addNode(button.0)
                 } label: {
-                    Label("Text", systemImage: "text.alignleft")
+                    Label(button.1, systemImage: button.2)
                 }
-                
-                Button {
-                    addNode(ImageNode.self)
-                } label: {
-                    Label("Image", systemImage: "photo.fill")
-                }
-                
-                Button {
-                    addNode(ColorNode.self)
-                } label: {
-                    Label("Color", systemImage: "circle.hexagongrid.fill")
-                }
-                
-                Button {
-                    addNode(OpacityNode.self)
-                } label: {
-                    Label("Opacity", systemImage: "rectangle.checkered")
-                }
-                
-                Button {
-                    addNode(RotationNode.self)
-                } label: {
-                    Label("Rotation", systemImage: "arrow.clockwise")
-                }
-                
-//                Button {
-//                    addNode(CornerRadiusNode.self)
-//                } label: {
-//                    Label("Corner Radius", systemImage: "viewfinder")
-//                }
+                .buttonStyle(BorderedProminentButtonStyle())
             }
-            .buttonStyle(BorderedProminentButtonStyle())
-            
         } label: {
             Image(systemName: "plus.circle")
         }
     }
     
-    func addNode(_ nodeType: Node.Type){
-        withAnimation{
-            let centerX = (canvasData.canvasGeometry?.size.width ?? 0) / 2
-            let centerY = (canvasData.canvasGeometry?.size.height ?? 0) / 2
-            
-            nodeData.nodes.append(
-                nodeType.init(position: CGPoint(x: centerX, y: centerY))
-            )
+    private func addNode(_ nodeType: Node.Type) {
+        guard let canvasGeometry = canvasData.canvasGeometry else { return }
+        
+        let centerX = canvasGeometry.size.width / 2
+        let centerY = canvasGeometry.size.height / 2
+        
+        withAnimation {
+            nodeData.nodes.append(nodeType.init(position: CGPoint(x: centerX, y: centerY)))
         }
     }
 }

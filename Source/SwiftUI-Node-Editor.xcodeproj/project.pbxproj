@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A133EA12BC024FC00ACFBE9 /* CornerRadiusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A133EA02BC024FC00ACFBE9 /* CornerRadiusNode.swift */; };
 		1A133EA32BC0257F00ACFBE9 /* CornerRadiusUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A133EA22BC0257F00ACFBE9 /* CornerRadiusUINode.swift */; };
+		1A133EA52BC0310C00ACFBE9 /* BlurMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A133EA42BC0310C00ACFBE9 /* BlurMaterial.swift */; };
 		1A1F8B6A2BADDB540069A63B /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8B692BADDB540069A63B /* NotificationsView.swift */; };
 		1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8B6C2BADE3B20069A63B /* NotificationsData.swift */; };
 		1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		1A133EA02BC024FC00ACFBE9 /* CornerRadiusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusNode.swift; sourceTree = "<group>"; };
 		1A133EA22BC0257F00ACFBE9 /* CornerRadiusUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusUINode.swift; sourceTree = "<group>"; };
+		1A133EA42BC0310C00ACFBE9 /* BlurMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurMaterial.swift; sourceTree = "<group>"; };
 		1A1F8B692BADDB540069A63B /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		1A1F8B6C2BADE3B20069A63B /* NotificationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsData.swift; sourceTree = "<group>"; };
 		1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorWellExtension.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */,
 				1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */,
 				1ACFB9CE2BAA456300223133 /* Nodes */,
+				1A133EA42BC0310C00ACFBE9 /* BlurMaterial.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				1ACFB9B42BAA1A1400223133 /* CanvasView.swift in Sources */,
 				1A1F8B6A2BADDB540069A63B /* NotificationsView.swift in Sources */,
 				1ACFB9C72BAA328000223133 /* ImageUINode.swift in Sources */,
+				1A133EA52BC0310C00ACFBE9 /* BlurMaterial.swift in Sources */,
 				1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */,
 				1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */,
 				1AD88EC92BBD6D7F0028890E /* RotationDial.swift in Sources */,

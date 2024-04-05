@@ -32,8 +32,8 @@ struct BaseUINode: View {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(.nodeStroke, lineWidth: 8)
                 .background (
-                    Color.nodeBackground.opacity(0.85)
-                    .clipShape(.rect(cornerRadius: cornerRadius))
+                    BlurView(style: .regular, color: .nodeBackground)
+                        .clipShape(.rect(cornerRadius: cornerRadius))
                 )
                 .shadow(color: .black.opacity(isBeingDragged ? 0.2 : 0), radius: 15)
             

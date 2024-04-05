@@ -37,6 +37,9 @@ struct CanvasView: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
+                .onTapGesture(count: 2, perform: {
+                    print("Expanding the menu...")
+                })
         }
         .overlay{
             GeometryReader{ proxy in

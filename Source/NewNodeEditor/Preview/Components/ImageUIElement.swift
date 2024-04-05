@@ -39,7 +39,7 @@ struct ImageUIElement: View {
         selectedNode.value?
             .resizable()
             .scaledToFit()
-            .clipShape(.rect(cornerRadius: cornerRadius))
+            .cornerRadius(cornerRadius)
             .rotationEffect(Angle(degrees: rotation))
             .padding()
             .opacity(opacity)
