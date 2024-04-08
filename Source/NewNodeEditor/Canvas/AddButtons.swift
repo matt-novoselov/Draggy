@@ -16,13 +16,13 @@ struct AddButtons: View {
     private var canvasData: CanvasData
     
     private let buttons: [(Node.Type, String, String)] = [
-        (TextNode.self, "Text", "text.alignleft"),
+        (TextNode.self, "Text", "text.word.spacing"),
         (ImageNode.self, "Image", "photo.fill"),
-        (ColorNode.self, "Color", "circle.hexagongrid.fill"),
+        (ColorNode.self, "Color", "paintpalette.fill"),
         (OpacityNode.self, "Opacity", "rectangle.checkered"),
         (RotationNode.self, "Rotation", "arrow.clockwise"),
-//        (CornerRadiusNode.self, "Corner Radius", "viewfinder"),
-//        (ShadowNode.self, "Shadow", "shadow"),
+        (CornerRadiusNode.self, "Corner Radius", "viewfinder"),
+        (ShadowNode.self, "Shadow", "shadow"),
     ]
     
     var body: some View {

@@ -14,7 +14,13 @@ struct ShadowUINode: View {
         @Bindable var selectedNode = selectedNode
         
         VStack{
-            Text("\(selectedNode.value.description)")
+            RoundedRectangle(cornerRadius: 10)
+                .fill(.white)
+                .shadow(color: .white, radius: selectedNode.value)
+                .aspectRatio(contentMode: .fit)
+                .padding()
+            
+//            Text("Shadow")
             
             Slider(value: $selectedNode.value, in: 0...50)
         }

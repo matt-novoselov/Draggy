@@ -15,9 +15,13 @@ struct CornerRadiusUINode: View {
         @Bindable var selectedNode = selectedNode
         
         VStack{
-            Text("\(selectedNode.value.description)")
+            RoundedRectangle(cornerRadius: selectedNode.value / 3)
+                .fill(.clear)
+                .stroke(.white, lineWidth: 8)
+                .aspectRatio(contentMode: .fit)
+                .padding()
             
-            Slider(value: $selectedNode.value, in: 1...100, step: 1)
+            Slider(value: $selectedNode.value, in: 0...100, step: 1)
         }
         
     }

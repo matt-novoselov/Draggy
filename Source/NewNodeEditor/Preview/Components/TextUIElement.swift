@@ -62,7 +62,7 @@ struct TextUIElement: View {
         Text(text)
             .font(.title2)
             .fontWeight(.bold)
-            .shadow(color: shadowColor, radius: shadowRadius)
+            .shadow(color: shadowColor.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
             .multilineTextAlignment(.center)
             .rotationEffect(Angle(degrees: rotation))
             .foregroundColor(color)

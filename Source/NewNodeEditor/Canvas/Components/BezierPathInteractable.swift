@@ -84,7 +84,6 @@ struct BezierPathInteractable: View {
                 
                 node.tryToLinkNode(selfNode, notificationsData: notificationsData)
                 lastCheckedNodeID = node.id
-                endPoint = startPoint
                 return
             }
         }
