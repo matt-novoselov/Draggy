@@ -44,13 +44,13 @@ struct BezierPathInteractable: View {
             Circle()
                 .frame(width: 32, height: 32)
                 .position(startPoint)
-                .foregroundColor(.accentColor)
+                .foregroundStyle(Color.accentColor)
             
             // Circle 2
             Circle()
                 .frame(width: 32, height: 32)
                 .position(endPoint)
-                .foregroundColor(.nodeConnectionDark)
+                .foregroundStyle(.nodeConnectionDark)
                 .gesture(DragGesture()
                     .onChanged { (value) in
                         self.endPoint = CGPoint(x: value.location.x, y: value.location.y)

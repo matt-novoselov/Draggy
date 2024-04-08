@@ -12,12 +12,15 @@
 		1A133EA52BC0310C00ACFBE9 /* BlurMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A133EA42BC0310C00ACFBE9 /* BlurMaterial.swift */; };
 		1A1F8B6A2BADDB540069A63B /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8B692BADDB540069A63B /* NotificationsView.swift */; };
 		1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8B6C2BADE3B20069A63B /* NotificationsData.swift */; };
+		1A3606872BC4393D00B8BBF3 /* ArcSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3606862BC4393D00B8BBF3 /* ArcSearch.swift */; };
+		1A36068A2BC43BE900B8BBF3 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3606892BC43BE900B8BBF3 /* ButtonModel.swift */; };
+		1A36068C2BC43BF400B8BBF3 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */; };
 		1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */; };
 		1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */; };
 		1AADE2E42BC050AD0060F755 /* ShadowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE2E32BC050AD0060F755 /* ShadowNode.swift */; };
 		1AADE2E62BC050DA0060F755 /* ShadowUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */; };
 		1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7ACF12BAB474B00E09324 /* LinkingView.swift */; };
-		1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */; };
+		1ACFB9962BA9AFB200223133 /* SwiftNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* SwiftNode.swift */; };
 		1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9972BA9AFB200223133 /* ContentView.swift */; };
 		1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9A32BA9B07D00223133 /* NodeData.swift */; };
 		1ACFB9AA2BA9BC2400223133 /* TextUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9A92BA9BC2400223133 /* TextUIElement.swift */; };
@@ -49,13 +52,16 @@
 		1A133EA42BC0310C00ACFBE9 /* BlurMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurMaterial.swift; sourceTree = "<group>"; };
 		1A1F8B692BADDB540069A63B /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		1A1F8B6C2BADE3B20069A63B /* NotificationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsData.swift; sourceTree = "<group>"; };
+		1A3606862BC4393D00B8BBF3 /* ArcSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcSearch.swift; sourceTree = "<group>"; };
+		1A3606892BC43BE900B8BBF3 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
+		1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorWellExtension.swift; sourceTree = "<group>"; };
 		1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasData.swift; sourceTree = "<group>"; };
 		1AADE2E32BC050AD0060F755 /* ShadowNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowNode.swift; sourceTree = "<group>"; };
 		1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowUINode.swift; sourceTree = "<group>"; };
 		1AB7ACF12BAB474B00E09324 /* LinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkingView.swift; sourceTree = "<group>"; };
-		1ACFB9922BA9AFB200223133 /* SwiftUI-Node-Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Node-Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNodeEditorApp.swift; sourceTree = "<group>"; };
+		1ACFB9922BA9AFB200223133 /* SwiftNode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACFB9952BA9AFB200223133 /* SwiftNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNode.swift; sourceTree = "<group>"; };
 		1ACFB9972BA9AFB200223133 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1ACFB9A32BA9B07D00223133 /* NodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeData.swift; sourceTree = "<group>"; };
 		1ACFB9A92BA9BC2400223133 /* TextUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUIElement.swift; sourceTree = "<group>"; };
@@ -101,6 +107,16 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		1A3606882BC43BD700B8BBF3 /* SmartSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1A3606862BC4393D00B8BBF3 /* ArcSearch.swift */,
+				1A3606892BC43BE900B8BBF3 /* ButtonModel.swift */,
+				1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */,
+			);
+			path = SmartSearch;
+			sourceTree = "<group>";
+		};
 		1A4E7D6E2BAD6CB30081EC12 /* ColorNode */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +129,10 @@
 		1ACFB9892BA9AFB200223133 = {
 			isa = PBXGroup;
 			children = (
-				1ACFB9952BA9AFB200223133 /* NewNodeEditorApp.swift */,
+				1ACFB9952BA9AFB200223133 /* SwiftNode.swift */,
 				1ACFB9BB2BAA1BA700223133 /* Assets.xcassets */,
-				1ACFB9942BA9AFB200223133 /* NewNodeEditor */,
+				1ACFB9942BA9AFB200223133 /* NodeEditor */,
+				1A3606882BC43BD700B8BBF3 /* SmartSearch */,
 				1ACFB9932BA9AFB200223133 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,12 +140,12 @@
 		1ACFB9932BA9AFB200223133 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1ACFB9922BA9AFB200223133 /* SwiftUI-Node-Editor.app */,
+				1ACFB9922BA9AFB200223133 /* SwiftNode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1ACFB9942BA9AFB200223133 /* NewNodeEditor */ = {
+		1ACFB9942BA9AFB200223133 /* NodeEditor */ = {
 			isa = PBXGroup;
 			children = (
 				1ACFB9972BA9AFB200223133 /* ContentView.swift */,
@@ -137,7 +154,7 @@
 				1ACFB9AB2BAA190000223133 /* Node data */,
 				1A1F8B6B2BADE38F0069A63B /* Notifications */,
 			);
-			path = NewNodeEditor;
+			path = NodeEditor;
 			sourceTree = "<group>";
 		};
 		1ACFB9A62BA9BC0200223133 /* Components */ = {
@@ -240,9 +257,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1ACFB9912BA9AFB200223133 /* SwiftUI-Node-Editor */ = {
+		1ACFB9912BA9AFB200223133 /* SwiftNode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "SwiftUI-Node-Editor" */;
+			buildConfigurationList = 1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "SwiftNode" */;
 			buildPhases = (
 				1ACFB98E2BA9AFB200223133 /* Sources */,
 				1ACFB98F2BA9AFB200223133 /* Frameworks */,
@@ -252,9 +269,9 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftUI-Node-Editor";
+			name = SwiftNode;
 			productName = NewNodeEditor;
-			productReference = 1ACFB9922BA9AFB200223133 /* SwiftUI-Node-Editor.app */;
+			productReference = 1ACFB9922BA9AFB200223133 /* SwiftNode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +289,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "SwiftUI-Node-Editor" */;
+			buildConfigurationList = 1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "SwiftNode" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -285,7 +302,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1ACFB9912BA9AFB200223133 /* SwiftUI-Node-Editor */,
+				1ACFB9912BA9AFB200223133 /* SwiftNode */,
 			);
 		};
 /* End PBXProject section */
@@ -313,21 +330,24 @@
 				1ACFB9C02BAA1C8F00223133 /* ImageUIElement.swift in Sources */,
 				1A133EA12BC024FC00ACFBE9 /* CornerRadiusNode.swift in Sources */,
 				1ACFB9B62BAA1A2300223133 /* PreviewView.swift in Sources */,
+				1A36068A2BC43BE900B8BBF3 /* ButtonModel.swift in Sources */,
 				1ACFB9B42BAA1A1400223133 /* CanvasView.swift in Sources */,
 				1A1F8B6A2BADDB540069A63B /* NotificationsView.swift in Sources */,
 				1ACFB9C72BAA328000223133 /* ImageUINode.swift in Sources */,
 				1A133EA52BC0310C00ACFBE9 /* BlurMaterial.swift in Sources */,
-				1ACFB9962BA9AFB200223133 /* NewNodeEditorApp.swift in Sources */,
+				1ACFB9962BA9AFB200223133 /* SwiftNode.swift in Sources */,
 				1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */,
 				1AD88EC92BBD6D7F0028890E /* RotationDial.swift in Sources */,
 				1ACFB9AD2BAA191200223133 /* TextNode.swift in Sources */,
 				1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */,
 				1ACFB9C32BAA1E3100223133 /* BaseUINode.swift in Sources */,
 				1AE52EF92BB1D3AC00EF64AC /* RotationNode.swift in Sources */,
+				1A3606872BC4393D00B8BBF3 /* ArcSearch.swift in Sources */,
 				1ACFB9C52BAA259700223133 /* TextUINode.swift in Sources */,
 				1A133EA32BC0257F00ACFBE9 /* CornerRadiusUINode.swift in Sources */,
 				1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */,
 				1ACFB9B12BAA192400223133 /* ColorNode.swift in Sources */,
+				1A36068C2BC43BF400B8BBF3 /* ButtonViewModel.swift in Sources */,
 				1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */,
 				1AADE2E42BC050AD0060F755 /* ShadowNode.swift in Sources */,
 				1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */,
@@ -537,7 +557,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "SwiftUI-Node-Editor" */ = {
+		1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "SwiftNode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ACFB99E2BA9AFB300223133 /* Debug */,
@@ -546,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "SwiftUI-Node-Editor" */ = {
+		1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "SwiftNode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ACFB9A12BA9AFB300223133 /* Debug */,

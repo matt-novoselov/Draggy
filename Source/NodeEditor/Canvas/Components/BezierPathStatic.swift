@@ -34,19 +34,19 @@ struct BezierPathStatic: View {
                 path.addCurve(to: endPoint, control1: controlPoint1, control2: controlPoint2)
             }
             .strokedPath(StrokeStyle(lineWidth: 9, lineCap: .round, lineJoin: .round))
-            .foregroundColor(.accentColor)
+            .foregroundStyle(Color.accentColor)
             
             // Circle 1
             Circle()
                 .frame(width: 32, height: 32)
                 .position(startPoint)
-                .foregroundColor(.nodeConnectionDark)
+                .foregroundStyle(.nodeConnectionDark)
             
             // Circle 2
             Circle()
                 .frame(width: 32, height: 32)
                 .position(endPoint)
-                .foregroundColor(.accentColor)
+                .foregroundStyle(Color.accentColor)
         }
         .allowsHitTesting(false)
     }
