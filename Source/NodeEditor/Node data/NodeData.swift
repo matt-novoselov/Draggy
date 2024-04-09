@@ -27,6 +27,7 @@ protocol NodeObject: Identifiable, AnyObject {
     var id: UUID { get }
     var position: CGPoint { get set }
     var linkedNodes: [Node] { get set }
+    var linkedToNodes: [Node] { get set }
     var availableForLinkingNodes: [Node.Type] { get }
     var uiNodeElement: any View {get}
     var uiPreviewElement: any View {get}
@@ -37,6 +38,7 @@ class Node: NodeObject {
     var id: UUID = .init()
     var position: CGPoint
     var linkedNodes: [Node] = []
+    var linkedToNodes: [Node] = []
     var availableForLinkingNodes: [Node.Type]
     var uiNodeElement: any View = AnyView(EmptyView())
     var uiPreviewElement: any View = AnyView(EmptyView())
@@ -56,9 +58,8 @@ class Node: NodeObject {
     func addLinkedNode(_ node: Node) {
         withAnimation {
             linkedNodes.append(node)
+            node.linkedToNodes.append(self)
         }
-        
-        print(dump(self.linkedNodes))
     }
     
     func replaceLinkedNode(_ node: Node, existingIndex: Int) {

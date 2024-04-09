@@ -29,7 +29,13 @@ struct PreviewView: View {
                 .background{
                     VStack{
                         ForEach(nodeData.nodes) { node in
-                            AnyView(node.uiPreviewElement)
+                            
+                            // MARK: 
+                            let containsButtonNode = node.linkedToNodes.contains { $0 is ButtonNode }
+
+                            if !containsButtonNode {
+                                AnyView(node.uiPreviewElement)
+                            }
                         }
                     }
                     .padding()
