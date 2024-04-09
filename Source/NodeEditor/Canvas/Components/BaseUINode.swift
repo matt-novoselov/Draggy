@@ -39,6 +39,7 @@ struct BaseUINode: View {
             
             customOverlay
                 .padding(.all, 35)
+                .clipped()
         }
         .overlay{
             BezierPathInteractable(selfNode: selectedNode)
