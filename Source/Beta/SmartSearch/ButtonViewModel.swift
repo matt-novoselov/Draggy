@@ -15,7 +15,8 @@ class ButtonListViewModel{
         ButtonItem(nodeType: OpacityNode.self, title: "Opacity", iconName: "rectangle.checkered", keywords: ["opacity", "transparent", "transparency", "opaque", "fade", "see-through"]),
         ButtonItem(nodeType: RotationNode.self, title: "Rotation", iconName: "arrow.clockwise", keywords: ["rotation", "clockwise", "spin"]),
         ButtonItem(nodeType: CornerRadiusNode.self, title: "Corner Radius", iconName: "viewfinder", keywords: ["corner", "radius", "edges", "bevel", "rounded"]),
-        ButtonItem(nodeType: ShadowNode.self, title: "Shadow", iconName: "shadow", keywords: ["shadow", "shade", "silhouette", "darkness"])
+        ButtonItem(nodeType: ShadowNode.self, title: "Shadow", iconName: "shadow", keywords: ["shadow", "shade", "silhouette", "darkness"]),
+//        ButtonItem(nodeType: SFSymbolNode.self, title: "Symbol", iconName: "star.fill", keywords: ["symbol", "icon", "emblem", "sign", "mark", "figurine"]),
     ]
     
     // Function to filter buttons based on search text

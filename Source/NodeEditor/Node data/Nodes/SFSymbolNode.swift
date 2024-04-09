@@ -1,18 +1,18 @@
 //
-//  RotationNode.swift
-//  SwiftUI-Node-Editor
+//  SFSymbolNode.swift
+//  SwiftNode
 //
-//  Created by Matt Novoselov on 25/03/24.
+//  Created by Matt Novoselov on 09/04/24.
 //
 
 import SwiftUI
 
 @Observable
-class RotationNode: Node {
+class SFSymbolNode: Node {
     
     // Property of the Node
-    var value: Angle = .degrees(180)
-    
+    var value: String = "star.fill"
+
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -26,9 +26,9 @@ class RotationNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
-        self.uiPreviewElement = AnyView(EmptyView())
-        self.uiNodeElement = AnyView(RotationUINode(selectedNode: self))
-        self.availableForLinkingNodes = []
+        self.uiPreviewElement = AnyView(SFSymbolUIElement(selectedNode: self))
+        self.uiNodeElement = AnyView(SFSymbolUINode(selectedNode: self))
+        self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self, ShadowNode.self]
     }
     
 }

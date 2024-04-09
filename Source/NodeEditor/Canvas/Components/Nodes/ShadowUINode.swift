@@ -20,8 +20,6 @@ struct ShadowUINode: View {
                 .aspectRatio(contentMode: .fit)
                 .padding()
             
-//            Text("Shadow")
-            
             Slider(value: $selectedNode.value, in: 0...50)
         }
         

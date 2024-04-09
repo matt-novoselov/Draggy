@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArcSearch: View {
+struct SmartSearch: View {
     
     let buttonListViewModel = ButtonListViewModel()
     @State private var searchText = ""
@@ -56,5 +56,5 @@ struct singleSearchButton: View {
 }
 
 #Preview {
-    ArcSearch()
+    SmartSearch()
 }

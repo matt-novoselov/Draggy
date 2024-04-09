@@ -15,23 +15,15 @@ struct AddButtons: View {
     @Environment(CanvasData.self)
     private var canvasData: CanvasData
     
-    private let buttons: [(Node.Type, String, String)] = [
-        (TextNode.self, "Text", "text.word.spacing"),
-        (ImageNode.self, "Image", "photo.fill"),
-        (ColorNode.self, "Color", "paintpalette.fill"),
-        (OpacityNode.self, "Opacity", "rectangle.checkered"),
-        (RotationNode.self, "Rotation", "arrow.clockwise"),
-        (CornerRadiusNode.self, "Corner Radius", "viewfinder"),
-        (ShadowNode.self, "Shadow", "shadow"),
-    ]
+    let buttonListViewModel = ButtonListViewModel().buttons
     
     var body: some View {
         Menu {
-            ForEach(buttons, id: \.1) { button in
+            ForEach(buttonListViewModel) { button in
                 Button {
-                    addNode(button.0)
+                    addNode(button.nodeType)
                 } label: {
-                    Label(button.1, systemImage: button.2)
+                    Label(button.title, systemImage: button.iconName)
                 }
                 .buttonStyle(BorderedProminentButtonStyle())
             }

@@ -34,8 +34,8 @@ struct RotatingDial: View {
     var showProgress = true
     
     //MARK: - Internal State
-    @State var progress: Double = 0
     @Binding var angle: Double
+    @State var progress: Double = .zero
     @State var currentQuadrant:Quadrant = .one
     @State var upcomingQuadrant:Quadrant = .one
     
@@ -51,6 +51,9 @@ struct RotatingDial: View {
                 angleIndicator
             }
             Spacer()
+        }
+        .onAppear(){
+            progress = angle / 360.0
         }
     }
     
@@ -185,7 +188,9 @@ extension RotatingDial {
         let roundedAngle = (normalizedAngle / 90.0).rounded() * 90.0
 
         // Update the angle
-        self.angle = roundedAngle
+        withAnimation{
+            self.angle = roundedAngle
+        }
         
         withAnimation{
             self.progress = roundedAngle / 360.0

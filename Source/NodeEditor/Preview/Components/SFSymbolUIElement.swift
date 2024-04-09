@@ -1,15 +1,15 @@
 //
-//  TextElement.swift
-//  NewNodeEditor
+//  SFSymbol.swift
+//  SwiftNode
 //
-//  Created by Matt Novoselov on 19/03/24.
+//  Created by Matt Novoselov on 09/04/24.
 //
 
 import SwiftUI
 
-struct TextUIElement: View {
+struct SFSymbolUIElement: View {
     
-    var selectedNode: TextNode
+    var selectedNode: SFSymbolNode
     
     var color: Color {
         if let test = selectedNode.parseLinkedNodes(linkedNodeType: ColorNode.self) as? ColorNode{
@@ -27,7 +27,7 @@ struct TextUIElement: View {
         return 1.0
     }
     
-    var text: String {
+    var iconName: String {
         selectedNode.value
     }
     
@@ -59,11 +59,8 @@ struct TextUIElement: View {
     }
 
     var body: some View {
-        Text(text)
-            .font(.title2)
-            .fontWeight(.bold)
+        Image(systemName: iconName)
             .shadow(color: shadowColor.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
-            .multilineTextAlignment(.center)
             .rotationEffect(Angle(degrees: rotation))
             .foregroundStyle(color)
             .opacity(opacity)

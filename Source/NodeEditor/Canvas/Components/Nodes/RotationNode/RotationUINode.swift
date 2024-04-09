@@ -10,21 +10,18 @@ import SwiftUI
 struct RotationUINode: View {
     var selectedNode: RotationNode
     
-    @State var degreesProxy: Double = 0
-    
     var body: some View {
         
-        ZStack{
-            RotatingDial(indicatorDiameter: 25, angle: $degreesProxy)
-            
-            Text("\(Int(degreesProxy))°")
-                .fontWeight(.bold)
-        }
-        .onChange(of: degreesProxy){
-            withAnimation{
-                selectedNode.value.degrees = degreesProxy
-            }
-        }
+        @Bindable var selectedNode = selectedNode
         
+        ZStack{
+            RotatingDial(indicatorDiameter: 25, angle: $selectedNode.value.degrees)
+            
+            Text("\(Int(selectedNode.value.degrees))°")
+                .fontWeight(.bold)
+                .contentTransition(.numericText())
+//                .animation(.none)
+        }
     }
 }
+
