@@ -60,6 +60,8 @@ struct SFSymbolUIElement: View {
 
     var body: some View {
         Image(systemName: iconName)
+            .font(.title2)
+            .fontWeight(.bold)
             .shadow(color: shadowColor.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
             .rotationEffect(Angle(degrees: rotation))
             .foregroundStyle(color)
