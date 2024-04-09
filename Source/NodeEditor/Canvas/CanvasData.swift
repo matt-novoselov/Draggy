@@ -10,4 +10,5 @@ import SwiftUI
 @Observable
 class CanvasData {
     var canvasGeometry: GeometryProxy?
+    var isMenuExpanded: Bool = false
 }

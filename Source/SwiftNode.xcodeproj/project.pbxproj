@@ -144,14 +144,6 @@
 			path = ColorNode;
 			sourceTree = "<group>";
 		};
-		1A7A14482BC5363A00BB8860 /* Beta */ = {
-			isa = PBXGroup;
-			children = (
-				1A3606882BC43BD700B8BBF3 /* SmartSearch */,
-			);
-			path = Beta;
-			sourceTree = "<group>";
-		};
 		1A7A14492BC539A900BB8860 /* SFSymbolNode */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +161,6 @@
 				1ACFB9952BA9AFB200223133 /* SwiftNode.swift */,
 				1ACFB9BB2BAA1BA700223133 /* Assets.xcassets */,
 				1ACFB9942BA9AFB200223133 /* NodeEditor */,
-				1A7A14482BC5363A00BB8860 /* Beta */,
 				1ACFB9932BA9AFB200223133 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -233,6 +224,7 @@
 		1ACFB9B72BAA1A2800223133 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				1A3606882BC43BD700B8BBF3 /* SmartSearch */,
 				1ACFB9B92BAA1B5F00223133 /* AddButtons.swift */,
 				1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */,
 				1ACFB9B32BAA1A1400223133 /* CanvasView.swift */,

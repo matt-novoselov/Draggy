@@ -25,6 +25,8 @@ struct CanvasView: View {
     
     var body: some View {
         
+        @Bindable var canvasData = canvasData
+        
         ZStack{
             ForEach(nodeData.nodes){ node in
                 BaseUINode(
@@ -55,7 +57,7 @@ struct CanvasView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
                 .onTapGesture(count: 2, perform: {
-                    print("Expanding the menu...")
+                    canvasData.isMenuExpanded = true
                 })
         }
         .overlay{
@@ -66,6 +68,9 @@ struct CanvasView: View {
                     }
             }
         }
+        .sheet(isPresented: $canvasData.isMenuExpanded, content: {
+            SmartSearch()
+        })
 
     }
     
