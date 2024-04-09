@@ -10,17 +10,6 @@ import SwiftUI
 @Observable
 class NodeData {
     var nodes: [Node] = []
-    
-    func deleteNode(_ node: Node) {
-        withAnimation {
-            nodes.removeAll { $0.id == node.id }
-            
-            // Remove the deleted node from the linkedNodes arrays of other nodes
-            for selectedNode in nodes {
-                selectedNode.linkedNodes.removeAll { $0.id == node.id }
-            }
-        }
-    }
 }
 
 protocol NodeObject: Identifiable, AnyObject {
@@ -108,5 +97,34 @@ extension Node {
             }
         }
         return nil
+    }
+}
+
+extension NodeData {
+    func addNode(_ nodeType: Node.Type, position: CGPoint) {
+        withAnimation {
+            nodes.append(nodeType.init(position: position))
+        }
+    }
+}
+
+extension NodeData {
+    func deleteNode(_ node: Node) {
+        withAnimation {
+            nodes.removeAll { $0.id == node.id }
+            
+            // Remove the deleted node from the linkedNodes arrays of other nodes
+            for selectedNode in nodes {
+                selectedNode.linkedNodes.removeAll { $0.id == node.id }
+            }
+        }
+    }
+}
+
+extension NodeData {
+    func duplicateNode(_ node: Node) {
+        let duplicatedNodePosition = CGPoint(x: node.position.x + 50, y: node.position.y - 50)
+        
+        addNode(type(of: node), position: duplicatedNodePosition)
     }
 }

@@ -47,11 +47,19 @@ struct BaseUINode: View {
         }
         .frame(width: 200, height: 200)
         .contextMenu{
-            Button("Delete") {
+            
+            Button("Duplicate", systemImage: "rectangle.portrait.on.rectangle.portrait") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
+                    nodeData.duplicateNode(selectedNode)
+                }
+            }
+            
+            Button("Delete", systemImage: "trash", role: .destructive) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
                     nodeData.deleteNode(selectedNode)
                 }
             }
+            
         }
         .zIndex(isBeingDragged ? 10000.0 : selfZIndex)
         .scaleEffect(isBeingDragged ? 1.1 : 1.0)

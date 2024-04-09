@@ -55,9 +55,7 @@ struct SingleSearchButton: View {
         let centerX = canvasGeometry.size.width / 2
         let centerY = canvasGeometry.size.height / 2
         
-        withAnimation {
-            nodeData.nodes.append(nodeType.init(position: CGPoint(x: centerX, y: centerY)))
-        }
+        nodeData.addNode(nodeType, position: CGPoint(x: centerX, y: centerY))
         
         dismiss()
     }
