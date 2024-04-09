@@ -44,7 +44,7 @@ struct ButtonUIElement: View {
             return test.value
         }
      
-        return .accent
+        return .blue
     }
     
     var opacity: Double {

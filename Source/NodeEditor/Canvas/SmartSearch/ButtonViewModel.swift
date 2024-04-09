@@ -26,7 +26,7 @@ class ButtonListViewModel{
         
         ButtonItem(nodeType: SFSymbolNode.self, nodeCategory: .component, title: "Symbol", iconName: "star.fill", keywords: ["symbol", "icon", "emblem", "sign", "mark", "figurine"]),
         
-        ButtonItem(nodeType: ButtonNode.self, nodeCategory: .component, title: "Button", iconName: "button.horizontal.top.press", keywords: ["button", "click", "press", "interaction", "action", "control"])
+        ButtonItem(nodeType: ButtonNode.self, nodeCategory: .component, title: "Button", iconName: "button.horizontal.top.press.fill", keywords: ["button", "click", "press", "interaction", "action", "control"])
         
     ]
     
