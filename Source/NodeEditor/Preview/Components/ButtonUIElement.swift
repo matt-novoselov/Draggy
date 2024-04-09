@@ -36,7 +36,7 @@ struct ButtonUIElement: View {
             return AnyView(test.uiPreviewElement)
         }
 
-        return AnyView(Text("Button"))
+        return AnyView(EmptyView())
     }
     
     var color: Color {
@@ -93,16 +93,14 @@ struct ButtonUIElement: View {
     var body: some View {
         Button(action: action) {
             
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     symbol
-                    
                     text
                 }
-                
                 image
             }
-
+            
         }
         .buttonStyle(PlainButtonStyle())
         .padding()
