@@ -57,6 +57,8 @@ class Node: NodeObject {
         withAnimation {
             linkedNodes.append(node)
         }
+        
+        print(dump(self.linkedNodes))
     }
     
     func replaceLinkedNode(_ node: Node, existingIndex: Int) {

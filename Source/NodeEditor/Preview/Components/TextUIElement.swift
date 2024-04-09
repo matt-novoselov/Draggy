@@ -11,6 +11,10 @@ struct TextUIElement: View {
     
     var selectedNode: TextNode
     
+    var text: String {
+        selectedNode.value
+    }
+    
     var color: Color {
         if let test = selectedNode.parseLinkedNodes(linkedNodeType: ColorNode.self) as? ColorNode{
             return test.value
@@ -25,10 +29,6 @@ struct TextUIElement: View {
         }
         
         return 1.0
-    }
-    
-    var text: String {
-        selectedNode.value
     }
     
     var rotation: Double {

@@ -17,6 +17,9 @@
 		1A36068C2BC43BF400B8BBF3 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */; };
 		1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */; };
 		1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */; };
+		1A75E1F62BC553FF005645EA /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F52BC553FF005645EA /* ButtonNode.swift */; };
+		1A75E1F82BC55432005645EA /* ButtonUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F72BC55432005645EA /* ButtonUIElement.swift */; };
+		1A75E1FA2BC5547D005645EA /* ButtonUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F92BC5547D005645EA /* ButtonUINode.swift */; };
 		1A7A14402BC5301C00BB8860 /* SFSymbolsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A143F2BC5301C00BB8860 /* SFSymbolsLoader.swift */; };
 		1A7A14432BC530DE00BB8860 /* SFSymbolNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A14422BC530DE00BB8860 /* SFSymbolNode.swift */; };
 		1A7A14452BC5314D00BB8860 /* SFSymbolUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A14442BC5314D00BB8860 /* SFSymbolUIElement.swift */; };
@@ -63,6 +66,9 @@
 		1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorWellExtension.swift; sourceTree = "<group>"; };
 		1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasData.swift; sourceTree = "<group>"; };
+		1A75E1F52BC553FF005645EA /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		1A75E1F72BC55432005645EA /* ButtonUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUIElement.swift; sourceTree = "<group>"; };
+		1A75E1F92BC5547D005645EA /* ButtonUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUINode.swift; sourceTree = "<group>"; };
 		1A7A143F2BC5301C00BB8860 /* SFSymbolsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsLoader.swift; sourceTree = "<group>"; };
 		1A7A14422BC530DE00BB8860 /* SFSymbolNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolNode.swift; sourceTree = "<group>"; };
 		1A7A14442BC5314D00BB8860 /* SFSymbolUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolUIElement.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 				1ACFB9A92BA9BC2400223133 /* TextUIElement.swift */,
 				1ACFB9BF2BAA1C8F00223133 /* ImageUIElement.swift */,
 				1A7A14442BC5314D00BB8860 /* SFSymbolUIElement.swift */,
+				1A75E1F72BC55432005645EA /* ButtonUIElement.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 				1A133EA02BC024FC00ACFBE9 /* CornerRadiusNode.swift */,
 				1AADE2E32BC050AD0060F755 /* ShadowNode.swift */,
 				1A7A14422BC530DE00BB8860 /* SFSymbolNode.swift */,
+				1A75E1F52BC553FF005645EA /* ButtonNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 				1A7A14492BC539A900BB8860 /* SFSymbolNode */,
 				1A133EA22BC0257F00ACFBE9 /* CornerRadiusUINode.swift */,
 				1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */,
+				1A75E1F92BC5547D005645EA /* ButtonUINode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 				1A7A14452BC5314D00BB8860 /* SFSymbolUIElement.swift in Sources */,
 				1AD88EC72BBD638B0028890E /* OpacitySlider.swift in Sources */,
 				1ACFB9AA2BA9BC2400223133 /* TextUIElement.swift in Sources */,
+				1A75E1F62BC553FF005645EA /* ButtonNode.swift in Sources */,
 				1A7A14432BC530DE00BB8860 /* SFSymbolNode.swift in Sources */,
 				1ACFB9C02BAA1C8F00223133 /* ImageUIElement.swift in Sources */,
 				1A133EA12BC024FC00ACFBE9 /* CornerRadiusNode.swift in Sources */,
@@ -380,7 +390,9 @@
 				1AE52EF92BB1D3AC00EF64AC /* RotationNode.swift in Sources */,
 				1A3606872BC4393D00B8BBF3 /* SmartSearch.swift in Sources */,
 				1ACFB9C52BAA259700223133 /* TextUINode.swift in Sources */,
+				1A75E1F82BC55432005645EA /* ButtonUIElement.swift in Sources */,
 				1A133EA32BC0257F00ACFBE9 /* CornerRadiusUINode.swift in Sources */,
+				1A75E1FA2BC5547D005645EA /* ButtonUINode.swift in Sources */,
 				1A1F8B6D2BADE3B20069A63B /* NotificationsData.swift in Sources */,
 				1ACFB9B12BAA192400223133 /* ColorNode.swift in Sources */,
 				1A36068C2BC43BF400B8BBF3 /* ButtonViewModel.swift in Sources */,

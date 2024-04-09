@@ -19,10 +19,12 @@ struct PreviewView: View {
             Image(.iphoneBezel)
                 .resizable()
                 .scaledToFit()
+                .allowsHitTesting(false)
                 .overlay{
                     Image(.iphoneIsland)
                         .resizable()
                         .scaledToFit()
+                        .allowsHitTesting(false)
                 }
                 .background{
                     VStack{

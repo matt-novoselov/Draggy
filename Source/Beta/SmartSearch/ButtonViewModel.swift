@@ -26,6 +26,8 @@ class ButtonListViewModel{
         
         ButtonItem(nodeType: SFSymbolNode.self, title: "Symbol", iconName: "star.fill", keywords: ["symbol", "icon", "emblem", "sign", "mark", "figurine"]),
         
+        ButtonItem(nodeType: ButtonNode.self, title: "Button", iconName: "button.horizontal.top.press", keywords: ["button", "click", "press", "interaction", "action", "control"])
+        
     ]
     
     // Function to filter buttons based on search text

@@ -11,6 +11,10 @@ struct SFSymbolUIElement: View {
     
     var selectedNode: SFSymbolNode
     
+    var iconName: String {
+        selectedNode.value
+    }
+    
     var color: Color {
         if let test = selectedNode.parseLinkedNodes(linkedNodeType: ColorNode.self) as? ColorNode{
             return test.value
@@ -25,10 +29,6 @@ struct SFSymbolUIElement: View {
         }
         
         return 1.0
-    }
-    
-    var iconName: String {
-        selectedNode.value
     }
     
     var rotation: Double {
