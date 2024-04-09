@@ -27,6 +27,7 @@ struct SingleSearchButton: View {
                 title: {
                     Text(searchButton.title)
                         .fontWeight(.medium)
+                        .foregroundStyle(Color.white)
                 },
                 icon: {
                     Image(systemName: "circle")
@@ -45,7 +46,6 @@ struct SingleSearchButton: View {
             )
             
         }
-        .buttonStyle(PlainButtonStyle())
         
     }
     
