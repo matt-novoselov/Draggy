@@ -20,6 +20,7 @@
 		1A75E1F62BC553FF005645EA /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F52BC553FF005645EA /* ButtonNode.swift */; };
 		1A75E1F82BC55432005645EA /* ButtonUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F72BC55432005645EA /* ButtonUIElement.swift */; };
 		1A75E1FA2BC5547D005645EA /* ButtonUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F92BC5547D005645EA /* ButtonUINode.swift */; };
+		1A75E1FC2BC56E72005645EA /* SingleSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1FB2BC56E72005645EA /* SingleSearchButton.swift */; };
 		1A7A14402BC5301C00BB8860 /* SFSymbolsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A143F2BC5301C00BB8860 /* SFSymbolsLoader.swift */; };
 		1A7A14432BC530DE00BB8860 /* SFSymbolNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A14422BC530DE00BB8860 /* SFSymbolNode.swift */; };
 		1A7A14452BC5314D00BB8860 /* SFSymbolUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A14442BC5314D00BB8860 /* SFSymbolUIElement.swift */; };
@@ -69,6 +70,7 @@
 		1A75E1F52BC553FF005645EA /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		1A75E1F72BC55432005645EA /* ButtonUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUIElement.swift; sourceTree = "<group>"; };
 		1A75E1F92BC5547D005645EA /* ButtonUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUINode.swift; sourceTree = "<group>"; };
+		1A75E1FB2BC56E72005645EA /* SingleSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSearchButton.swift; sourceTree = "<group>"; };
 		1A7A143F2BC5301C00BB8860 /* SFSymbolsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsLoader.swift; sourceTree = "<group>"; };
 		1A7A14422BC530DE00BB8860 /* SFSymbolNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolNode.swift; sourceTree = "<group>"; };
 		1A7A14442BC5314D00BB8860 /* SFSymbolUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolUIElement.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				1A3606862BC4393D00B8BBF3 /* SmartSearch.swift */,
 				1A3606892BC43BE900B8BBF3 /* ButtonModel.swift */,
 				1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */,
+				1A75E1FB2BC56E72005645EA /* SingleSearchButton.swift */,
 			);
 			path = SmartSearch;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				1A7A14452BC5314D00BB8860 /* SFSymbolUIElement.swift in Sources */,
 				1AD88EC72BBD638B0028890E /* OpacitySlider.swift in Sources */,
 				1ACFB9AA2BA9BC2400223133 /* TextUIElement.swift in Sources */,
+				1A75E1FC2BC56E72005645EA /* SingleSearchButton.swift in Sources */,
 				1A75E1F62BC553FF005645EA /* ButtonNode.swift in Sources */,
 				1A7A14432BC530DE00BB8860 /* SFSymbolNode.swift in Sources */,
 				1ACFB9C02BAA1C8F00223133 /* ImageUIElement.swift in Sources */,
