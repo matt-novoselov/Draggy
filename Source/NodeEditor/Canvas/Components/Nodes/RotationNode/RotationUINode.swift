@@ -8,19 +8,27 @@
 import SwiftUI
 
 struct RotationUINode: View {
-    var selectedNode: RotationNode
+    
+    @State var selectedNode: RotationNode
+    
+    var bindingValue: Binding<Angle> {
+        Binding(
+            get: { selectedNode.value as! Angle },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     var body: some View {
-        
-        @Bindable var selectedNode = selectedNode
+
+        let rotation: Angle = selectedNode.value as? Angle ?? .zero
         
         ZStack{
-            RotatingDial(indicatorDiameter: 25, angle: $selectedNode.value.degrees)
+            RotatingDial(indicatorDiameter: 25, angle: bindingValue.degrees)
             
-            Text("\(Int(selectedNode.value.degrees))°")
+            Text("\(Int(rotation.degrees))°")
                 .fontWeight(.bold)
                 .contentTransition(.numericText())
-//                .animation(.none)
+                .withoutAnimation()
         }
     }
 }

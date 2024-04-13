@@ -9,15 +9,13 @@ import SwiftUI
 
 @Observable
 class SFSymbolNode: Node {
-    
-    // Property of the Node
-    var value: String = "star.fill"
 
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class SFSymbolNode: Node {
         self.uiPreviewElement = AnyView(SFSymbolUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(SFSymbolUINode(selectedNode: self))
         self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self, ShadowNode.self]
+        self.value = "star.fill"
+    }
+    
+    func getValue() -> String{
+        return self.value as! String
     }
     
 }

@@ -10,14 +10,12 @@ import SwiftUI
 @Observable
 class OpacityNode: Node {
     
-    // Property of the Node
-    var value: Double = 0.5
-    
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class OpacityNode: Node {
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(OpacityUINode(selectedNode: self))
         self.availableForLinkingNodes = []
+        self.value = 0.5
+    }
+    
+    func getValue() -> Double{
+        return self.value as! Double
     }
     
 }

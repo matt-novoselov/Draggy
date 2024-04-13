@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct OpacityUINode: View {
-    var selectedNode: OpacityNode
+    
+    @State var selectedNode: OpacityNode
+    
+    var bindingValue: Binding<Double> {
+        Binding(
+            get: { selectedNode.value as! Double },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     var body: some View {
-        @Bindable var selectedNode = selectedNode
+        let opacity: Double = selectedNode.value as? Double ?? 1.0
         
         VStack(spacing: 20){
-            Text("\(Int(selectedNode.value * 100))%")
+            Text("\(Int(opacity * 100))%")
                 .fontWeight(.bold)
             
-            OpacitySlider(value: $selectedNode.value)
+            OpacitySlider(value: bindingValue)
                 .frame(height: 30)
         }
         

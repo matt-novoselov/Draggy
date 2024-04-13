@@ -8,20 +8,28 @@
 import SwiftUI
 
 struct ColorUINode: View {
-    var selectedNode: ColorNode
+    
+    @State var selectedNode: ColorNode
+    
+    var bindingValue: Binding<Color> {
+        Binding(
+            get: { selectedNode.value as! Color },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     var body: some View {
-        @Bindable var selectedNode = selectedNode
+        let color: Color = selectedNode.value as? Color ?? .black
         
         Button(action: {UIColorWellHelper.helper.execute?()}){
             
             RoundedRectangle(cornerRadius: 10)
-                .fill(selectedNode.value)
+                .fill(color)
                 .aspectRatio(contentMode: .fit)
             
         }
         .background(
-            ColorPicker("", selection: $selectedNode.value, supportsOpacity: false)
+            ColorPicker("", selection: bindingValue, supportsOpacity: false)
                 .labelsHidden()
                 .opacity(0)
         )

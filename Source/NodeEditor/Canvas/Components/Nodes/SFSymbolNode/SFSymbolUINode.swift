@@ -9,22 +9,29 @@ import SwiftUI
 
 struct SFSymbolUINode: View {
     
-    var selectedNode: SFSymbolNode
+    @State var selectedNode: SFSymbolNode
+    
+    var bindingValue: Binding<String> {
+        Binding(
+            get: { selectedNode.value as! String },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     @State var showingSelector: Bool = false
     
     var body: some View {
-        
-        @Bindable var selectedNode = selectedNode
+
+        let iconName: String = selectedNode.value as? String ?? "N/A"
         
         Button(action: {showingSelector = true}) {
-            Image(systemName: selectedNode.value)
+            Image(systemName: iconName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
         }
         .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $showingSelector, content: {
-            SFSymbolsPicker(selectedSymbol: $selectedNode.value)
+            SFSymbolsPicker(selectedSymbol: bindingValue)
         })
         
     }

@@ -20,10 +20,13 @@ protocol NodeObject: Identifiable, AnyObject {
     var availableForLinkingNodes: [Node.Type] { get }
     var uiNodeElement: any View {get}
     var uiPreviewElement: any View {get}
+    var value: Any { get set }
+    func getValue() -> Any
 }
 
 @Observable
 class Node: NodeObject {
+    
     var id: UUID = .init()
     var position: CGPoint
     var linkedNodes: [Node] = []
@@ -31,17 +34,23 @@ class Node: NodeObject {
     var availableForLinkingNodes: [Node.Type]
     var uiNodeElement: any View = AnyView(EmptyView())
     var uiPreviewElement: any View = AnyView(EmptyView())
+    var value: Any
+    func getValue() -> Any {
+        return value
+    }
     
     required init(
         position: CGPoint = .zero,
         availableForLinkingNodes: [Node.Type] = [],
         uiNodeElement: any View = AnyView(EmptyView()),
-        uiPreviewElement: any View = AnyView(EmptyView())
+        uiPreviewElement: any View = AnyView(EmptyView()),
+        value: Any = AnyView(EmptyView())
     ) {
         self.position = position
         self.availableForLinkingNodes = availableForLinkingNodes
         self.uiNodeElement = uiNodeElement
         self.uiPreviewElement = uiPreviewElement
+        self.value = value
     }
     
     func addLinkedNode(_ node: Node) {
@@ -90,7 +99,7 @@ extension Node {
 }
 
 extension Node {
-    func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
+    private func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
         for linkedNode in self.linkedNodes {
             if type(of: linkedNode) == linkedNodeType {
                 return linkedNode
@@ -98,16 +107,31 @@ extension Node {
         }
         return nil
     }
+    
+    func getValueFrom(_ linkedNodeType: Node.Type) -> Any?{
+        
+        if let selectedNode = parseLinkedNodes(linkedNodeType: linkedNodeType){
+            return selectedNode.getValue()
+        }
+        
+        return nil
+    }
 }
 
+// Add new Node
 extension NodeData {
-    func addNode(_ nodeType: Node.Type, position: CGPoint) {
+    func addNode(_ nodeType: Node.Type, position: CGPoint, value: Any? = nil) {
         withAnimation {
-            nodes.append(nodeType.init(position: position))
+            if let value = value {
+                nodes.append(nodeType.init(position: position, value: value))
+            } else {
+                nodes.append(nodeType.init(position: position))
+            }
         }
     }
 }
 
+// Delete existing Node
 extension NodeData {
     func deleteNode(_ node: Node) {
         withAnimation {
@@ -121,10 +145,11 @@ extension NodeData {
     }
 }
 
+// Duplicate existing Node
 extension NodeData {
     func duplicateNode(_ node: Node) {
         let duplicatedNodePosition = CGPoint(x: node.position.x + 50, y: node.position.y - 50)
         
-        addNode(type(of: node), position: duplicatedNodePosition)
+        addNode(type(of: node), position: duplicatedNodePosition, value: node.value)
     }
 }

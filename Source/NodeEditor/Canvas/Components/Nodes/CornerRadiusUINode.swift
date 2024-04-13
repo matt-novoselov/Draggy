@@ -9,19 +9,28 @@ import SwiftUI
 
 
 struct CornerRadiusUINode: View {
-    var selectedNode: CornerRadiusNode
+    
+    @State var selectedNode: CornerRadiusNode
+    
+    var bindingValue: Binding<CGFloat> {
+        Binding(
+            get: { selectedNode.value as! CGFloat },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     var body: some View {
-        @Bindable var selectedNode = selectedNode
+
+        let cornerRadius: CGFloat = selectedNode.value as? CGFloat ?? 0
         
         VStack{
-            RoundedRectangle(cornerRadius: selectedNode.value / 3)
+            RoundedRectangle(cornerRadius: cornerRadius / 3)
                 .fill(.clear)
                 .stroke(.white, lineWidth: 8)
                 .aspectRatio(contentMode: .fit)
                 .padding()
             
-            Slider(value: $selectedNode.value, in: 0...100, step: 1)
+            Slider(value: bindingValue, in: 0...100, step: 1)
         }
         
     }

@@ -9,15 +9,13 @@ import SwiftUI
 
 @Observable
 class CornerRadiusNode: Node {
-    
-    // Property of the Node
-    var value: CGFloat = 25
 
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class CornerRadiusNode: Node {
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(CornerRadiusUINode(selectedNode: self))
         self.availableForLinkingNodes = []
+        self.value = CGFloat(25)
+    }
+    
+    func getValue() -> CGFloat{
+        return self.value as! CGFloat
     }
     
 }

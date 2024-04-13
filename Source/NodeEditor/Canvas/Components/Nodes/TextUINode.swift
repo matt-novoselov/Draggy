@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct TextUINode: View {
-    var selectedNode: TextNode
+    
+    @State var selectedNode: TextNode
+    
+    var bindingValue: Binding<String> {
+        Binding(
+            get: { selectedNode.value as! String },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     var body: some View {
-        @Bindable var selectedNode = selectedNode
-        
-        TextField("Enter some text here", text: $selectedNode.value, axis: .vertical)
+        TextField("Enter some text here", text: bindingValue, axis: .vertical)
             .fontWeight(.bold)
             .multilineTextAlignment(.center)
     }

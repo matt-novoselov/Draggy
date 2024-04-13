@@ -17,6 +17,7 @@
 		1A36068C2BC43BF400B8BBF3 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */; };
 		1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */; };
 		1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */; };
+		1A70628D2BCAE8D60051613E /* WithoutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A70628C2BCAE8D60051613E /* WithoutAnimation.swift */; };
 		1A75E1F62BC553FF005645EA /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F52BC553FF005645EA /* ButtonNode.swift */; };
 		1A75E1F82BC55432005645EA /* ButtonUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F72BC55432005645EA /* ButtonUIElement.swift */; };
 		1A75E1FA2BC5547D005645EA /* ButtonUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F92BC5547D005645EA /* ButtonUINode.swift */; };
@@ -67,6 +68,7 @@
 		1A36068B2BC43BF400B8BBF3 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
 		1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorWellExtension.swift; sourceTree = "<group>"; };
 		1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasData.swift; sourceTree = "<group>"; };
+		1A70628C2BCAE8D60051613E /* WithoutAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutAnimation.swift; sourceTree = "<group>"; };
 		1A75E1F52BC553FF005645EA /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		1A75E1F72BC55432005645EA /* ButtonUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUIElement.swift; sourceTree = "<group>"; };
 		1A75E1F92BC5547D005645EA /* ButtonUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUINode.swift; sourceTree = "<group>"; };
@@ -147,6 +149,22 @@
 			path = ColorNode;
 			sourceTree = "<group>";
 		};
+		1A70628B2BCAE8B70051613E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A70628E2BCAE8DD0051613E /* Extensions */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		1A70628E2BCAE8DD0051613E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A70628C2BCAE8D60051613E /* WithoutAnimation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1A7A14492BC539A900BB8860 /* SFSymbolNode */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +202,7 @@
 				1ACFB9B72BAA1A2800223133 /* Canvas */,
 				1ACFB9AB2BAA190000223133 /* Node data */,
 				1A1F8B6B2BADE38F0069A63B /* Notifications */,
+				1A70628B2BCAE8B70051613E /* Support Files */,
 			);
 			path = NodeEditor;
 			sourceTree = "<group>";
@@ -400,6 +419,7 @@
 				1ACFB9BE2BAA1BF700223133 /* ImageNode.swift in Sources */,
 				1ACFB9AF2BAA191B00223133 /* OpacityNode.swift in Sources */,
 				1ACFB9BA2BAA1B5F00223133 /* AddButtons.swift in Sources */,
+				1A70628D2BCAE8D60051613E /* WithoutAnimation.swift in Sources */,
 				1A7A14472BC531BE00BB8860 /* SFSymbolUINode.swift in Sources */,
 				1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */,
 				1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */,
@@ -556,7 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattnovoselov.SwiftNode;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.SwiftNode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -592,7 +612,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattnovoselov.SwiftNode;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.SwiftNode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

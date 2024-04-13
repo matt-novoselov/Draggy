@@ -62,7 +62,7 @@ struct SingleSearchButton: View {
 }
 
 #Preview {
-    SingleSearchButton(searchButton: ButtonListViewModel().buttons.first!)
+    SingleSearchButton(searchButton: ButtonListViewModel().buttons[0])
         .environment(NodeData())
         .environment(CanvasData())
 }

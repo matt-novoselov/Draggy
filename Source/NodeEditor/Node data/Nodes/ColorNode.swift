@@ -10,14 +10,12 @@ import SwiftUI
 @Observable
 class ColorNode: Node {
     
-    // Property of the Node
-    var value: Color = .red
-    
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class ColorNode: Node {
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(ColorUINode(selectedNode: self))
         self.availableForLinkingNodes = []
+        self.value = Color.red
+    }
+    
+    func getValue() -> Color{
+        return self.value as! Color
     }
     
 }

@@ -9,15 +9,13 @@ import SwiftUI
 
 @Observable
 class ButtonNode: Node {
-    
-    // Property of the Node
-    var value: () -> Void = {}
 
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class ButtonNode: Node {
         self.uiPreviewElement = AnyView(ButtonUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(ButtonUINode(selectedNode: self))
         self.availableForLinkingNodes = [OpacityNode.self, ColorNode.self, RotationNode.self, CornerRadiusNode.self, ShadowNode.self, TextNode.self, ImageNode.self, SFSymbolNode.self]
+        self.value = {}
     }
     
+    func getValue() -> Void{
+        return self.value as! Void
+    }
+
 }

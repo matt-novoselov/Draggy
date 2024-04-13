@@ -9,15 +9,13 @@ import SwiftUI
 
 @Observable
 class ShadowNode: Node {
-    
-    // Property of the Node
-    var value: Double = 15
 
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class ShadowNode: Node {
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(ShadowUINode(selectedNode: self))
         self.availableForLinkingNodes = [ColorNode.self]
+        self.value = 15.0
+    }
+    
+    func getValue() -> Double{
+        return self.value as! Double
     }
     
 }

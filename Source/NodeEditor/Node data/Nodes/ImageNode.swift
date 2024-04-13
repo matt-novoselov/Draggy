@@ -10,14 +10,12 @@ import SwiftUI
 @Observable
 class ImageNode: Node {
     
-    // Property of the Node
-    var value: Image? = Image("placeholder")
-    
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class ImageNode: Node {
         self.uiPreviewElement = AnyView(ImageUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(ImageUINode(selectedNode: self))
         self.availableForLinkingNodes = [OpacityNode.self, RotationNode.self, CornerRadiusNode.self, ShadowNode.self]
+        self.value = Image("placeholder")
+    }
+    
+    func getValue() -> Image{
+        return self.value as! Image
     }
     
 }

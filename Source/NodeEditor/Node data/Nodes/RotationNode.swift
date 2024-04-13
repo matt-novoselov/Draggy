@@ -10,14 +10,12 @@ import SwiftUI
 @Observable
 class RotationNode: Node {
     
-    // Property of the Node
-    var value: Angle = .degrees(180)
-    
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
         uiNodeElement: any View,
-        uiPreviewElement: any View
+        uiPreviewElement: any View,
+        value: Any
     ) {
         super.init(
             position: position,
@@ -29,6 +27,11 @@ class RotationNode: Node {
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(RotationUINode(selectedNode: self))
         self.availableForLinkingNodes = []
+        self.value = Angle.degrees(180)
+    }
+    
+    func getValue() -> Angle{
+        return self.value as! Angle
     }
     
 }

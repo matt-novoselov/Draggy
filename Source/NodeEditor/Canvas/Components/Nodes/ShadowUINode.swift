@@ -8,19 +8,28 @@
 import SwiftUI
 
 struct ShadowUINode: View {
-    var selectedNode: ShadowNode
+    
+    @State var selectedNode: ShadowNode
+    
+    var bindingValue: Binding<Double> {
+        Binding(
+            get: { selectedNode.value as! Double },
+            set: { newValue in selectedNode.value = newValue }
+        )
+    }
     
     var body: some View {
-        @Bindable var selectedNode = selectedNode
+
+        let shadowRadius: Double = selectedNode.value as? Double ?? 0
         
         VStack{
             RoundedRectangle(cornerRadius: 10)
                 .fill(.white)
-                .shadow(color: .white, radius: selectedNode.value)
+                .shadow(color: .white, radius: shadowRadius)
                 .aspectRatio(contentMode: .fit)
                 .padding()
             
-            Slider(value: $selectedNode.value, in: 0...50)
+            Slider(value: bindingValue, in: 0...50)
         }
         
     }
