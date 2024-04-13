@@ -22,8 +22,6 @@ struct CornerRadiusUINode: View {
     }
     
     var body: some View {
-
-        let cornerRadius: CGFloat = selectedNode.value as? CGFloat ?? 0
         
         VStack{
             DynamicRadiusSquare(nodeValue: bindingValue, maxSliderValue: maxSliderValue)
