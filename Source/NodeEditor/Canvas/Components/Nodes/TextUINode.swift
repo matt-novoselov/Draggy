@@ -19,7 +19,7 @@ struct TextUINode: View {
     }
     
     var body: some View {
-        TextField("Enter some text here", text: bindingValue, axis: .vertical)
+        TextField("Enter text", text: bindingValue, axis: .vertical)
             .fontWeight(.bold)
             .multilineTextAlignment(.center)
     }
