@@ -11,6 +11,8 @@ import SwiftUI
 struct CornerRadiusUINode: View {
     
     @State var selectedNode: CornerRadiusNode
+
+    let maxSliderValue: CGFloat = 100
     
     var bindingValue: Binding<CGFloat> {
         Binding(
@@ -24,13 +26,9 @@ struct CornerRadiusUINode: View {
         let cornerRadius: CGFloat = selectedNode.value as? CGFloat ?? 0
         
         VStack{
-            RoundedRectangle(cornerRadius: cornerRadius / 3)
-                .fill(.clear)
-                .stroke(.white, lineWidth: 8)
-                .aspectRatio(contentMode: .fit)
-                .padding()
+            DynamicRadiusSquare(nodeValue: bindingValue, maxSliderValue: maxSliderValue)
             
-            Slider(value: bindingValue, in: 0...100, step: 1)
+            Slider(value: bindingValue, in: 0...maxSliderValue, step: 1)
         }
         
     }

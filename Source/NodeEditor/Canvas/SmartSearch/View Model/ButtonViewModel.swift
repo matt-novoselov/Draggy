@@ -20,7 +20,7 @@ class ButtonListViewModel{
         
         ButtonItem(nodeType: RotationNode.self, nodeCategory: .effect, title: "Rotation", iconName: "arrow.clockwise", keywords: ["rotation", "clockwise", "spin"]),
         
-        ButtonItem(nodeType: CornerRadiusNode.self, nodeCategory: .effect, title: "Corner Radius", iconName: "viewfinder", keywords: ["corner", "radius", "edges", "bevel", "rounded"]),
+        ButtonItem(nodeType: CornerRadiusNode.self, nodeCategory: .effect, title: "Rounded Corners", iconName: "viewfinder", keywords: ["corner", "radius", "edges", "bevel", "rounded"]),
         
         ButtonItem(nodeType: ShadowNode.self, nodeCategory: .effect, title: "Shadow", iconName: "shadow", keywords: ["shadow", "shade", "silhouette", "darkness"]),
         
