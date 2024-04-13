@@ -116,6 +116,15 @@ extension Node {
         
         return nil
     }
+    
+    func getUIFrom(_ linkedNodeType: Node.Type) -> Any?{
+        
+        if let selectedNode = parseLinkedNodes(linkedNodeType: linkedNodeType){
+            return selectedNode.uiPreviewElement
+        }
+        
+        return nil
+    }
 }
 
 // Add new Node

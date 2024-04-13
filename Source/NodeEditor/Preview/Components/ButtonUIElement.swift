@@ -15,28 +15,23 @@ struct ButtonUIElement: View {
         
         let action: Void = print("Executing Button's action")
         
-        let color: Color = selectedNode.getValueFrom(ColorNode.self) as? Color ?? .black
+        let color: Color = selectedNode.getValueFrom(ColorNode.self) as? Color ?? .blue
         let opacity: Double = selectedNode.getValueFrom(OpacityNode.self) as? Double ?? 1.0
         let rotation: Angle = selectedNode.getValueFrom(RotationNode.self) as? Angle ?? .zero
         let cornerRadius: CGFloat = selectedNode.getValueFrom(RotationNode.self) as? CGFloat ?? 0
         let shadowRadius: Double = selectedNode.getValueFrom(ShadowNode.self) as? Double ?? 0
         
-//        var imageView: any View = selectedNode.getValueFrom(ImageNode.self) as? some View
-//        var symbolView: any View = selectedNode.getValueFrom(SFSymbolNode.self) as? View ?? AnyView(EmptyView())
-//        var textView: any View = selectedNode.getValueFrom(TextNode.self) as? View ?? AnyView(EmptyView())
-        
-        
+        let imageView: AnyView = selectedNode.getUIFrom(ImageNode.self) as? AnyView ?? AnyView(EmptyView())
+        let symbolView: AnyView = selectedNode.getUIFrom(SFSymbolNode.self) as? AnyView ?? AnyView(EmptyView())
+        let textView: AnyView = selectedNode.getUIFrom(TextNode.self) as? AnyView ?? AnyView(Text("Button"))
         
         Button(action: {action}) {
             
-            EmptyView()
-//            VStack {
-//                HStack {
-//                    symbolView
-//                    textView
-//                }
-//                imageView
-//            }
+            VStack {
+                symbolView
+                textView
+                imageView
+            }
             
         }
         .buttonStyle(PlainButtonStyle())
