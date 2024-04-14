@@ -122,6 +122,7 @@ extension RotatingDial {
                     .fill(.clear)
                     .strokeBorder(.nodeStroke, lineWidth: 4)
             }
+            .contentShape(Circle().stroke(lineWidth: 20))
             .frame(width: indicatorDiameter, height: indicatorDiameter)
             .offset(x: intendedDialSize / 2) //put indicator circle on the edge
             .rotationEffect(.init(degrees: progress*360))//modification for it to rotate angle chosen
