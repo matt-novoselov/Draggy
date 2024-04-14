@@ -18,13 +18,12 @@ struct ImageUIElement: View {
         let opacity: Double = selectedNode.getValueFrom(OpacityNode.self) as? Double ?? 1.0
         let rotation: Angle = selectedNode.getValueFrom(RotationNode.self) as? Angle ?? .zero
         let cornerRadius: CGFloat = selectedNode.getValueFrom(CornerRadiusNode.self) as? CGFloat ?? 0
-        let shadowRadius: Double = selectedNode.getValueFrom(ShadowNode.self) as? Double ?? 0
         
         image
             .resizable()
             .scaledToFit()
             .cornerRadius(cornerRadius)
-            .shadow(color: .black.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
+//            .shadow(color: .black.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
             .rotationEffect(Angle(degrees: rotation.degrees))
             .padding()
             .opacity(opacity)

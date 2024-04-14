@@ -18,6 +18,7 @@
 		1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */; };
 		1A4E7D722BAD6DA70081EC12 /* CanvasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */; };
 		1A54D83D2BCB125C00EC2092 /* DynamicRadiusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A54D83C2BCB125C00EC2092 /* DynamicRadiusSquare.swift */; };
+		1A54D8432BCB1C2500EC2092 /* ShadowUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A54D8422BCB1C2500EC2092 /* ShadowUIElement.swift */; };
 		1A70628D2BCAE8D60051613E /* WithoutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A70628C2BCAE8D60051613E /* WithoutAnimation.swift */; };
 		1A75E1F62BC553FF005645EA /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F52BC553FF005645EA /* ButtonNode.swift */; };
 		1A75E1F82BC55432005645EA /* ButtonUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75E1F72BC55432005645EA /* ButtonUIElement.swift */; };
@@ -70,6 +71,7 @@
 		1A4E7D6F2BAD6CCE0081EC12 /* UIColorWellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorWellExtension.swift; sourceTree = "<group>"; };
 		1A4E7D712BAD6DA70081EC12 /* CanvasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasData.swift; sourceTree = "<group>"; };
 		1A54D83C2BCB125C00EC2092 /* DynamicRadiusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicRadiusSquare.swift; sourceTree = "<group>"; };
+		1A54D8422BCB1C2500EC2092 /* ShadowUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowUIElement.swift; sourceTree = "<group>"; };
 		1A70628C2BCAE8D60051613E /* WithoutAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutAnimation.swift; sourceTree = "<group>"; };
 		1A75E1F52BC553FF005645EA /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		1A75E1F72BC55432005645EA /* ButtonUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUIElement.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				1ACFB9BF2BAA1C8F00223133 /* ImageUIElement.swift */,
 				1A7A14442BC5314D00BB8860 /* SFSymbolUIElement.swift */,
 				1A75E1F72BC55432005645EA /* ButtonUIElement.swift */,
+				1A54D8422BCB1C2500EC2092 /* ShadowUIElement.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				1A36068C2BC43BF400B8BBF3 /* ButtonViewModel.swift in Sources */,
 				1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */,
 				1AADE2E42BC050AD0060F755 /* ShadowNode.swift in Sources */,
+				1A54D8432BCB1C2500EC2092 /* ShadowUIElement.swift in Sources */,
 				1A7A144B2BC539D700BB8860 /* SFSymbolsPicker.swift in Sources */,
 				1A7A14402BC5301C00BB8860 /* SFSymbolsLoader.swift in Sources */,
 				1ACFB9CB2BAA34B800223133 /* OpacityUINode.swift in Sources */,

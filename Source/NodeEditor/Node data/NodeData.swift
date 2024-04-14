@@ -99,7 +99,7 @@ extension Node {
 }
 
 extension Node {
-    private func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
+    func parseLinkedNodes(linkedNodeType: Node.Type) -> Node?{
         for linkedNode in self.linkedNodes {
             if type(of: linkedNode) == linkedNodeType {
                 return linkedNode
