@@ -30,8 +30,4 @@ class ShadowNode: Node {
         self.value = 15.0
     }
     
-    func getValue() -> Double{
-        return self.value as! Double
-    }
-    
 }

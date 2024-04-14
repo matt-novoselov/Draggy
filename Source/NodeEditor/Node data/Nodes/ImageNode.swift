@@ -29,9 +29,5 @@ class ImageNode: Node {
         self.availableForLinkingNodes = [OpacityNode.self, RotationNode.self, CornerRadiusNode.self, ShadowNode.self]
         self.value = Image("placeholder")
     }
-    
-    func getValue() -> Image{
-        return self.value as! Image
-    }
-    
+
 }

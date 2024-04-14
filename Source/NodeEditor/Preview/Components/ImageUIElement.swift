@@ -23,7 +23,6 @@ struct ImageUIElement: View {
             .resizable()
             .scaledToFit()
             .cornerRadius(cornerRadius)
-//            .shadow(color: .black.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
             .rotationEffect(Angle(degrees: rotation.degrees))
             .padding()
             .opacity(opacity)

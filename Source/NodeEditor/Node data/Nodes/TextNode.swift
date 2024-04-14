@@ -31,8 +31,4 @@ class TextNode: Node {
         self.value = "Hello World!"
     }
     
-    func getValue() -> String{
-        return self.value as! String
-    }
-    
 }

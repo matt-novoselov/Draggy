@@ -29,9 +29,5 @@ class SFSymbolNode: Node {
         self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self, ShadowNode.self]
         self.value = "star.fill"
     }
-    
-    func getValue() -> String{
-        return self.value as! String
-    }
-    
+
 }

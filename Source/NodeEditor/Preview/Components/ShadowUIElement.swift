@@ -19,7 +19,7 @@ struct ShadowUIElement: View {
         let shadowRadius: Double = selectedNode.getValueFrom(ShadowNode.self) as? Double ?? 0
         
         content
-            .shadow(color: color, radius: shadowRadius)
+            .shadow(color: color.opacity(shadowRadius==0 ? 0 : 1), radius: shadowRadius)
     }
 }
 

@@ -30,8 +30,4 @@ class OpacityNode: Node {
         self.value = 0.5
     }
     
-    func getValue() -> Double{
-        return self.value as! Double
-    }
-    
 }

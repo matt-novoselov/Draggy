@@ -29,9 +29,5 @@ class RotationNode: Node {
         self.availableForLinkingNodes = []
         self.value = Angle.degrees(180)
     }
-    
-    func getValue() -> Angle{
-        return self.value as! Angle
-    }
-    
+
 }

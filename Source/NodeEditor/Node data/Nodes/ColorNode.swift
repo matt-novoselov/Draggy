@@ -29,9 +29,5 @@ class ColorNode: Node {
         self.availableForLinkingNodes = []
         self.value = Color.red
     }
-    
-    func getValue() -> Color{
-        return self.value as! Color
-    }
-    
+
 }

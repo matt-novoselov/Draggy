@@ -29,9 +29,5 @@ class ButtonNode: Node {
         self.availableForLinkingNodes = [OpacityNode.self, ColorNode.self, RotationNode.self, CornerRadiusNode.self, ShadowNode.self, TextNode.self, ImageNode.self, SFSymbolNode.self]
         self.value = {}
     }
-    
-    func getValue() -> Void{
-        return self.value as! Void
-    }
 
 }

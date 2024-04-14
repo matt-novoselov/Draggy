@@ -21,7 +21,6 @@ protocol NodeObject: Identifiable, AnyObject {
     var uiNodeElement: any View {get}
     var uiPreviewElement: any View {get}
     var value: Any { get set }
-    func getValue() -> Any
 }
 
 @Observable
@@ -35,9 +34,6 @@ class Node: NodeObject {
     var uiNodeElement: any View = AnyView(EmptyView())
     var uiPreviewElement: any View = AnyView(EmptyView())
     var value: Any
-    func getValue() -> Any {
-        return value
-    }
     
     required init(
         position: CGPoint = .zero,
@@ -111,7 +107,7 @@ extension Node {
     func getValueFrom(_ linkedNodeType: Node.Type) -> Any?{
         
         if let selectedNode = parseLinkedNodes(linkedNodeType: linkedNodeType){
-            return selectedNode.getValue()
+            return selectedNode.value
         }
         
         return nil

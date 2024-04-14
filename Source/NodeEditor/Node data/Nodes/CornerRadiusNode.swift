@@ -29,9 +29,5 @@ class CornerRadiusNode: Node {
         self.availableForLinkingNodes = []
         self.value = CGFloat(25)
     }
-    
-    func getValue() -> CGFloat{
-        return self.value as! CGFloat
-    }
-    
+
 }
