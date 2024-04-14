@@ -24,7 +24,7 @@ class ButtonListViewModel{
         
         ButtonItem(nodeType: ShadowNode.self, nodeCategory: .effect, title: "Shadow", iconName: "shadow", keywords: ["shadow", "shade", "silhouette", "darkness"]),
         
-        ButtonItem(nodeType: SFSymbolNode.self, nodeCategory: .component, title: "Symbol", iconName: "star.fill", keywords: ["symbol", "icon", "emblem", "sign", "mark", "figurine"]),
+        ButtonItem(nodeType: SFSymbolNode.self, nodeCategory: .component, title: "Symbol", iconName: "star.fill", keywords: ["symbol", "icon", "emblem", "sign", "mark", "figurine", "sf symbol"]),
         
         ButtonItem(nodeType: ButtonNode.self, nodeCategory: .component, title: "Button", iconName: "button.horizontal.top.press.fill", keywords: ["button", "click", "press", "interaction", "action", "control"])
         
@@ -32,14 +32,18 @@ class ButtonListViewModel{
     
     // Function to filter buttons based on search text
     func filtered(_ searchText: String, category: NodeCategory) -> [ButtonItem] {
-        if searchText.isEmpty {
+        let trimmedSearchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if trimmedSearchText.isEmpty {
             return buttons.filter { $0.nodeCategory == category }
-        }
-        else {
+        } else {
+            let searchWords = trimmedSearchText.lowercased().components(separatedBy: " ")
             return buttons.filter { button in
                 button.nodeCategory == category &&
-                (button.title.localizedCaseInsensitiveContains(searchText) ||
-                button.keywords.contains { $0.localizedCaseInsensitiveContains(searchText) })
+                    searchWords.allSatisfy { searchWord in
+                        button.title.localizedCaseInsensitiveContains(searchWord) ||
+                            button.keywords.contains { $0.localizedCaseInsensitiveContains(searchWord) }
+                    }
             }
         }
     }
