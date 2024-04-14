@@ -147,7 +147,7 @@ extension NodeData {
             nodes.removeAll { $0.id == node.id }
             
             // Remove the deleted node from the linkedNodes arrays of other nodes
-            for selectedNode in nodes {
+            for selectedNode in node.linkedToNodes{
                 selectedNode.linkedNodes.removeAll { $0.id == node.id }
             }
         }
