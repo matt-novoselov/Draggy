@@ -66,7 +66,7 @@ struct BaseUINode: View {
         .transition(.scale(0.0, anchor: selectedNodeAnchor()))
         .position(position)
         .offset(x: dragOffset.width, y: dragOffset.height)
-        .gesture(
+        .highPriorityGesture(
             DragGesture()
                 .updating($dragOffset, body: { (value, state, transaction) in
                     state = value.translation
