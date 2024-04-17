@@ -30,7 +30,7 @@ struct BezierPathInteractable: View {
     
     @State var lastCheckedNodeID: UUID = .init()
     
-    var body: some View {        
+    var body: some View {
         ZStack {
             Path { (path) in
                 path.move(to: startPoint)
@@ -38,7 +38,7 @@ struct BezierPathInteractable: View {
             }
             .strokedPath(StrokeStyle(lineWidth: 9, lineCap: .round, lineJoin: .round))
             .foregroundStyle(Color.accentColor)
-
+            
             
             // Circle 1
             Circle()
@@ -51,25 +51,26 @@ struct BezierPathInteractable: View {
                 .frame(width: 32, height: 32)
                 .position(endPoint)
                 .foregroundStyle(.nodeConnectionDark)
-                .gesture(DragGesture()
-                    .onChanged { (value) in
-                        self.endPoint = CGPoint(x: value.location.x, y: value.location.y)
-                        
-                        detectOverlappingCircle(value: value)
-                    }
-                    .onEnded(){ _ in
-                        withAnimation{
-                            self.endPoint = self.startPoint
+                .gesture(
+                    DragGesture()
+                        .onChanged { (value) in
+                            self.endPoint = CGPoint(x: value.location.x, y: value.location.y)
+                            
+                            detectOverlappingCircle(value: value)
                         }
-                    }
+                        .onEnded(){ _ in
+                            withAnimation{
+                                self.endPoint = self.startPoint
+                            }
+                        }
                 )
         }
     }
     
     func detectOverlappingCircle(value: DragGesture.Value) {
         let colliderSize: Double = 20
-
-        // MARK: 
+        
+        // MARK:
         for node in nodeData.nodes {
             let circlePosition = node.position
             
