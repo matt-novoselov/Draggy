@@ -22,7 +22,7 @@ class ButtonListViewModel{
         
         ButtonItem(nodeType: CornerRadiusNode.self, nodeCategory: .effect, title: "Rounded Corners", iconName: "viewfinder", keywords: ["corner", "radius", "edges", "bevel", "rounded"]),
         
-        ButtonItem(nodeType: ShadowNode.self, nodeCategory: .effect, title: "Shadow", iconName: "shadow", keywords: ["shadow", "shade", "silhouette", "darkness"]),
+//        ButtonItem(nodeType: ShadowNode.self, nodeCategory: .effect, title: "Shadow", iconName: "shadow", keywords: ["shadow", "shade", "silhouette", "darkness"]),
         
         ButtonItem(nodeType: SFSymbolNode.self, nodeCategory: .component, title: "Symbol", iconName: "star.fill", keywords: ["symbol", "icon", "emblem", "sign", "mark", "figurine", "sf symbol"]),
         
