@@ -33,7 +33,7 @@
 		1AADE2E42BC050AD0060F755 /* ShadowNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE2E32BC050AD0060F755 /* ShadowNode.swift */; };
 		1AADE2E62BC050DA0060F755 /* ShadowUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */; };
 		1AB7ACF22BAB474B00E09324 /* LinkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7ACF12BAB474B00E09324 /* LinkingView.swift */; };
-		1ACFB9962BA9AFB200223133 /* SwiftNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* SwiftNode.swift */; };
+		1ACFB9962BA9AFB200223133 /* Draggy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9952BA9AFB200223133 /* Draggy.swift */; };
 		1ACFB9982BA9AFB200223133 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9972BA9AFB200223133 /* ContentView.swift */; };
 		1ACFB9A42BA9B07D00223133 /* NodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9A32BA9B07D00223133 /* NodeData.swift */; };
 		1ACFB9AA2BA9BC2400223133 /* TextUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9A92BA9BC2400223133 /* TextUIElement.swift */; };
@@ -86,8 +86,8 @@
 		1AADE2E32BC050AD0060F755 /* ShadowNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowNode.swift; sourceTree = "<group>"; };
 		1AADE2E52BC050DA0060F755 /* ShadowUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowUINode.swift; sourceTree = "<group>"; };
 		1AB7ACF12BAB474B00E09324 /* LinkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkingView.swift; sourceTree = "<group>"; };
-		1ACFB9922BA9AFB200223133 /* SwiftNode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNode.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ACFB9952BA9AFB200223133 /* SwiftNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNode.swift; sourceTree = "<group>"; };
+		1ACFB9922BA9AFB200223133 /* Draggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACFB9952BA9AFB200223133 /* Draggy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggy.swift; sourceTree = "<group>"; };
 		1ACFB9972BA9AFB200223133 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1ACFB9A32BA9B07D00223133 /* NodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeData.swift; sourceTree = "<group>"; };
 		1ACFB9A92BA9BC2400223133 /* TextUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUIElement.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		1ACFB9892BA9AFB200223133 = {
 			isa = PBXGroup;
 			children = (
-				1ACFB9952BA9AFB200223133 /* SwiftNode.swift */,
+				1ACFB9952BA9AFB200223133 /* Draggy.swift */,
 				1ACFB9BB2BAA1BA700223133 /* Assets.xcassets */,
 				1ACFB9942BA9AFB200223133 /* NodeEditor */,
 				1ACFB9932BA9AFB200223133 /* Products */,
@@ -218,7 +218,7 @@
 		1ACFB9932BA9AFB200223133 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1ACFB9922BA9AFB200223133 /* SwiftNode.app */,
+				1ACFB9922BA9AFB200223133 /* Draggy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,9 +344,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1ACFB9912BA9AFB200223133 /* SwiftNode */ = {
+		1ACFB9912BA9AFB200223133 /* Draggy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "SwiftNode" */;
+			buildConfigurationList = 1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "Draggy" */;
 			buildPhases = (
 				1ACFB98E2BA9AFB200223133 /* Sources */,
 				1ACFB98F2BA9AFB200223133 /* Frameworks */,
@@ -356,9 +356,9 @@
 			);
 			dependencies = (
 			);
-			name = SwiftNode;
+			name = Draggy;
 			productName = NewNodeEditor;
-			productReference = 1ACFB9922BA9AFB200223133 /* SwiftNode.app */;
+			productReference = 1ACFB9922BA9AFB200223133 /* Draggy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -376,7 +376,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "SwiftNode" */;
+			buildConfigurationList = 1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "Draggy" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -389,7 +389,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1ACFB9912BA9AFB200223133 /* SwiftNode */,
+				1ACFB9912BA9AFB200223133 /* Draggy */,
 			);
 		};
 /* End PBXProject section */
@@ -426,7 +426,7 @@
 				1A1F8B6A2BADDB540069A63B /* NotificationsView.swift in Sources */,
 				1ACFB9C72BAA328000223133 /* ImageUINode.swift in Sources */,
 				1A133EA52BC0310C00ACFBE9 /* BlurMaterial.swift in Sources */,
-				1ACFB9962BA9AFB200223133 /* SwiftNode.swift in Sources */,
+				1ACFB9962BA9AFB200223133 /* Draggy.swift in Sources */,
 				1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */,
 				1A54D83D2BCB125C00EC2092 /* DynamicRadiusSquare.swift in Sources */,
 				1AD88EC92BBD6D7F0028890E /* RotationDial.swift in Sources */,
@@ -594,7 +594,7 @@
 				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = SwiftNode;
+				INFOPLIST_KEY_CFBundleDisplayName = Draggy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -608,7 +608,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.SwiftNode;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.Draggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -630,7 +630,7 @@
 				DEVELOPMENT_TEAM = GXDG2KXXXC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = SwiftNode;
+				INFOPLIST_KEY_CFBundleDisplayName = Draggy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -644,7 +644,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.SwiftNode;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.Draggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -659,7 +659,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "SwiftNode" */ = {
+		1ACFB98D2BA9AFB200223133 /* Build configuration list for PBXProject "Draggy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ACFB99E2BA9AFB300223133 /* Debug */,
@@ -668,7 +668,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "SwiftNode" */ = {
+		1ACFB9A02BA9AFB300223133 /* Build configuration list for PBXNativeTarget "Draggy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ACFB9A12BA9AFB300223133 /* Debug */,
