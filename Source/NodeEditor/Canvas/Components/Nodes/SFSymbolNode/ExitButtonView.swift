@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Native Looking button to close the sheet
 struct ExitButtonView: View {
 
     @Environment(\.dismiss) var dismiss

@@ -1,6 +1,6 @@
 //
 //  BlurMaterial.swift
-//  SwiftUI-Node-Editor
+//  Draggy
 //
 //  Created by Matt Novoselov on 05/04/24.
 //

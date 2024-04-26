@@ -1,6 +1,6 @@
 //
 //  TextNode.swift
-//  NewNodeEditor
+//  Draggy
 //
 //  Created by Matt Novoselov on 19/03/24.
 //
@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 class TextNode: Node {
 
+    // MARK: DO NOT modify required initializer
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -25,6 +26,7 @@ class TextNode: Node {
             value: value
         )
         
+        // Setup default properties of the Node here
         self.uiPreviewElement = AnyView(TextUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(TextUINode(selectedNode: self))
         self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self, ShadowNode.self]

@@ -1,6 +1,6 @@
 //
 //  RotationNode.swift
-//  SwiftUI-Node-Editor
+//  Draggy
 //
 //  Created by Matt Novoselov on 25/03/24.
 //
@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 class RotationNode: Node {
     
+    // MARK: DO NOT modify required initializer
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -24,6 +25,7 @@ class RotationNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
+        // Setup default properties of the Node here
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(RotationUINode(selectedNode: self))
         self.availableForLinkingNodes = []

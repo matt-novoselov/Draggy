@@ -1,6 +1,6 @@
 //
 //  SFSymbolNode.swift
-//  SwiftNode
+//  Draggy
 //
 //  Created by Matt Novoselov on 09/04/24.
 //
@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 class SFSymbolNode: Node {
 
+    // MARK: DO NOT modify required initializer
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -24,6 +25,7 @@ class SFSymbolNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
+        // Setup default properties of the Node here
         self.uiPreviewElement = AnyView(SFSymbolUIElement(selectedNode: self))
         self.uiNodeElement = AnyView(SFSymbolUINode(selectedNode: self))
         self.availableForLinkingNodes = [ColorNode.self, OpacityNode.self, RotationNode.self, ShadowNode.self]

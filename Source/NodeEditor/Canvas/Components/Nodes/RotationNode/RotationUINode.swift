@@ -1,16 +1,19 @@
 //
 //  RotationUINode.swift
-//  SwiftUI-Node-Editor
+//  Draggy
 //
 //  Created by Matt Novoselov on 25/03/24.
 //
 
 import SwiftUI
 
+// RotationUINode is displayed in the canvas and allows user to select the angle of rotation
 struct RotationUINode: View {
     
+    // The node that is currently being edited
     @State var selectedNode: RotationNode
     
+    // Make node's value bindable, so it can be modified by the external component
     var bindingValue: Binding<Angle> {
         Binding(
             get: { selectedNode.value as! Angle },

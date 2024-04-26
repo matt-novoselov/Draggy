@@ -1,6 +1,6 @@
 //
 //  ColorNode.swift
-//  NewNodeEditor
+//  Draggy
 //
 //  Created by Matt Novoselov on 19/03/24.
 //
@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 class ColorNode: Node {
     
+    // MARK: DO NOT modify required initializer
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -24,6 +25,7 @@ class ColorNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
+        // Setup default properties of the Node here
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(ColorUINode(selectedNode: self))
         self.availableForLinkingNodes = []

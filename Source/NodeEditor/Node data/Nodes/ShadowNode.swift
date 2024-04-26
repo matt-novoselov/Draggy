@@ -1,6 +1,6 @@
 //
 //  ShadowNode.swift
-//  SwiftUI-Node-Editor
+//  Draggy
 //
 //  Created by Matt Novoselov on 05/04/24.
 //
@@ -10,6 +10,7 @@ import SwiftUI
 @Observable
 class ShadowNode: Node {
 
+    // MARK: DO NOT modify required initializer
     required init(
         position: CGPoint,
         availableForLinkingNodes: [Node.Type],
@@ -24,6 +25,7 @@ class ShadowNode: Node {
             uiPreviewElement: uiPreviewElement
         )
         
+        // Setup default properties of the Node here
         self.uiPreviewElement = AnyView(EmptyView())
         self.uiNodeElement = AnyView(ShadowUINode(selectedNode: self))
         self.availableForLinkingNodes = [ColorNode.self]

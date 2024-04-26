@@ -54,7 +54,7 @@
 		1ACFB9CD2BAA3B3A00223133 /* BezierPathStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */; };
 		1AD88EC72BBD638B0028890E /* OpacitySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD88EC62BBD638B0028890E /* OpacitySlider.swift */; };
 		1AD88EC92BBD6D7F0028890E /* RotationDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD88EC82BBD6D7F0028890E /* RotationDial.swift */; };
-		1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */; };
+		1AE242362BAC27B6009F4104 /* BezierPathInteractive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE242352BAC27B6009F4104 /* BezierPathInteractive.swift */; };
 		1AE52EF92BB1D3AC00EF64AC /* RotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */; };
 		1AE52EFB2BB1D41B00EF64AC /* RotationUINode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */; };
 /* End PBXBuildFile section */
@@ -108,7 +108,7 @@
 		1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathStatic.swift; sourceTree = "<group>"; };
 		1AD88EC62BBD638B0028890E /* OpacitySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacitySlider.swift; sourceTree = "<group>"; };
 		1AD88EC82BBD6D7F0028890E /* RotationDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationDial.swift; sourceTree = "<group>"; };
-		1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathInteractable.swift; sourceTree = "<group>"; };
+		1AE242352BAC27B6009F4104 /* BezierPathInteractive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPathInteractive.swift; sourceTree = "<group>"; };
 		1AE52EF82BB1D3AC00EF64AC /* RotationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationNode.swift; sourceTree = "<group>"; };
 		1AE52EFA2BB1D41B00EF64AC /* RotationUINode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationUINode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -300,7 +300,7 @@
 			children = (
 				1ACFB9C22BAA1E3100223133 /* BaseUINode.swift */,
 				1ACFB9CC2BAA3B3A00223133 /* BezierPathStatic.swift */,
-				1AE242352BAC27B6009F4104 /* BezierPathInteractable.swift */,
+				1AE242352BAC27B6009F4104 /* BezierPathInteractive.swift */,
 				1ACFB9CE2BAA456300223133 /* Nodes */,
 				1A133EA42BC0310C00ACFBE9 /* BlurMaterial.swift */,
 			);
@@ -453,7 +453,7 @@
 				1ACFB9BA2BAA1B5F00223133 /* AddButtons.swift in Sources */,
 				1A70628D2BCAE8D60051613E /* WithoutAnimation.swift in Sources */,
 				1A7A14472BC531BE00BB8860 /* SFSymbolUINode.swift in Sources */,
-				1AE242362BAC27B6009F4104 /* BezierPathInteractable.swift in Sources */,
+				1AE242362BAC27B6009F4104 /* BezierPathInteractive.swift in Sources */,
 				1A4E7D702BAD6CCE0081EC12 /* UIColorWellExtension.swift in Sources */,
 				1A7A144E2BC53FFE00BB8860 /* ExitButtonView.swift in Sources */,
 				1ACFB9C92BAA34AF00223133 /* ColorUINode.swift in Sources */,
@@ -607,7 +607,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.Draggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -643,7 +643,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.01;
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.novoselov.Draggy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

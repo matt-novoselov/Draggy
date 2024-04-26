@@ -1,6 +1,6 @@
 //
 //  CanvasView.swift
-//  NewNodeEditor
+//  Draggy
 //
 //  Created by Matt Novoselov on 19/03/24.
 //
@@ -9,24 +9,24 @@ import SwiftUI
 
 struct CanvasView: View {
     
+    // Load NodeData from Environment
     @Environment(NodeData.self)
     private var nodeData: NodeData
     
+    // Load CanvasData from Environment
     @Environment(CanvasData.self)
     private var canvasData: CanvasData
     
+    // Store maximum z index that one of the nodes has
+    // This is needed to create overlap and hovering effect on node drag
     @State var maxZIndex: Double = 1
-    
-    //    @State private var currentZoom = 0.0
-    //    @State private var totalZoom = 1.0
-    //
-    //    let minZoom: Double = 0.5
-    //    let maxZoom: Double = 2
     
     var body: some View {
         
+        // Make canvas data bindable
         @Bindable var canvasData = canvasData
         
+        // Display each node's uiNodeElement, that is contained in nodeData
         ZStack{
             ForEach(nodeData.nodes){ node in
                 BaseUINode(
@@ -37,29 +37,26 @@ struct CanvasView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        //                .scaleEffect(currentZoom + totalZoom)
-        //                .gesture(
-        //                    MagnifyGesture()
-        //                        .onChanged { value in
-        //                            currentZoom = value.magnification - 1
-        //                        }
-        //                        .onEnded { value in
-        //                            totalZoom += currentZoom
-        //                            currentZoom = 0
-        //                        }
-        //                )
+        
+        // Display linking View on the background of nodes
+        // Linking view is responsible for displaying connections between nodes
         .background {
             LinkingView()
         }
+        // Display background
+        // MARK: The background should be infinite and scrollable
         .background{
             Image(.gridBackground)
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
+                // Open smart search menu on double tap
                 .onTapGesture(count: 2, perform: {
                     canvasData.isMenuExpanded = true
                 })
         }
+        
+        // Determine canvas size using Geometry Reader
         .overlay{
             GeometryReader{ proxy in
                 Color.clear
@@ -68,6 +65,8 @@ struct CanvasView: View {
                     }
             }
         }
+        
+        // Present Smart Search node selection menu using sheet
         .sheet(isPresented: $canvasData.isMenuExpanded, content: {
             SmartSearch()
         })

@@ -1,6 +1,6 @@
 //
 //  ButtonViewModel.swift
-//  SwiftUI-Node-Editor
+//  Draggy
 //
 //  Created by Matt Novoselov on 08/04/24.
 //
@@ -32,19 +32,28 @@ class ButtonListViewModel{
     
     // Function to filter buttons based on search text
     func filtered(_ searchText: String, category: NodeCategory) -> [ButtonItem] {
+        // Trim leading and trailing whitespaces and newlines from the search text
         let trimmedSearchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        // If the search text is empty, return all buttons belonging to the specified category
         if trimmedSearchText.isEmpty {
             return buttons.filter { $0.nodeCategory == category }
         } else {
+            // Split the search text into individual words, convert to lowercase
             let searchWords = trimmedSearchText.lowercased().components(separatedBy: " ")
+            
+            // Filter buttons based on category and search words
             return buttons.filter { button in
+                // Check if the button belongs to the specified category and matches all search words
                 button.nodeCategory == category &&
                     searchWords.allSatisfy { searchWord in
+                        // Check if the button title or any of its keywords contain the search word,
+                        // ignoring case sensitivity
                         button.title.localizedCaseInsensitiveContains(searchWord) ||
                             button.keywords.contains { $0.localizedCaseInsensitiveContains(searchWord) }
                     }
             }
         }
     }
+
 }

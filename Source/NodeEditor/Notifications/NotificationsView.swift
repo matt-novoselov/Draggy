@@ -1,17 +1,18 @@
 //
 //  SwiftUIView.swift
-//  SwiftUI-Node-Editor
+//  Draggy
 //
 //  Created by Matt Novoselov on 22/03/24.
 //
 
 import SwiftUI
 
+// The view that should be overlayed on top of the canvas to display notifications
 struct NotificationsView: View {
     
+    // Get notifications data
     @Environment(NotificationsData.self)
     private var notificationsData: NotificationsData
-    
     
     var body: some View {
         
@@ -19,15 +20,20 @@ struct NotificationsView: View {
             Spacer()
             
             ZStack{
+                // Display each notification
                 ForEach(notificationsData.displayed.indices, id: \.self) { index in
                     let notification = notificationsData.displayed[index]
                     
+                    // Display notification if it's not currently hidden
                     if notification.isShowing {
                         NotificationsBlob(text: notification.text)
                             .transition(.move(edge: .bottom).combined(with: .blurReplace))
+                        
+                            // Hide notification after 4 seconds
                             .onAppear {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                     withAnimation {
+                                        // Set isShowing = false to hide notification
                                         notificationsData.displayed[index].isShowing = false
                                     }
                                 }
@@ -41,7 +47,10 @@ struct NotificationsView: View {
     }
 }
 
+// Structure for the notification blob
 struct NotificationsBlob: View {
+    
+    // Text that will be displayed inside of the notification
     var text: String
     
     var body: some View {
@@ -51,11 +60,7 @@ struct NotificationsBlob: View {
             .fontWeight(.medium)
             .padding()
             .background{
-//                Color.nodeBackground
-//                    .blur(radius: 10)
-//                    .opacity(0.85)
-                
-                RoundedRectangle(cornerRadius: 50)
+                RoundedRectangle(cornerRadius: 100)
                     .stroke(.nodeStroke, lineWidth: 4)
                     .background{
                         Color.nodeBackground
@@ -63,13 +68,10 @@ struct NotificationsBlob: View {
                             .opacity(0.85)
                     }
             }
-//            .stroke(.nodeStroke, lineWidth: 8)
-//            .cornerRadius(50)
         
     }
 }
 
 #Preview {
-    NotificationsView()
-        .environment(NotificationsData())
+    NotificationsBlob(text: "Hello Notification")
 }
