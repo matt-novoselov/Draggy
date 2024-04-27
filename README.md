@@ -10,7 +10,7 @@
 Draggy empowers you to design app interfaces visually, no code needed. Experiment with UI elements, preview in real-time, and dive into visual programming. Perfect for aspiring developers and enthusiasts. Unlock the potential of app design with Draggy – where creativity meets simplicity!
 
 <a href="https://youtu.be/lFWM_Fcr1gM" target="_blank">
-  <img src="https://github.com/matt-novoselov/SwiftNode/blob/aa63f1831325d69ec2bd49442a82655f0993fc76/poster.png" alt="GIF">
+  <img src="https://github.com/matt-novoselov/Draggy/assets/59065228/01b6f21f-b880-49df-bb6f-cbb8e50e6951" alt="GIF">
 </a>
 
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/34555effedede5dd5aa24ae675218d989e976cf6/Files/YouTube_Badge.svg)](https://youtu.be/lFWM_Fcr1gM)
