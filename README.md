@@ -17,7 +17,11 @@ Draggy empowers you to design app interfaces visually, no code needed. Experimen
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/6386e5860d859930957588548cf1f968774ffc7e/Files/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg)](https://apps.apple.com/app/draggy/id6499097419)
 
 ## Description
-SwiftUI, Unreal Engine !!!!!
+The app was built entirely using **SwiftUI** to create a visual interface for the node editor, enabling fast and real-time previews of the interfaces users compose using nodes. The visual programming, node-based mechanics were inspired by the **Unreal Engine's Blueprint** Visual Scripting system. Creating interfaces with Draggy resembles the declarative programming paradigm, allowing users to fully customize the interface they're creating.
+
+Each type of node is an [Observable Class](https://developer.apple.com/documentation/Observation) containing properties for the node. This approach enables Draggy to update the presentation when the underlying data of any node changes.
+
+Our app incorporates accessibility features to assist our users.
 
 ## Requirements
 - iOS 17.0+
