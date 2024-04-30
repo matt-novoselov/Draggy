@@ -21,7 +21,7 @@ The app was built entirely using **SwiftUI** to create a visual interface for th
 
 Each type of node is an [Observable Class](https://developer.apple.com/documentation/Observation) containing properties for the node. This approach enables Draggy to update the presentation when the underlying data of any node changes.
 
-Our app incorporates accessibility features to assist our users.
+Our app incorporates accessibility features to assist our users, including support for VoiceOver.
 
 ## Requirements
 - iOS 17.0+
