@@ -7,7 +7,7 @@
 
 <img src="https://github.com/matt-novoselov/matt-novoselov/blob/fa4553c1e2ba92cb77bf1d11d272d0c1ad5de138/Files/ios17.svg" alt="SwiftUI" style="height: 30px"> <img src="https://github.com/matt-novoselov/matt-novoselov/blob/fa4553c1e2ba92cb77bf1d11d272d0c1ad5de138/Files/SwiftUI.svg" alt="SwiftUI" style="height: 30px">
 
-Draggy empowers you to design app interfaces visually, no code needed. Experiment with UI elements, preview in real-time, and dive into visual programming. Perfect for aspiring developers and enthusiasts. Unlock the potential of app design with Draggy – where creativity meets simplicity!
+Draggy lets you create app interfaces visually, without a single line of code. Experiment with different UI elements and preview in real-time - perfect for beginner developers and teenagers who want to learn to code. Develop with Draggy – where creativity meets simplicity!
 
 <a href="https://youtu.be/lFWM_Fcr1gM" target="_blank">
   <img src="https://github.com/matt-novoselov/Draggy/assets/59065228/01b6f21f-b880-49df-bb6f-cbb8e50e6951" alt="GIF">
@@ -21,7 +21,7 @@ The app was built entirely using **SwiftUI** to create a visual interface for th
 
 Each type of node is an [Observable Class](https://developer.apple.com/documentation/Observation) containing properties for the node. This approach enables Draggy to update the presentation when the underlying data of any node changes.
 
-Our app incorporates accessibility features to assist our users, including support for VoiceOver.
+Draggy incorporates accessibility features to assist our users, including support for VoiceOver.
 
 ## Requirements
 - iOS 17.0+
