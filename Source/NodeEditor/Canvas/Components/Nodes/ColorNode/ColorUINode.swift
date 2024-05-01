@@ -33,6 +33,7 @@ struct ColorUINode: View {
                 .aspectRatio(contentMode: .fit)
             
         }
+        .accessibilityLabel("Select color")
         // Hide labels of color picker
         .background(
             ColorPicker("", selection: bindingValue, supportsOpacity: false)

@@ -36,6 +36,7 @@ struct SFSymbolUINode: View {
                 .fontWeight(.bold)
         }
         .buttonStyle(PlainButtonStyle())
+        .accessibilityLabel("Selected symbol: \(iconName)")
         
         // Present selection sheet
         .sheet(isPresented: $showingSelector, content: {

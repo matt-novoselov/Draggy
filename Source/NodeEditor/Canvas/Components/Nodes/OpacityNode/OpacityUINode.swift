@@ -23,14 +23,17 @@ struct OpacityUINode: View {
     
     var body: some View {
         let opacity: Double = selectedNode.value as? Double ?? 1.0
+        let opacityPercent: String = "\(Int(opacity * 100))%"
         
         // Display slider and current opacity in percents
         VStack(spacing: 20){
-            Text("\(Int(opacity * 100))%")
+            Text(opacityPercent)
                 .fontWeight(.bold)
+                .accessibilityLabel("Opacity of \(opacityPercent)")
             
             OpacitySlider(value: bindingValue)
                 .frame(height: 30)
+                .accessibilityLabel("Opacity slider")
         }
         
     }

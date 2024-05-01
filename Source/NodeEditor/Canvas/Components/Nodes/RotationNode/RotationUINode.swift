@@ -24,14 +24,17 @@ struct RotationUINode: View {
     var body: some View {
 
         let rotation: Angle = selectedNode.value as? Angle ?? .zero
+        let rotationDegrees: String = "\(Int(rotation.degrees))°"
         
         ZStack{
             RotatingDial(indicatorDiameter: 25, angle: bindingValue.degrees)
+                .accessibilityLabel("Rotation dial")
             
-            Text("\(Int(rotation.degrees))°")
+            Text(rotationDegrees)
                 .fontWeight(.bold)
                 .contentTransition(.numericText())
                 .withoutAnimation()
+                .accessibilityLabel("Selected angle: \(rotationDegrees)")
         }
     }
 }

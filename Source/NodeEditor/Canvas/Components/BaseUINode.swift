@@ -26,6 +26,7 @@ struct BaseUINode: View {
     
     // Selected node that should be displayed
     @State var selectedNode: Node
+    
     // All nodes views are only previewed through overlaying them on top of the BaseUINode
     var customOverlay: AnyView?
     
@@ -120,6 +121,8 @@ struct BaseUINode: View {
             // Set initial z-index of the node
             self.selfZIndex = maxZIndex + 1
         }
+        .accessibilityLabel("Node of type \(selectedNode.self)")
+        
     }
     
     // Function to determine the anchor point of the selected node based on the canvas size

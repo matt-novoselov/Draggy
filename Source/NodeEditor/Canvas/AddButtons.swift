@@ -18,6 +18,8 @@ struct AddButtons: View {
         Button(action: {canvasData.isMenuExpanded = true}){
             Image(systemName: "plus.circle")
         }
+        .accessibilityLabel("Add new node")
+        
     }
     
 }

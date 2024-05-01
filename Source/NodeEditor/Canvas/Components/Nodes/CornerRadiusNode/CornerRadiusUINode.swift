@@ -28,9 +28,11 @@ struct CornerRadiusUINode: View {
         VStack{
             // Represent value using rectangle with dynamic corner radius
             DynamicRadiusSquare(nodeValue: bindingValue, maxSliderValue: maxSliderValue)
+                .accessibilityLabel("Selected corner radius: \(bindingValue)")
             
             // Control value using slider
             Slider(value: bindingValue, in: 0...maxSliderValue, step: 1)
+                .accessibilityLabel("Corner radius slider")
         }
         
     }

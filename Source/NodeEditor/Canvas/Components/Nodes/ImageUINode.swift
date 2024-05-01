@@ -40,6 +40,7 @@ struct ImageUINode: View {
                 .cornerRadius(10)
             
         }
+        .accessibilityLabel("Select image")
         // Integrates the PhotosPicker with the SwiftUI view hierarchy
         .photosPicker(isPresented: $showingPhotoPicker, selection: $pickerItem, matching: .images)
         
