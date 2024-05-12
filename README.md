@@ -16,10 +16,18 @@ Draggy lets you create app interfaces visually, without a single line of code. E
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/34555effedede5dd5aa24ae675218d989e976cf6/Files/YouTube_Badge.svg)](https://youtu.be/lFWM_Fcr1gM)
 [![](https://github.com/matt-novoselov/matt-novoselov/blob/6386e5860d859930957588548cf1f968774ffc7e/Files/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg)](https://apps.apple.com/app/draggy/id6499097419)
 
-## Description
-The app was built entirely using **SwiftUI** to create a visual interface for the node editor, enabling fast and real-time previews of the interfaces users compose using nodes. The visual programming, node-based mechanics were inspired by the **Unreal Engine's Blueprint** Visual Scripting system. Creating interfaces with Draggy resembles the declarative programming paradigm, allowing users to fully customize the interface they're creating.
+## Features
 
-Each type of node is an [Observable Class](https://developer.apple.com/documentation/Observation) containing properties for the node. This approach enables Draggy to update the presentation when the underlying data of any node changes.
+### Visual scripting
+The visual programming, node-based mechanics were inspired by the **Unreal Engine's Blueprint** Visual Scripting system. Creating interfaces with Draggy resembles the declarative programming paradigm, allowing users to fully customize the interface they're creating.
+
+### Connecting nodes
+When you connect nodes between each other, you pass properties. For example, if you want to make the text red, just add a color node with the red color and connect it to the text node. That's it! The color of the text will automatically be updated.
+
+### Live preview
+The app was built entirely using **SwiftUI** to create a visual interface for the node editor, enabling fast and real-time previews of the interfaces users compose using nodes. Each type of node is an [Observable Class](https://developer.apple.com/documentation/Observation) containing properties for the node. This approach enables Draggy to update the presentation when the underlying data of any node changes.
+
+<br>
 
 Draggy incorporates accessibility features to assist our users, including support for VoiceOver.
 
